@@ -1,0 +1,26 @@
+.call__forms-wrap.js-call__popup
+    .call__forms
+        .call__forms-title Виникли запитання?
+        .call__forms-desc Наші менеджери передзвонять Вам у найближчий час
+        span.call__close.js-form__close
+        form(name='call').call__form
+            //legend.form__title Расчитать свой проект
+                //+svg('close', 'form__close')
+            // обязательно
+            label.call__form-user
+                input(type='text' name='name' placeholder='Ім’я:*').call__form-input.js-form__input
+                span.form__info
+            // обязательно
+            label.call__form-phone
+                input(type='number' name='tel' placeholder='Телефон:*').call__form-input.js-form__input
+                span.form__info
+
+            // обязательно
+            //input(type='email' name='mail' placeholder='E-mail:*').form__input.js-form__input
+            //span.form__info
+
+            // обязательно
+            //input(type='text' name='region' placeholder='Регион строительства:*').form__input.js-form__input
+            //span.form__info
+
+            button(type='submit' value='Надіслати').js-form__submit.button Надіслати

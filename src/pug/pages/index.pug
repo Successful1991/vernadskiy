@@ -1,0 +1,60 @@
+extends ../layout/main
+block variable
+block meta
+	title= 'Home'
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(src='./assets/scripts/libs.js')
+	//script(src='./assets/scripts/scroll.js')
+	script(src='./assets/scripts/index.js')
+
+block content
+	section.main
+		.wb-1
+			.wb-1__left
+				.wb-1__icon
+					a(href='#').wb-1__icon__link
+						+svg('instagram')
+					a(href='#').wb-1__icon__link
+						+svg('fb')
+				.wb-1__mouse
+					+svg('mouse')
+			.wb-1__content
+				.wb-1__title Житловий комплекс VERNADSKY
+				a(href='#').wb-1__link Квартири
+
+			.wb-1__right
+				.wb-1__icon
+					a(href='#').wb-1__icon__link
+						+svg('key')
+					a(href='#').wb-1__icon__link
+						+svg('Webcam')
+				.wb-1__fishka
+					+svg('fishka')
+			.wb-1__bg-video
+				img(src='./assets/video/sky.gif')
+			img(src='./assets/images/main/render.png').wb-1__bg-img
+		.wb-2
+			.wb-2__bg
+				include ../../static/wb-2-bg.svg
+			.wb-2__fishka
+				include ../includes/wb-2-fishka.html
+			.wb-2__content
+				.wb-2__title Комплекс
+				.wb-2__text
+					span Якщо ви шукаєте комплекс, де буде добре і затишно всій вашій родині? Вам у VERNADSKY.
+					span Ви фанат району «Академмістечко» з його розвиненою інфраструктурою, безліччю садочків, шкіл, парків і торговельних центрів? Вам у VERNADSKY.
+				.wb-2__link Детальніше
+
+block footer
+	footer.footer
+		include ../includes/footer
+	// include ../includes/menu
+	// include ../pages/includes/forms
+
+block header
+	header.header
+		include ../includes/header.pug
+

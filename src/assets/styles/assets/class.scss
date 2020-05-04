@@ -1,0 +1,58 @@
+// Global class
+.wow:not(#some){
+	opacity: 0;
+}
+
+.text-stroke{
+	color: transparent;
+	-webkit-text-stroke: 2px $wc;
+}
+
+
+.wrap{
+	position: relative;
+}
+
+.tabs--active{
+	display: inline-block!important;
+	opacity: 1!important;
+}
+
+.icon{
+	&--phone{
+		height: 24px;
+		width: 18px;
+		fill: transparent;
+	}
+	&--fb{
+		height: 14px;
+		width: 8px;
+		fill: transparent;
+	}
+	&--instagram{
+		height: 12px;
+		width: 12px;
+		fill: transparent;
+	}
+	&--mouse{
+		height: 24px;
+		width: 15px;
+		fill: transparent;
+	}
+	&--Webcam{
+		height: 19px;
+		width: 17px;
+	}
+	&--key{
+		height: 19px;
+		width: 18px;
+	}
+	&--fishka{
+		height: 26px;
+		width: 28px;
+		fill: transparent;
+	}
+}
+
+
+

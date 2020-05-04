@@ -1,0 +1,31 @@
+.wrap-menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #386A7E, #3286A8 );
+  z-index: 199;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  padding: 100px 30px 0;
+  transition: all 0.4s ease-in;
+  &.active{
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+.menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 40px 0;
+}
