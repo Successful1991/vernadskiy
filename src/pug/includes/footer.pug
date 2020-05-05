@@ -1,8 +1,32 @@
-a(href='#').footer__developer
-	+svg('Intergal-bud')
+.footer__top
+	each val in menu
+		.menu__list
+			if(val.group)
+				.menu__list-title=val.group
+			ul.menu__group
+				if(val.list)
+					each item in val.list
+						li.menu__link
+							a(href=item.href)=item.name
+.footer__middle
+	.footer__elem
+		+svg('point')
+		span.footer__elem-point вул. Вернадського, 32
+	.footer__elem
+		+svg('phone').footer__icon-phone
+		a(href='0442222020').footer__elem-phone (044) 222-20-20
+	.footer__elem
+		a(href="#").footer__social Instagram
+		a(href="#").footer__social Facebook
+	.footer__elem
+		a().js-call.footer__call Зворотній дзвінок
 
-.footer__smarto
-	+svg('smarto')
+.footer__bottom
+	.footer__copy © Усі права захищено Vernadsky
+	.footer__smarto
+		span Розробка сайту
+		a(href='https://smarto.agency/')
+			+svg('smarto')
 
 
 

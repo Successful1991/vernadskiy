@@ -10,6 +10,8 @@ block scripts
 	//script(src='./assets/scripts/scroll.js')
 	script(src='./assets/scripts/index.js')
 
+
+
 block content
 	section.main
 		.wb-1
@@ -38,7 +40,7 @@ block content
 			img(src='./assets/images/main/render.png').wb-1__bg-img
 		.wb-2
 			.wb-2__bg
-				include ../../static/wb-2-bg.svg
+				include ../includes/wb-2-bg.html
 			.wb-2__fishka
 				include ../includes/wb-2-fishka.html
 			.wb-2__content
@@ -47,6 +49,59 @@ block content
 					span Якщо ви шукаєте комплекс, де буде добре і затишно всій вашій родині? Вам у VERNADSKY.
 					span Ви фанат району «Академмістечко» з його розвиненою інфраструктурою, безліччю садочків, шкіл, парків і торговельних центрів? Вам у VERNADSKY.
 				.wb-2__link Детальніше
+		.wb-3
+			.wb-3__img-1
+				img(src='./assets/images/main/img1.jpg')
+			.wb-3__img-2
+				img(src='./assets/images/main/img2.jpg')
+			.wb-3__content-wrap
+				.wb-3__line
+				.wb-3__content
+					.wb-3__title Інфраструктура
+					.wb-3__text
+						span Для малечі різного віку ми побудуємо різноманітні майданчики і спортивні простори, яким, до речі, забудовник приділяє особливу увагу. Мами та тати матимуть фітнес-зали і салони краси.
+					.wb-3__link Детальніше
+			.wb-3__logo
+				+svg('fishka')
+		.wb-4
+			.wb-4__img-1
+				img(src='./assets/images/main/wb-4-1.jpg')
+			.wb-4__img-2
+				img(src='./assets/images/main/wb-4-2.jpg')
+			.wb-4__comerc
+				.wb-4__img-3
+					img(src='./assets/images/main/wb-4-3.jpg')
+				.wb-4__left-link Комерційна нерухомість
+			.wb-4__content-wrap
+				.wb-4__line
+				.wb-4__content
+					.wb-4__title Квартири
+					.wb-4__text
+						span Ми будуємо не просто комплекс, ми будуємо справжню домінанту району, місце, в якому комфортно жити, ростити дітей, працювати, розвиватися.
+					.wb-4__link Обрати квартиру
+			.wb-4__logo
+				+svg('fishka')
+		.wb-5
+			.wb-5__bg
+				include ../includes/wb-2-bg.html
+			.wb-5__fishka
+				include ../includes/wb-5-fishka.html
+			.wb-5__img
+				img(src='./assets/images/main/wb-5-1.jpg')
+			.wb-5__forms
+				.wb-5__forms-title Напишіть нам
+				form.wb-5__form
+					legend.wb-5__form-legend Наші менеджери зв’яжуться з вами у найкоротший час
+					label.wb-5__form-label.wb-5__form-user
+						input(type='text' placeholder='ваше ім’я' required)
+						span.form__info
+					label.wb-5__form-label.wb-5__form-mail
+						input(type='text' placeholder='example@email.com' required)
+						span.form__info
+					label.wb-5__form-label.wb-5__form-message
+						input(type='text' placeholder='повідомлення' required)
+						span.form__info
+					button(type='submit' value='Надіслати').wb-5__form-button Надіслати
 
 block footer
 	footer.footer

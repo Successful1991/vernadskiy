@@ -22,6 +22,7 @@
 	&--phone{
 		height: 24px;
 		width: 18px;
+		stroke: $mc2;
 		fill: transparent;
 	}
 	&--fb{
@@ -50,6 +51,16 @@
 	&--fishka{
 		height: 26px;
 		width: 28px;
+		fill: transparent;
+	}
+	&--point{
+		height: 16px;
+		width: 13px;
+		fill: transparent;
+	}
+	&--smarto{
+		height: 28px;
+		width: 70px;
 		fill: transparent;
 	}
 }

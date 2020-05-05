@@ -1,6 +1,119 @@
 include ../includes/mixins.pug
 block variable
-
+-
+    var menu = [
+        {
+            group:'Комплекс',
+            list: [
+                {
+                    name:'Про комплекс',
+                    href:'advantage'
+                },
+                {
+                    name:'Инфраструктура',
+                    href:'infrastructure'
+                },
+                {
+                    name:'Преимущества',
+                    href:'advantages'
+                },
+                {
+                    name:'Ген. план',
+                    href:'genplan'
+                },
+                {
+                    name:'Технические характеристики',
+                    href:'technical'
+                },
+                {
+                    name:'Документация',
+                    href:'documentation'
+                },
+                {
+                    name:'Про застройщика',
+                    href:'About'
+                }
+            ]
+        },
+        {
+            group:'Подбор квартир',
+            list:[
+                {
+                name:'Обрати квартиру',
+                href:'#'
+                },
+                {
+                name:'Подбор по параметрам',
+                href:'#'
+                },
+                {
+                name:'1-комнатные',
+                href:'#'
+                },
+                {
+                name:'2-комнатные',
+                href:'#'
+                },
+                {
+                name:'3-комнатные',
+                href:'#'
+                },
+            ]
+        },
+        {
+            group:'Условия приобретения',
+            list:[
+                {
+                name:'С ремонтом',
+                href:'#'
+                },
+                {
+                name:'Полная оплата',
+                href:'#'
+                },
+                {
+                name:'Рассрочка',
+                href:'#'
+                },
+                {
+                name:'Кредитование',
+                href:'#'
+                },
+            ]
+        },
+        {
+            list:[
+                {
+                name:'Новости',
+                href:'news'
+                },
+                {
+                name:'Акции',
+                href:'sale'
+                },
+                {
+                name:'Галерея',
+                href:'gallery'
+                },
+                {
+                name:'Ход строительства',
+                href:'construction'
+                },
+                {
+                name:'Нежилые помещения',
+                href:'nonResidential'
+                },
+                {
+                name:'Контакты',
+                href:'contact'
+                },
+                {
+                name:'СМИ о Нас',
+                href:'media'
+                },
+            ]
+        }
+    ];
 doctype html
 html(lang="uk")
     head

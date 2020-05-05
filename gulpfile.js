@@ -116,7 +116,7 @@ function templates() {
 // scss
 function styles() {
     return gulp.src(paths.styles.main)
-    // .pipe(sourcemaps.init()) // инциализация sourcemap'ов
+    .pipe(sourcemaps.init()) // инциализация sourcemap'ов
     .pipe(sass({
         outputStyle: 'expanded' // компиляции в CSS с отступами
     }))
