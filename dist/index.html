@@ -63,7 +63,7 @@
     <header class="header">
       <div class="lang">
         <div class="lang-list"><a class="lang-list__item lang-active" href="#">UA</a><a class="lang-list__item" href="#">RU</a><a class="lang-list__item" href="#">EN</a></div>
-      </div><a href="#"><img src="./assets/images/icon/logo.svg"></a>
+      </div><a href="#"><img src="/assets/images/icon/Logo.svg"></a>
       <div class="tel">
         <svg class="icon--phone tel__icon" role="presentation">
           <use xlink:href="#icon-phone"></use>
@@ -72,7 +72,7 @@
       <div class="burger"><span></span><span></span><span></span></div>
     </header>
     <section class="main">
-      <div class="wb-1">
+      <div class="wb-1 js-wb wb-active">
         <div class="wb-1__left">
           <div class="wb-1__icon"><a class="wb-1__icon__link" href="#">
               <svg class="icon--instagram" role="presentation">
@@ -106,7 +106,7 @@
         </div>
         <div class="wb-1__bg-video"><img src="./assets/video/sky.gif"></div><img class="wb-1__bg-img" src="./assets/images/main/render.png">
       </div>
-      <div class="wb-2">
+      <div class="wb-2 js-wb">
         <div class="wb-2__bg"><svg width="1361" height="700" viewBox="0 0 1361 700" fill="none" xmlns="http://www.w3.org/2000/svg">
     <line class="short" x1="95.5" y1="1100" x2="95.5" y2="-400" stroke="#627F80"/>
     <line class="short" x1="1264.5" y1="-400" x2="1264.5" y2="1100" stroke="#627F80"/>
@@ -127,10 +127,10 @@
         <div class="wb-2__fishka"><svg width="388" height="352" viewBox="0 0 388 352" fill="none" xmlns="http://www.w3.org/2000/svg" baseProfile="full">
     <defs>
         <mask id="thirty-two">
-    <path d="M279.574 143.747C286.375 150.549 290.038 159.966 290.038 169.384C290.038 178.801 286.375 188.219 279.574 195.02C272.772 201.822 263.355 205.484 253.938 205.484C244.52 205.484 235.103 201.822 228.301 195.02C221.5 188.219 217.837 179.324 217.837 169.384V168.337H233.533V169.384C233.533 180.894 242.951 189.788 253.938 189.788C264.925 189.788 274.342 180.371 274.342 169.384C274.342 158.397 264.925 148.979 253.938 148.979C250.275 148.979 246.613 150.026 243.474 151.595L233.533 143.224L259.169 111.309H217.314V95.6137H292.131L260.739 134.33C268.064 135.376 274.342 139.039 279.574 143.747Z" fill="white"/>
-    <path d="M387.875 204.446H304.164C304.164 204.446 328.231 176.194 340.264 162.068C346.543 154.743 353.344 147.941 359.099 140.094C362.238 135.908 364.854 130.676 363.808 125.444C362.762 120.736 359.623 118.12 357.007 116.027C353.344 113.411 349.159 112.364 344.973 112.364C332.94 112.364 322.999 122.305 322.999 134.338H304.687C304.687 123.875 308.873 113.411 316.198 106.086C324.045 98.7615 333.986 94.5759 344.45 94.5759C352.298 94.5759 360.669 97.1919 366.947 101.377C374.272 106.609 379.504 113.934 381.073 121.782C382.643 129.63 381.597 137.478 377.411 144.802C373.226 152.65 366.947 158.929 361.192 165.73L342.357 187.704H387.875V204.446Z" fill="white"/>
-    <path d="M66.112 0.924075L209.467 286.587L176.505 351.986L0.713074 0.924075H66.112Z" fill="white"/>
-    <path d="M317.244 45.1903L291.084 0.718964H342.88L317.244 45.1903Z" fill="white"/>
+    <path class="fishka-1" d="M279.574 143.747C286.375 150.549 290.038 159.966 290.038 169.384C290.038 178.801 286.375 188.219 279.574 195.02C272.772 201.822 263.355 205.484 253.938 205.484C244.52 205.484 235.103 201.822 228.301 195.02C221.5 188.219 217.837 179.324 217.837 169.384V168.337H233.533V169.384C233.533 180.894 242.951 189.788 253.938 189.788C264.925 189.788 274.342 180.371 274.342 169.384C274.342 158.397 264.925 148.979 253.938 148.979C250.275 148.979 246.613 150.026 243.474 151.595L233.533 143.224L259.169 111.309H217.314V95.6137H292.131L260.739 134.33C268.064 135.376 274.342 139.039 279.574 143.747Z" fill="white"/>
+    <path class="fishka-2" d="M387.875 204.446H304.164C304.164 204.446 328.231 176.194 340.264 162.068C346.543 154.743 353.344 147.941 359.099 140.094C362.238 135.908 364.854 130.676 363.808 125.444C362.762 120.736 359.623 118.12 357.007 116.027C353.344 113.411 349.159 112.364 344.973 112.364C332.94 112.364 322.999 122.305 322.999 134.338H304.687C304.687 123.875 308.873 113.411 316.198 106.086C324.045 98.7615 333.986 94.5759 344.45 94.5759C352.298 94.5759 360.669 97.1919 366.947 101.377C374.272 106.609 379.504 113.934 381.073 121.782C382.643 129.63 381.597 137.478 377.411 144.802C373.226 152.65 366.947 158.929 361.192 165.73L342.357 187.704H387.875V204.446Z" fill="white"/>
+    <path class="fishka-3" d="M33 0.924075 L193 319 L193 319 L33 0.924075 H33Z" fill="white"/>
+    <path class="fishka-4" d="M317.244 45.1903L291.084 0.718964H342.88L317.244 45.1903Z" fill="white"/>
         </mask>
     </defs>
     <image x="-100" y="0" width="1225" height="730"
@@ -139,14 +139,13 @@
     </image>
 </svg>
 
-
         </div>
         <div class="wb-2__content">
           <div class="wb-2__title">Комплекс</div>
           <div class="wb-2__text"><span>Якщо ви шукаєте комплекс, де буде добре і затишно всій вашій родині? Вам у VERNADSKY.</span><span>Ви фанат району «Академмістечко» з його розвиненою інфраструктурою, безліччю садочків, шкіл, парків і торговельних центрів? Вам у VERNADSKY.</span></div><a class="wb-2__link" href="#">Детальніше</a>
         </div>
       </div>
-      <div class="wb-3">
+      <div class="wb-3 js-wb">
         <div class="wb-3__img-1"><img src="./assets/images/main/img1.jpg"></div>
         <div class="wb-3__img-2"><img src="./assets/images/main/img2.jpg"></div>
         <div class="wb-3__content-wrap">
@@ -163,7 +162,7 @@
           </svg>
         </div>
       </div>
-      <div class="wb-4">
+      <div class="wb-4 js-wb">
         <div class="wb-4__img-1"><img src="./assets/images/main/wb-4-1.jpg"></div>
         <div class="wb-4__img-2"><img src="./assets/images/main/wb-4-2.jpg"></div>
         <div class="wb-4__comerc">
@@ -184,7 +183,7 @@
           </svg>
         </div>
       </div>
-      <div class="wb-5">
+      <div class="wb-5 js-wb">
         <div class="wb-5__bg"><svg width="1361" height="700" viewBox="0 0 1361 700" fill="none" xmlns="http://www.w3.org/2000/svg">
     <line class="short" x1="95.5" y1="1100" x2="95.5" y2="-400" stroke="#627F80"/>
     <line class="short" x1="1264.5" y1="-400" x2="1264.5" y2="1100" stroke="#627F80"/>
@@ -313,7 +312,7 @@
     <!-- include ../includes/menu-->
     <!-- include ../pages/includes/forms-->
     <script src="./assets/scripts/libs.js"></script>
-    <!--script(src='./assets/scripts/scroll.js')-->
+    <script src="./assets/scripts/scroll.js"></script>
     <script src="./assets/scripts/index.js"></script>
   </body>
 </html>

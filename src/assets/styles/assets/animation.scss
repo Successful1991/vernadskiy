@@ -84,8 +84,51 @@
 }
 
 
-@keyframes svg-line {
+@keyframes svg-line-long {
+	from{
+		stroke-dashoffset: 2000;
+	}
 	to{
 		stroke-dashoffset: 0;
+	}
+}
+@keyframes svg-line-short {
+	from{
+		stroke-dashoffset: 1300;
+	}
+	to{
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes svg-line-circle {
+	from{
+		stroke-dashoffset: 2500;
+	}
+	to{
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes svg-line-long-reverse {
+	from{
+		stroke-dashoffset: 0;
+	}
+	to{
+		stroke-dashoffset: 2000;
+	}
+}
+@keyframes svg-line-short-reverse {
+	from{
+		stroke-dashoffset: 0;
+	}
+	to{
+		stroke-dashoffset: 1300;
+	}
+}
+@keyframes svg-line-circle-reverse {
+	from{
+		stroke-dashoffset: 0;
+	}
+	to{
+		stroke-dashoffset: 2500;
 	}
 }

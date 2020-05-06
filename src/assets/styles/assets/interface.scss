@@ -93,7 +93,7 @@
     overflow: hidden;
     padding: 9px;
     border-radius: 50px;
-    transition: height 0.2s ease-in;
+    transition: height 0.2s ease-in, border-radius .15s linear 0.2s;
 
     &__item {
       @include flexCenter();
@@ -138,6 +138,7 @@
   &:hover {
     .lang-list {
       height: 120px;
+      border-radius: 0;
       &__item {
         visibility: visible;
         opacity: 1;

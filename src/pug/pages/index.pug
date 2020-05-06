@@ -7,14 +7,14 @@ block head
 		link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
 	script(src='./assets/scripts/libs.js')
-	//script(src='./assets/scripts/scroll.js')
+	script(src='./assets/scripts/scroll.js')
 	script(src='./assets/scripts/index.js')
 
 
 
 block content
 	section.main
-		.wb-1
+		.wb-1.js-wb.wb-active
 			.wb-1__left
 				.wb-1__icon
 					a(href='#').wb-1__icon__link
@@ -38,7 +38,7 @@ block content
 			.wb-1__bg-video
 				img(src='./assets/video/sky.gif')
 			img(src='./assets/images/main/render.png').wb-1__bg-img
-		.wb-2
+		.wb-2.js-wb
 			.wb-2__bg
 				include ../includes/wb-2-bg.html
 			.wb-2__fishka
@@ -49,7 +49,7 @@ block content
 					span Якщо ви шукаєте комплекс, де буде добре і затишно всій вашій родині? Вам у VERNADSKY.
 					span Ви фанат району «Академмістечко» з його розвиненою інфраструктурою, безліччю садочків, шкіл, парків і торговельних центрів? Вам у VERNADSKY.
 				a(href='#').wb-2__link Детальніше
-		.wb-3
+		.wb-3.js-wb
 			.wb-3__img-1
 				img(src='./assets/images/main/img1.jpg')
 			.wb-3__img-2
@@ -63,7 +63,7 @@ block content
 					.wb-3__link Детальніше
 			.wb-3__logo
 				+svg('fishka')
-		.wb-4
+		.wb-4.js-wb
 			.wb-4__img-1
 				img(src='./assets/images/main/wb-4-1.jpg')
 			.wb-4__img-2
@@ -81,7 +81,7 @@ block content
 					.wb-4__link Обрати квартиру
 			.wb-4__logo
 				+svg('fishka')
-		.wb-5
+		.wb-5.js-wb
 			.wb-5__bg
 				include ../includes/wb-2-bg.html
 			.wb-5__fishka

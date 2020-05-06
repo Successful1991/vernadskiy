@@ -2,11 +2,13 @@ class Smooth {
   constructor({element = window, strength=20, acceleration = 1.1,deceleration = 0.95, ignore = ''}={}) {
     this.self = this;
     this.element = element;
-    this.distance = strength;
-    this.acceleration = acceleration;
-    this.deceleration = deceleration;
+    // this.distance = strength;
+    // this.acceleration = acceleration;
+    // this.deceleration = deceleration;
     this.running = false;
     this.ignore = ignore;
+    this.currentSlide = 0;
+    this.elementsSlide = $('.js-wb');
     this.element.addEventListener('wheel', this.scrollHandler.bind(this));
     this.element.addEventListener('mousewheel', this.scrollHandler.bind(this));
     this.scroll = this.scroll.bind(this);
@@ -29,30 +31,53 @@ class Smooth {
     }
 
     if (!this.running && scroll) {
-      this.top = this.element.pageYOffset || this.element.scrollTop || 0;
-      this.running = true;
-      this.currentDistance = e.deltaY > 0 ? 0.1 : -0.1;
-      this.isDistanceAsc = true;
-      this.scroll();
-    } else {
-      this.isDistanceAsc = false;
-      this.currentDistance = e.deltaY > 0 ? this.distance : -this.distance;
+      console.log('dsd', e.deltaY);
+      if(e.deltaY < 0 && this.currentSlide > 0) {
+        this.running = false;
+        this.scroll(this.currentSlide-1, 'up');
+      } else if(e.deltaY > 0 && this.currentSlide < this.elementsSlide.length - 1) {
+        this.running = 1;
+        this.scroll(this.currentSlide+1, 'down');
+      }
+      // this.currentDistance = e.deltaY;
+      // this.scroll();
     }
   }
 
-  scroll() {
-    if (this.running) {
-      Math.abs(this.currentDistance) >= Math.abs(this.distance) ? this.isDistanceAsc = false : 1;
-      this.top += this.currentDistance;
-      this.element.scrollTo(0, this.top);
+  scroll(slide, cl) {
+    console.log('dsd', slide);
+    // this.elementsSlide[slide].classList.add(cl);
+    this.elementsSlide[slide].classList.add('wb-active');
 
-      this.currentDistance *= this.isDistanceAsc === true ? this.acceleration : this.deceleration;
-      ((Math.abs(this.currentDistance) < 0.1 ) && this.isDistanceAsc === false) ||
-      this.top > ( $(document).height() - document.documentElement.clientHeight) ||
-      this.top <= 0 ? this.running = false : 1;
+    if(cl === 'up'){
+      this.elementsSlide[this.currentSlide].classList.add('wb-active-end');
+      setTimeout(e => {
+        this.elementsSlide[slide].classList.add('wb-active');
+      },1000)
 
-      requestAnimationFrame(this.scroll);
+
+    } else if (cl === 'down'){
+      this.elementsSlide[slide].classList.add('wb-active');
+
     }
+    setTimeout(e => {
+      this.running = false;
+      this.elementsSlide[this.currentSlide].classList.remove('wb-active');
+      this.elementsSlide[this.currentSlide].classList.remove('wb-active-end');
+      this.currentSlide = slide;
+    },2000)
+    // if (this.running) {
+    //   Math.abs(this.currentDistance) >= Math.abs(this.distance) ? this.isDistanceAsc = false : 1;
+    //   this.top += this.currentDistance;
+    //   this.element.scrollTo(0, this.top);
+    //
+    //   this.currentDistance *= this.isDistanceAsc === true ? this.acceleration : this.deceleration;
+    //   ((Math.abs(this.currentDistance) < 0.1 ) && this.isDistanceAsc === false) ||
+    //   this.top > ( $(document).height() - document.documentElement.clientHeight) ||
+    //   this.top <= 0 ? this.running = false : 1;
+    //
+    //   requestAnimationFrame(this.scroll);
+    // }
   }
 
   key(){
