@@ -1136,6 +1136,7 @@ a, button, input {
   position: relative;
   width: 100%;
   flex: 0 0 54px;
+  order: -1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1149,6 +1150,8 @@ a, button, input {
 }
 
 .lang-list {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 50px;
   flex-shrink: 0;
@@ -1886,7 +1889,7 @@ a, button, input {
 }
 
 .wb-2__fishka .fishka-3 {
-  transition: d 0.5s ease-in 2.8s;
+  transition: d 0.5s ease-in 2.2s;
 }
 
 .wb-2__content {
@@ -1896,7 +1899,7 @@ a, button, input {
   width: 50%;
   padding: 50px 17% 50px 12%;
   opacity: 0;
-  transition: opacity 0.4s ease-in 3.5s;
+  transition: opacity 0.4s ease-in 2.7s;
 }
 
 .wb-3 {
@@ -1911,6 +1914,15 @@ a, button, input {
   z-index: 3;
 }
 
+.wb-3__left {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .wb-3__line {
   position: absolute;
   top: 0;
@@ -1923,8 +1935,10 @@ a, button, input {
 }
 
 .wb-3__img-1 {
-  grid-column: 1;
-  grid-row: 1;
+  flex: 0 0 auto;
+  height: 100%;
+  transition: transform 0.4s ease-in .2s, height 0.4s ease-in 1.2s;
+  transform: translate(0, -100%);
 }
 
 .wb-3__img-1 img {
@@ -1935,6 +1949,8 @@ a, button, input {
 .wb-3__img-2 {
   grid-column: 2;
   grid-row: 1 /span 2;
+  transition: transform 0.4s ease-in 0.5s;
+  transform: translate(100%, 0);
 }
 
 .wb-3__img-2 img {
@@ -1945,22 +1961,24 @@ a, button, input {
 .wb-3__content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 38%;
   min-width: 260px;
   margin: 0 auto;
-  padding: 50px auto 50px auto;
+  padding: 50px 0;
   background: #ffffff;
+  transition: margin 0.3s ease-in 0.9s;
 }
 
 .wb-3__content-wrap {
-  grid-column: 1;
-  grid-row: 2;
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
+  background: #ffffff;
+  height: 55%;
   width: 100%;
+  transition: transform 0.3s ease-in 1.2s, height 0.3s ease-in 1.2s;
+  transform: translate(0, 100%);
 }
 
 .wb-3__title {
@@ -1969,7 +1987,7 @@ a, button, input {
   line-height: 1.3em;
   color: #323131;
   transform: translate(-50px, 0);
-  margin-bottom: 20px;
+  margin: auto 0 20px;
 }
 
 .wb-3__text {
@@ -2007,6 +2025,7 @@ a, button, input {
   color: #C2A7A1;
   text-decoration: none;
   white-space: nowrap;
+  margin-bottom: auto;
 }
 
 .wb-3__link::after {
@@ -2453,15 +2472,15 @@ a, button, input {
 }
 
 .wb-active .wb-2__bg svg .long {
-  animation: svg-line-long 0.7s ease-in-out 0.2s forwards;
+  animation: svg-line-long 0.7s cubic-bezier(0.07, 0.62, 0.34, 0.01) 0.2s forwards;
 }
 
 .wb-active .wb-2__bg svg .short {
-  animation: svg-line-short 0.9s ease-out 0.3s forwards;
+  animation: svg-line-short 0.6s cubic-bezier(1, 0.57, 0.03, 0.41) 0.3s forwards;
 }
 
 .wb-active .wb-2__bg svg .circle {
-  animation: svg-line-circle 0.7s linear 1s forwards;
+  animation: svg-line-circle 1s cubic-bezier(0.37, 0.67, 1, 0.46) 0.7s forwards;
 }
 
 .wb-active .wb-2__bg svg rect {
@@ -2477,7 +2496,6 @@ a, button, input {
 }
 
 .wb-active .wb-2__fishka svg .fishka-3 {
-  transition: d 0.5s ease-in 0.8s;
   d: path("M66.112 0.924075 L209.467 286.587 L176.505 351.986 L0.713074 0.924075H66.112Z");
 }
 
@@ -2489,20 +2507,39 @@ a, button, input {
   opacity: 1;
 }
 
+.wb-active .wb-3 {
+  grid-template-rows: 45% 55%;
+}
+
+.wb-active .wb-3__img-1 {
+  height: 45%;
+  transform: translate(0, 0);
+}
+
+.wb-active .wb-3__img-2 {
+  transform: translate(0, 0);
+}
+
+.wb-active .wb-3__content-wrap {
+  transform: translate(0, 0);
+}
+
 .wb-active-end {
   visibility: visible;
+  transition: d 0.5s ease-in 0.8s, opacity 0.4s ease-out 1.2s;
+  opacity: 0;
 }
 
 .wb-active-end .wb-2__bg svg .long {
-  animation: svg-line-long-reverse 1.5s forwards;
+  animation: svg-line-long-reverse 1s forwards;
 }
 
 .wb-active-end .wb-2__bg svg .short {
-  animation: svg-line-short-reverse 1.5s forwards;
+  animation: svg-line-short-reverse 1s forwards;
 }
 
 .wb-active-end .wb-2__bg svg .circle {
-  animation: svg-line-circle-reverse 1.5s forwards;
+  animation: svg-line-circle-reverse 1s forwards;
 }
 
 .wb-active-end .wb-2__bg svg rect {
@@ -2519,6 +2556,7 @@ a, button, input {
 }
 
 .wb-active-end .wb-2__fishka svg .fishka-3 {
+  transition: d 0.3s ease-in 0.7s;
   d: path("M33 0.924075 L193 319 L193 319 L33 0.924075 H33Z");
 }
 

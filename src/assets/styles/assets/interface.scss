@@ -75,6 +75,7 @@
     position: relative;
     width: 100%;
     flex: 0 0 54px;
+    order: -1;
     @include flexCenter();
     cursor: pointer;
     z-index: 2;
@@ -86,6 +87,8 @@
   }
 
   &-list {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 50px;
     flex-shrink: 0;

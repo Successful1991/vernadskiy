@@ -53,7 +53,7 @@ class Smooth {
       this.elementsSlide[this.currentSlide].classList.add('wb-active-end');
       setTimeout(e => {
         this.elementsSlide[slide].classList.add('wb-active');
-      },1000)
+      },3000)
 
 
     } else if (cl === 'down'){
