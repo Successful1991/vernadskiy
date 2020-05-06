@@ -82,3 +82,10 @@
 	animation-fill-mode: forwards;
 	backface-visibility: visible;
 }
+
+
+@keyframes svg-line {
+	to{
+		stroke-dashoffset: 0;
+	}
+}

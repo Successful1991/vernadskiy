@@ -929,6 +929,12 @@ a, button, input {
   backface-visibility: visible;
 }
 
+@keyframes svg-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 .wow:not(#some) {
   opacity: 0;
 }
@@ -1786,6 +1792,21 @@ a, button, input {
   object-fit: contain;
 }
 
+.wb-2__bg svg .long {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+.wb-2__bg svg .short {
+  stroke-dasharray: 1300;
+  stroke-dashoffset: 1300;
+}
+
+.wb-2__bg svg .circle {
+  stroke-dasharray: 2500;
+  stroke-dashoffset: 2500;
+}
+
 .wb-2__fishka {
   display: flex;
   align-items: center;
@@ -1795,6 +1816,13 @@ a, button, input {
 
 .wb-2__fishka svg {
   width: 50%;
+}
+
+.wb-2__fishka svg path {
+  stroke: #00dd1c;
+  stroke-width: 2;
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
 }
 
 .wb-2__content {
@@ -1942,7 +1970,6 @@ a, button, input {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 45% 28% 27%;
-  padding-top: 50px;
   position: relative;
 }
 
@@ -2340,4 +2367,20 @@ a, button, input {
   height: 100%;
   object-fit: cover;
   object-position: 0 95%;
+}
+
+.active .wb-2__bg svg .long {
+  animation: svg-line 2s ease-in-out forwards;
+}
+
+.active .wb-2__bg svg .short {
+  animation: svg-line 2s ease-out forwards;
+}
+
+.active .wb-2__bg svg .circle {
+  animation: svg-line 2s linear 1.5s forwards;
+}
+
+.active .wb-2__fishka svg path {
+  animation: svg-line 2s linear 1.5s forwards;
 }
