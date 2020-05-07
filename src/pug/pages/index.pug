@@ -17,10 +17,12 @@ block content
 		.wb-1.js-wb.wb-active
 			.wb-1__left
 				.wb-1__icon
-					a(href='#').wb-1__icon__link
+					a(href='#').wb-1__icon__link.hover-right
 						+svg('instagram')
-					a(href='#').wb-1__icon__link
+						.icon__hover instagram
+					a(href='#').wb-1__icon__link.hover-right
 						+svg('fb')
+						.icon__hover facebook
 				.wb-1__mouse
 					+svg('mouse')
 			.wb-1__content
@@ -29,10 +31,12 @@ block content
 
 			.wb-1__right
 				.wb-1__icon
-					a(href='#').wb-1__icon__link
+					a(href='#').wb-1__icon__link.hover-left
 						+svg('key')
-					a(href='#').wb-1__icon__link
+						.icon__hover  Обрати квартиру
+					a(href='#').wb-1__icon__link.hover-left
 						+svg('Webcam')
+						.icon__hover Web камера
 				.wb-1__fishka
 					+svg('fishka')
 			.wb-1__bg-video

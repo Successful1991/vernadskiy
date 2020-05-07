@@ -30,14 +30,17 @@ class Smooth {
       scroll = false;
     }
 
+    console.log('this.running', this.running);
     if (!this.running && scroll) {
-      console.log('dsd', e.deltaY);
+      // console.log('dsd', e.deltaY);
       if(e.deltaY < 0 && this.currentSlide > 0) {
-        this.running = false;
+        this.running = 1;
         this.scroll(this.currentSlide-1, 'up');
       } else if(e.deltaY > 0 && this.currentSlide < this.elementsSlide.length - 1) {
         this.running = 1;
         this.scroll(this.currentSlide+1, 'down');
+      } else {
+        this.running = false;
       }
       // this.currentDistance = e.deltaY;
       // this.scroll();
@@ -50,12 +53,10 @@ class Smooth {
     this.elementsSlide[slide].classList.add('wb-active');
 
     if(cl === 'up'){
-      this.elementsSlide[this.currentSlide].classList.add('wb-active-end');
+      this.elementsSlide[slide].classList.add('wb-active');
       setTimeout(e => {
-        this.elementsSlide[slide].classList.add('wb-active');
-      },3000)
-
-
+      this.elementsSlide[this.currentSlide].classList.add('wb-active-end');
+      },300)
     } else if (cl === 'down'){
       this.elementsSlide[slide].classList.add('wb-active');
 
