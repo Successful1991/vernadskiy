@@ -26,6 +26,46 @@ function init() {
         $('.preloader').css('display','none');
     },0);
     // animateCanvas();
+    $('.js-wb-2__fishka-event').on('mousemove', animateBg);
+    $('.js-wb-2__fishka-event').on('mouseout', function (e) {
+        console.log(e);
+        let image = $(e.target).siblings('svg').find('image');
+        image[0].style.transition = 'x 0.35s cubic-bezier(.52,.27,.35,.97), y 0.3s cubic-bezier(.52,.27,.35,.97)';
+        image[0].style.x = null;
+        image[0].style.y = null;
+        setTimeout(function () {
+            image[0].style.transition = null;
+        },400)
+    });
+
+}
+
+function animateBg(e) {
+    let y = e.originalEvent.pageY;
+    let x = e.originalEvent.pageX;
+
+    let svg = $(e.target).siblings('svg');
+
+    let wrap = $(this);
+    let wrapX = wrap.offset().left;
+    let wrapY = wrap.offset().top;
+    // console.log(wrapX,wrapY);
+    let wrapH = wrap.height();
+    let wrapW = wrap.width();
+    // console.log('e',e);
+    // console.log('this', wrapX, wrapY);
+
+    let image = svg.find('image');
+    let imageH = image.height() ;
+    let imageW = image.width();
+
+    // console.log(svg.height() / wrapH);
+    let resY = (imageH / wrapH) * ( y - wrapY) * -1 * svg.height() / wrapH;
+    let resX = (imageW / wrapW)  * (x - wrapX) * -1 * svg.width() / wrapW;
+    image[0].style.x = resX ;
+    image[0].style.y = resY ;
+
+    // console.log(resX, resY);
 }
 
 function animateCanvas() {
@@ -38,22 +78,11 @@ function animateCanvas() {
         ctx.drawImage(this, -100, 0,1225, 730);
     };
 
-    let threePath = 'M387.875 204.446H304.164C304.164 204.446 328.231 176.194 340.264 162.068  C346.543 154.743 353.344 147.941 359.099 140.094C362.238 135.908 364.854 130.676 363.808 125.444C362.762 120.736 359.623 118.12 357.007 116.027C353.344 113.411 349.159 112.364 344.973 112.364C332.94 112.364 322.999 122.305 322.999 134.338H304.687C304.687 123.875 308.873 113.411 316.198 106.086C324.045 98.7615 333.986 94.5759 344.45 94.5759C352.298 94.5759 360.669 97.1919 366.947 101.377C374.272 106.609 379.504 113.934 381.073 121.782C382.643 129.63 381.597 137.478 377.411 144.802C373.226 152.65 366.947 158.929 361.192 165.73L342.357 187.704H387.875V204.446Z';
-    let twoPath = 'M279.574 143.747  C286.375 150.549 290.038 159.966 290.038 169.384C290.038 178.801 286.375 188.219 279.574 195.02C272.772 201.822 263.355 205.484 253.938 205.484C244.52 205.484 235.103 201.822 228.301 195.02C221.5 188.219 217.837 179.324 217.837 169.384V168.337H233.533V169.384C233.533 180.894 242.951 189.788 253.938 189.788C264.925 189.788 274.342 180.371 274.342 169.384C274.342 158.397 264.925 148.979 253.938 148.979C250.275 148.979 246.613 150.026 243.474 151.595L233.533 143.224L259.169 111.309H217.314V95.6137H292.131L260.739 134.33C268.064 135.376 274.342 139.039 279.574 143.747Z';
-    let sleshPath = 'M66.112 0.924075 L209.467 286.587 L176.505 351.986 L0.713074 0.924075H66.112Z';
     let pointPath = 'M317.244 45.1903L291.084 0.718964H342.88L317.244 45.1903Z';
-    let two = new Path2D(twoPath);
-
-    let three = new Path2D(threePath);
-
-    let slesh = new Path2D(sleshPath);
-
     let point = new Path2D(pointPath);
 
-    two.addPath(three);
-    two.addPath(slesh);
-    two.addPath(point);
-    ctx.clip(two);
+    // two.addPath(point);
+    ctx.clip(point);
 }
 function initMap() {
   var contentTranslate = [{

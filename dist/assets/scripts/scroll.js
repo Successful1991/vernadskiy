@@ -13,6 +13,7 @@ class Smooth {
     this.element.addEventListener('mousewheel', this.scrollHandler.bind(this));
     this.scroll = this.scroll.bind(this);
 
+    this.elementsSlide[0].classList.add('wb-show');
     document.addEventListener('mousedown',function (e) {
       function clickedOnScrollbar(mouseX) {
         if(document.documentElement.clientWidth <= mouseX){return true}
@@ -50,21 +51,24 @@ class Smooth {
   scroll(slide, cl) {
     console.log('dsd', slide);
     // this.elementsSlide[slide].classList.add(cl);
-    this.elementsSlide[slide].classList.add('wb-active');
+    // this.elementsSlide[slide].classList.add('wb-animate');
+    this.elementsSlide[slide].classList.add('wb-show');
 
     if(cl === 'up'){
-      this.elementsSlide[slide].classList.add('wb-active');
-      setTimeout(e => {
-      this.elementsSlide[this.currentSlide].classList.add('wb-active-end');
-      },300)
+      // this.elementsSlide[slide].classList.add('wb-show');
+      // setTimeout(e => {
+      this.elementsSlide[this.currentSlide].classList.add('wb-animate-end');
+      // },300)
     } else if (cl === 'down'){
-      this.elementsSlide[slide].classList.add('wb-active');
+      // this.elementsSlide[slide].classList.add('wb-show');
+      this.elementsSlide[slide].classList.add('wb-animate');
 
     }
     setTimeout(e => {
       this.running = false;
-      this.elementsSlide[this.currentSlide].classList.remove('wb-active');
-      this.elementsSlide[this.currentSlide].classList.remove('wb-active-end');
+      this.elementsSlide[this.currentSlide].classList.remove('wb-show');
+      this.elementsSlide[this.currentSlide].classList.remove('wb-animate');
+      this.elementsSlide[this.currentSlide].classList.remove('wb-animate-end');
       this.currentSlide = slide;
     },2000)
     // if (this.running) {

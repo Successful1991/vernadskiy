@@ -1856,7 +1856,6 @@ a, button, input {
   display: inline-block;
   width: 100%;
   height: 100%;
-  pointer-events: none;
 }
 
 .wb-2__bg svg {
@@ -1867,6 +1866,7 @@ a, button, input {
 }
 
 .wb-2__fishka {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1877,6 +1877,16 @@ a, button, input {
 
 .wb-2__fishka svg {
   width: 50%;
+}
+
+.wb-2__fishka-event {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50vw;
+  height: 50vw;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 .wb-2__content {
@@ -2022,7 +2032,7 @@ a, button, input {
 }
 
 .wb-3__logo {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 2;
   z-index: 5;
   display: flex;
@@ -2030,8 +2040,10 @@ a, button, input {
   justify-content: center;
   height: 51px;
   width: 51px;
+  margin: 0 0 auto auto;
   border-radius: 50%;
   border: 1px solid #323131;
+  transform: translate(50%, -50%);
 }
 
 .wb-4 {
@@ -2053,7 +2065,7 @@ a, button, input {
   transform: translate(0, -50%);
   display: inline-block;
   width: 2px;
-  height: 100px;
+  height: 90px;
   background: linear-gradient(0, #7E8888 50%, #C2A7A1 50%);
 }
 
@@ -2220,8 +2232,6 @@ a, button, input {
   background: #323131;
   visibility: hidden;
   padding-top: 50px;
-  opacity: 0;
-  transition: opacity 0.5s cubic-bezier(0.3, 0.24, 1, 0.1);
   z-index: 5;
 }
 
@@ -2538,6 +2548,7 @@ a, button, input {
 }
 
 .wb-2__fishka svg .fishka-img {
+  opacity: 0;
   x: 400;
   y: 400;
 }
@@ -2575,8 +2586,7 @@ a, button, input {
 }
 
 .wb-3__left {
-  transform-origin: top center;
-  transform: scale(1, 2.25);
+  height: 100%;
 }
 
 .wb-3__img-1 {
@@ -2588,6 +2598,10 @@ a, button, input {
 }
 
 .wb-3__logo {
+  opacity: 0;
+}
+
+.wb-3__line {
   opacity: 0;
 }
 
@@ -2618,7 +2632,12 @@ a, button, input {
   transition: opacity 0.2s ease-in 1.6s;
 }
 
+.wb-4__line {
+  left: 15%;
+}
+
 .wb-5 {
+  visibility: hidden;
   opacity: 0;
   transition: opacity 0.5s cubic-bezier(0.3, 0.24, 1, 0.1);
 }
@@ -2689,294 +2708,450 @@ a, button, input {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.wb-active {
+.wb-show {
   opacity: 1;
   visibility: visible;
 }
 
-.wb-active .wb-2__bg svg .long {
-  animation: svg-line-long 1.3s cubic-bezier(0.07, 0.62, 0.34, 0.01) 0.1s forwards;
+.wb-show .wb-2__bg svg .long {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.3s cubic-bezier(0.07, 0.62, 0.34, 0.01) 0.8s;
 }
 
-.wb-active .wb-2__bg svg .short {
-  animation: svg-line-short 1.5s cubic-bezier(1, 0.57, 0.03, 0.41) 0.3s forwards;
+.wb-show .wb-2__bg svg .short {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.5s cubic-bezier(1, 0.57, 0.03, 0.41) 1.1s;
 }
 
-.wb-active .wb-2__bg svg .circle {
-  animation: svg-line-circle 0.8s cubic-bezier(0.37, 0.67, 1, 0.46) 0.6s forwards;
+.wb-show .wb-2__bg svg .circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.37, 0.67, 1, 0.46) 1.3s;
 }
 
-.wb-active .wb-2__bg svg rect {
+.wb-show .wb-2__bg svg rect {
   opacity: 1;
 }
 
-.wb-active .wb-2__fishka svg .fishka-img {
+.wb-show .wb-2__fishka svg .fishka-img {
   x: -100;
   y: 0;
-  transition: x 0.01s ease-in 1.5s, y 0.01s ease-in 1.5s;
+  opacity: 1;
 }
 
-.wb-active .wb-2__fishka svg .fishka-1 {
-  transition: stroke-width 0.3s cubic-bezier(0.09, 0.37, 0, 0.55) 1.6s, stroke-dashoffset 0.45s cubic-bezier(0.73, 0.01, 1, 0.33) 0.7s;
+.wb-show .wb-2__fishka svg .fishka-1 {
   stroke-width: 16;
   stroke-dashoffset: 0;
 }
 
-.wb-active .wb-2__fishka svg .fishka-2 {
-  transition: stroke-width 0.35s cubic-bezier(0.09, 0.37, 0, 0.55) 1.7s, stroke-dashoffset 0.4s cubic-bezier(0.73, 0.01, 1, 0.33) 0.9s;
+.wb-show .wb-2__fishka svg .fishka-2 {
   stroke-width: 16;
   stroke-dashoffset: 0;
 }
 
-.wb-active .wb-2__fishka svg .fishka-3 {
-  transition: stroke-width 0.4s cubic-bezier(0.09, 0.37, 0, 0.55) 1.8s, stroke-dashoffset 0.3s cubic-bezier(0.18, 0.52, 1, 0.07) 1.2s;
+.wb-show .wb-2__fishka svg .fishka-3 {
   stroke-width: 60;
   stroke-dashoffset: 0;
   stroke-miterlimit: 3;
 }
 
-.wb-active .wb-2__fishka svg .fishka-4 {
-  transition: stroke-width 0.3s cubic-bezier(0.09, 0.37, 0, 0.55) 1.8s, stroke-dashoffset 0.5s linear 1.4s;
+.wb-show .wb-2__fishka svg .fishka-4 {
   stroke-width: 22;
   stroke-dashoffset: 0;
   stroke-miterlimit: 3;
 }
 
-.wb-active .wb-2__content {
+.wb-show .wb-2__content {
   transition: opacity 0.4s ease-in 2s;
   opacity: 1;
 }
 
-.wb-active .wb-3 {
+.wb-show .wb-3 {
   grid-template-rows: 45% 55%;
 }
 
-.wb-active .wb-3__img-1 {
-  transition: transform 0.8s cubic-bezier(0.52, 0.01, 0.35, 0.99) 0.2s;
+.wb-show .wb-3__img-1 {
   transform: translate(0, 0);
 }
 
-.wb-active .wb-3__img-2 {
+.wb-show .wb-3__img-2 {
   transform: translate(0, 0);
-  transition: transform 0.7s cubic-bezier(0.52, 0.01, 0.35, 0.99) 0.4s;
 }
 
-.wb-active .wb-3__left {
-  transition: transform 0.3s cubic-bezier(0.52, 0.01, 0.35, 0.99) 1.16s;
-  transform: scale(1);
+.wb-show .wb-3__left {
+  height: 45%;
 }
 
-.wb-active .wb-3__logo {
-  transition: opacity 0.2s ease-in 1.6s;
+.wb-show .wb-3__logo {
   opacity: 1;
 }
 
-.wb-active .wb-4__img-1 {
-  transition: transform 1.18s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.6s;
-  transform: translate(0, 0);
-}
-
-.wb-active .wb-4__img-2 {
-  transition: transform 0.9s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.7s;
-  transform: translate(0, 0);
-}
-
-.wb-active .wb-4__comerc {
-  transition: opacity 0.1s linear 0.6s;
+.wb-show .wb-3__line {
   opacity: 1;
 }
 
-.wb-active .wb-4__content {
-  transition: opacity 0.3s cubic-bezier(0.28, 0.28, 1, 0.1) 0.3s;
-  opacity: 1;
-}
-
-.wb-active .wb-4__content-wrap {
-  transition: transform 1s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.6s;
+.wb-show .wb-4__img-1 {
   transform: translate(0, 0);
 }
 
-.wb-active .wb-5 {
+.wb-show .wb-4__img-2 {
+  transform: translate(0, 0);
+}
+
+.wb-show .wb-4__comerc {
   opacity: 1;
 }
 
-.wb-active .wb-5__img {
-  transition: clip-path 0.6s cubic-bezier(0.65, 0.01, 0.27, 1) 0.2s;
+.wb-show .wb-4__content {
+  opacity: 1;
+}
+
+.wb-show .wb-4__content-wrap {
+  transform: translate(0, 0);
+}
+
+.wb-show .wb-4__line {
+  left: 85%;
+}
+
+.wb-show .wb-5 {
+  opacity: 1;
+}
+
+.wb-show .wb-5__img {
   clip-path: polygon(0% 50%, 100% 0%, 100% 50%, 0% 100%);
 }
 
-.wb-active .wb-5__forms {
-  transition: opacity 0.4s cubic-bezier(1, 0.01, 0.54, 0.75) 2.1s;
+.wb-show .wb-5__forms {
   opacity: 1;
 }
 
-.wb-active .wb-5__bg svg .long {
-  animation: svg-line-long 0.7s cubic-bezier(0.07, 0.62, 0.34, 0.01) 0.5s forwards;
+.wb-show .wb-5__bg svg .long {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
 }
 
-.wb-active .wb-5__bg svg .short {
-  animation: svg-line-short 0.6s cubic-bezier(1, 0.57, 0.03, 0.41) 0.6s forwards;
+.wb-show .wb-5__bg svg .short {
+  stroke-dasharray: 1300;
+  stroke-dashoffset: 1300;
 }
 
-.wb-active .wb-5__bg svg .circle {
-  animation: svg-line-circle 0.8s cubic-bezier(0.37, 0.67, 1, 0.46) 1.2s forwards;
+.wb-show .wb-5__bg svg .circle {
+  stroke-dasharray: 2500;
+  stroke-dashoffset: 2500;
 }
 
-.wb-active .wb-5__bg svg rect {
+.wb-show .wb-5__bg svg rect {
   opacity: 1;
 }
 
-.wb-active .wb-5__fishka svg .fishka-img {
+.wb-show .wb-5__fishka svg .fishka-img {
+  opacity: 0;
   x: -100;
   y: 0;
-  transition: x 0.01s ease-in 1.5s, y 0.01s ease-in 1.5s;
 }
 
-.wb-active .wb-5__fishka svg .fishka-1 {
-  transition: stroke-width 0.3s cubic-bezier(0.09, 0.37, 0, 0.55) 1.7s, stroke-dashoffset 0.5s cubic-bezier(0.73, 0.01, 1, 0.33) 0.7s;
+.wb-show .wb-5__fishka svg .fishka-1 {
   stroke-width: 16;
   stroke-dashoffset: 0;
 }
 
-.wb-active .wb-5__fishka svg .fishka-2 {
-  transition: stroke-width 0.3s cubic-bezier(0.09, 0.37, 0, 0.55) 1.7s, stroke-dashoffset 0.4s cubic-bezier(0.73, 0.01, 1, 0.33) 0.9s;
+.wb-show .wb-5__fishka svg .fishka-2 {
   stroke-width: 16;
   stroke-dashoffset: 0;
 }
 
-.wb-active .wb-5__fishka svg .fishka-3 {
-  transition: stroke-width 0.3s cubic-bezier(0.09, 0.37, 0, 0.55) 1.7s, stroke-dashoffset 0.3s cubic-bezier(0.18, 0.52, 1, 0.07) 1.1s;
+.wb-show .wb-5__fishka svg .fishka-3 {
   stroke-width: 60;
   stroke-dashoffset: 0;
   stroke-miterlimit: 3;
 }
 
-.wb-active .wb-5__fishka svg .fishka-4 {
-  transition: stroke-width 0.3s cubic-bezier(0.09, 0.37, 0, 0.55) 1.7s, stroke-dashoffset 0.5s linear 1.4s;
+.wb-show .wb-5__fishka svg .fishka-4 {
   stroke-width: 22;
   stroke-dashoffset: 0;
   stroke-miterlimit: 3;
 }
 
-.wb-active-end {
-  visibility: visible;
-  transition: opacity 0.4s ease-out 1.6s;
-  opacity: 0;
+.wb-animate .wb-2__bg svg .long {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.3s cubic-bezier(0.07, 0.62, 0.34, 0.01) 0.1s;
 }
 
-.wb-active-end .wb-2__bg svg .long {
-  animation: svg-line-long-reverse 1s forwards;
+.wb-animate .wb-2__bg svg .short {
+  transition: stroke-dashoffset 1.5s cubic-bezier(1, 0.57, 0.03, 0.41) 0.3s;
+  stroke-dashoffset: 0;
 }
 
-.wb-active-end .wb-2__bg svg .short {
-  animation: svg-line-short-reverse 1s forwards;
+.wb-animate .wb-2__bg svg .circle {
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.37, 0.67, 1, 0.46) 0.6s;
+  stroke-dashoffset: 0;
 }
 
-.wb-active-end .wb-2__bg svg .circle {
-  animation: svg-line-circle-reverse 1s forwards;
+.wb-animate .wb-2__fishka svg .fishka-img {
+  transition: opacity 0.01s ease-in 1.3s;
 }
 
-.wb-active-end .wb-2__bg svg rect {
-  transition: opacity 0.3s linear 1s;
-  opacity: 0 !important;
+.wb-animate .wb-2__fishka svg .fishka-1 {
+  transition: stroke-width 0.5s cubic-bezier(0.09, 0.37, 0, 0.55) 1.5s, stroke-dashoffset 0.65s cubic-bezier(0.73, 0.01, 1, 0.33) 0.7s;
 }
 
-.wb-active-end .wb-2__content {
+.wb-animate .wb-2__fishka svg .fishka-2 {
+  transition: stroke-width 0.55s cubic-bezier(0.09, 0.37, 0, 0.55) 1.5s, stroke-dashoffset 0.6s cubic-bezier(0.73, 0.01, 1, 0.33) 0.8s;
+}
+
+.wb-animate .wb-2__fishka svg .fishka-3 {
+  transition: stroke-width 0.6s cubic-bezier(0.09, 0.37, 0, 0.55) 1.5s, stroke-dashoffset 0.55s cubic-bezier(0.18, 0.52, 1, 0.07) 0.9s;
+}
+
+.wb-animate .wb-2__fishka svg .fishka-4 {
+  transition: stroke-width 0.55s cubic-bezier(0.09, 0.37, 0, 0.55) 1.5s, stroke-dashoffset 0.7s linear 0.9s;
+}
+
+.wb-animate .wb-2__content {
+  transition: opacity 0.4s ease-in 1.5s;
+}
+
+.wb-animate .wb-3__img-1 {
+  transition: transform 0.9s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.2s;
+}
+
+.wb-animate .wb-3__img-2 {
+  transition: transform 0.9s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.2s;
+}
+
+.wb-animate .wb-3__left {
+  transition: height 0.7s cubic-bezier(0.52, 0.01, 0.35, 0.99) 1.2s;
+}
+
+.wb-animate .wb-3__logo {
+  transition: opacity 0.2s ease-in 1.8s;
+}
+
+.wb-animate .wb-3__line {
+  transition: opacity 0.2s cubic-bezier(0.52, 0.01, 0.35, 0.99) 1.6s;
+}
+
+.wb-animate .wb-4__img-1 {
+  transition: transform 1.18s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.6s;
+}
+
+.wb-animate .wb-4__img-2 {
+  transition: transform 0.9s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.7s;
+}
+
+.wb-animate .wb-4__comerc {
+  transition: opacity 0.1s linear 0.6s;
+}
+
+.wb-animate .wb-4__content {
+  transition: opacity 0.3s cubic-bezier(0.28, 0.28, 1, 0.1) 0.3s;
+}
+
+.wb-animate .wb-4__content-wrap {
+  transition: transform 1s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.6s;
+}
+
+.wb-animate .wb-4__line {
+  transition: left 0.6s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.1s;
+}
+
+.wb-animate .wb-5 {
   opacity: 1;
 }
 
-.wb-active-end .wb-3__img-1 {
-  transition: transform 0.4s cubic-bezier(0.7, 0, 1, 0.4) 0.3s;
-  transform: translate(0, -100%);
+.wb-animate .wb-5__img {
+  transition: clip-path 0.6s cubic-bezier(0.65, 0.01, 0.27, 1) 0.2s;
 }
 
-.wb-active-end .wb-3__img-2 {
-  transition: transform 0.4s cubic-bezier(0.73, 0.01, 0.73, 0.01) 0.5s;
+.wb-animate .wb-5__forms {
+  transition: opacity 0.4s cubic-bezier(1, 0.01, 0.54, 0.75) 1.3s;
+}
+
+.wb-animate .wb-5__bg svg .long {
+  transition: stroke-dashoffset 0.7s cubic-bezier(0.07, 0.62, 0.34, 0.01) 0.5s;
+  stroke-dashoffset: 0;
+}
+
+.wb-animate .wb-5__bg svg .short {
+  transition: stroke-dashoffset 0.6s cubic-bezier(1, 0.57, 0.03, 0.41) 0.6s;
+  stroke-dashoffset: 0;
+}
+
+.wb-animate .wb-5__bg svg .circle {
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.37, 0.67, 1, 0.46) 1.2s;
+  stroke-dashoffset: 0;
+}
+
+.wb-animate .wb-5__fishka svg .fishka-img {
+  transition: opacity 0.01s ease-in 1.3s;
+  opacity: 1;
+}
+
+.wb-animate .wb-5__fishka svg .fishka-1 {
+  transition: stroke-width 0.5s cubic-bezier(0.09, 0.37, 0, 0.55) 1.4s, stroke-dashoffset 0.45s cubic-bezier(0.73, 0.01, 1, 0.33) 0.7s;
+}
+
+.wb-animate .wb-5__fishka svg .fishka-2 {
+  transition: stroke-width 0.55s cubic-bezier(0.09, 0.37, 0, 0.55) 1.4s, stroke-dashoffset 0.4s cubic-bezier(0.73, 0.01, 1, 0.33) 0.8s;
+}
+
+.wb-animate .wb-5__fishka svg .fishka-3 {
+  transition: stroke-width 0.6s cubic-bezier(0.09, 0.37, 0, 0.55) 1.4s, stroke-dashoffset 0.3s cubic-bezier(0.18, 0.52, 1, 0.07) 0.9s;
+}
+
+.wb-animate .wb-5__fishka svg .fishka-4 {
+  transition: stroke-width 0.55s cubic-bezier(0.09, 0.37, 0, 0.55) 1.4s, stroke-dashoffset 0.5s linear 0.9s;
+}
+
+.wb-animate-end {
+  visibility: visible;
+  transition: opacity 0.4s ease-out 1.3s;
+  opacity: 0;
+  z-index: 6;
+}
+
+.wb-animate-end .wb-2__bg svg .long {
+  transition: stroke-dashoffset 0.7s;
+  stroke-dashoffset: 2000;
+}
+
+.wb-animate-end .wb-2__bg svg .short {
+  transition: stroke-dashoffset 0.6s;
+  stroke-dashoffset: 1300;
+}
+
+.wb-animate-end .wb-2__bg svg .circle {
+  transition: stroke-dashoffset 0.8s;
+  stroke-dashoffset: 2500;
+}
+
+.wb-animate-end .wb-2__bg svg rect {
+  transition: opacity 0.3s linear 1s;
+  opacity: 0;
+}
+
+.wb-animate-end .wb-2__fishka svg .fishka-1 {
+  transition: opacity 0.8s cubic-bezier(1, 0.01, 0.54, 0.75) 0.15s;
+  opacity: 0;
+}
+
+.wb-animate-end .wb-2__fishka svg .fishka-2 {
+  transition: opacity 0.7s cubic-bezier(1, 0.01, 0.54, 0.75) 0.25s;
+  opacity: 0;
+}
+
+.wb-animate-end .wb-2__fishka svg .fishka-3 {
+  transition: opacity 0.9s cubic-bezier(1, 0.01, 0.54, 0.75);
+  opacity: 0;
+}
+
+.wb-animate-end .wb-2__fishka svg .fishka-4 {
+  transition: opacity 0.8s cubic-bezier(1, 0.01, 0.54, 0.75) 0.2s;
+  opacity: 0;
+}
+
+.wb-animate-end .wb-2__content {
+  transition: opacity 0.4s cubic-bezier(1, 0.01, 0.54, 0.75) 0.2s;
+  opacity: 0;
+}
+
+.wb-animate-end .wb-3__img-1 {
+  transition: transform 0.8s cubic-bezier(0.74, 0.01, 0.36, 0.99) 1s;
+  transform: translate(-100%, 0%);
+}
+
+.wb-animate-end .wb-3__img-2 {
+  transition: transform 0.7s cubic-bezier(0.74, 0.01, 0.36, 0.99) 1.1s;
   transform: translate(100%, 0);
 }
 
-.wb-active-end .wb-3__left {
-  transition: transform 0.3s cubic-bezier(0.52, 0.01, 0.35, 0.99) 0.1s;
-  transform: scale(1, 2.25);
+.wb-animate-end .wb-3__left {
+  transition: height 0.8s cubic-bezier(0.62, 0.01, 0.35, 0.99);
+  height: 100%;
 }
 
-.wb-active-end .wb-3__logo {
+.wb-animate-end .wb-3__logo {
   transition: opacity 0.2s ease-in 0.2s;
   opacity: 0;
 }
 
-.wb-active-end .wb-4__img-1 {
-  transition: transform 0.3s cubic-bezier(0.5, 0, 0.5, 1) 0.7s;
-  transform: translate(0, 100%);
-}
-
-.wb-active-end .wb-4__img-2 {
-  transition: opacity 0.2s cubic-bezier(0.21, 0.78, 0.56, 0.49) 0.1s;
+.wb-animate-end .wb-3__line {
+  transition: opacity 0.2s ease-in 0.2s;
   opacity: 0;
 }
 
-.wb-active-end .wb-4__comerc {
+.wb-animate-end .wb-4__img-1 {
+  transition: transform 0.5s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.7s;
+  transform: translate(0, 200%);
+}
+
+.wb-animate-end .wb-4__img-2 {
+  transform: translate(100%, 0);
+  transition: transform 0.6s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.4s;
+}
+
+.wb-animate-end .wb-4__comerc {
   transition: opacity 0.1s linear 0.6s;
-  opacity: 1;
-}
-
-.wb-active-end .wb-4__content {
-  transition: opacity 0.2s cubic-bezier(0.28, 0.28, 1, 0.1) 0.65s;
   opacity: 0;
 }
 
-.wb-active-end .wb-4__content-wrap {
-  transition: transform 0.3s cubic-bezier(0.58, 0, 0.5, 0.96) 0.3s;
+.wb-animate-end .wb-4__content-wrap {
+  transition: transform 0.5s cubic-bezier(0.68, 0, 0.5, 0.96) 0.3s, opacity 0.4s cubic-bezier(0.28, 0.28, 1, 0.1) 1.2s;
   transform: translate(-100%, 0);
+  opacity: 0;
 }
 
-.wb-active-end .wb-5 {
-  transition: opacity 1s cubic-bezier(0.38, 0.43, 0.64, 0.16) 1.6s;
+.wb-animate-end .wb-4__line {
+  transition: left 0.5s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.6s;
+  left: 15%;
 }
 
-.wb-active-end .wb-5__bg svg .long {
-  animation: svg-line-long-reverse 0.5s forwards;
+.wb-animate-end .wb-5__bg svg .long {
+  transition: stroke-dashoffset 0.5s;
+  stroke-dashoffset: 2000;
 }
 
-.wb-active-end .wb-5__bg svg .short {
-  animation: svg-line-short-reverse 0.6s forwards;
+.wb-animate-end .wb-5__bg svg .short {
+  transition: stroke-dashoffset 0.6s;
+  stroke-dashoffset: 1300;
 }
 
-.wb-active-end .wb-5__bg svg .circle {
-  animation: svg-line-circle-reverse 0.5s forwards;
+.wb-animate-end .wb-5__bg svg .circle {
+  transition: stroke-dashoffset 0.5s;
+  stroke-dashoffset: 2500;
 }
 
-.wb-active-end .wb-5__bg svg rect {
+.wb-animate-end .wb-5__bg svg rect {
   transition: opacity 0.3s linear 0.5s;
   opacity: 0 !important;
 }
 
-.wb-active-end .wb-5__fishka svg .fishka-1 {
+.wb-animate-end .wb-5__fishka svg .fishka-1 {
   transition: opacity 0.6s cubic-bezier(1, 0.01, 0.54, 0.75) 0.1s;
   opacity: 0;
 }
 
-.wb-active-end .wb-5__fishka svg .fishka-2 {
+.wb-animate-end .wb-5__fishka svg .fishka-2 {
   transition: opacity 0.5s cubic-bezier(1, 0.01, 0.54, 0.75) 0.15s;
   opacity: 0;
 }
 
-.wb-active-end .wb-5__fishka svg .fishka-3 {
+.wb-animate-end .wb-5__fishka svg .fishka-3 {
   transition: opacity 0.7s cubic-bezier(1, 0.01, 0.54, 0.75);
   opacity: 0;
 }
 
-.wb-active-end .wb-5__fishka svg .fishka-4 {
+.wb-animate-end .wb-5__fishka svg .fishka-4 {
   transition: opacity 0.6s cubic-bezier(1, 0.01, 0.54, 0.75) 0.2s;
   opacity: 0;
 }
 
-.wb-active-end .wb-5__forms {
+.wb-animate-end .wb-5__forms {
   transition: opacity 0.4s cubic-bezier(1, 0.01, 0.54, 0.75) 0.1s;
   opacity: 0;
 }
 
-.wb-active-end .wb-5__img {
+.wb-animate-end .wb-5__img {
   transition: clip-path 0.6s cubic-bezier(0.65, 0.01, 0.27, 1) 0.8s;
   clip-path: polygon(0% 75%, 100% 25%, 100% 25%, 0% 75%);
 }
