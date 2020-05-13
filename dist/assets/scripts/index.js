@@ -4,69 +4,31 @@
 function init() {
     // sliders init start
 
-    $('.js-mouse-scroll').on('click',function (e) {
-        e.preventDefault();
-        $("html").animate({scrollTop: $('.main-first-screen').height()}, 600)
-    });
+    // $('.js-mouse-scroll').on('click',function (e) {
+    //     e.preventDefault();
+    //     $("html").animate({scrollTop: $('.main-first-screen').height()}, 600)
+    // });
 
-    $('body').on('click','.js-call',function () {
-      $('.js-call__popup').css({'transform':'scale(1, 1)'});
-    });
+    // $('body').on('click','.js-call',function () {
+    //   $('.js-call__popup').css({'transform':'scale(1, 1)'});
+    // });
 
 
-    $('.js-form__close').on('click',function () {
-      $('.js-call__popup').css({'transform':'scale(0.5,0)'});
-    });
-
-    $('.js-video__popup-close').on('click',function () {
-        $('.js-video__popup').removeClass('active');
-    });
+    // $('.js-form__close').on('click',function () {
+    //   $('.js-call__popup').css({'transform':'scale(0.5,0)'});
+    // });
+    //
+    // $('.js-video__popup-close').on('click',function () {
+    //     $('.js-video__popup').removeClass('active');
+    // });
     setTimeout(function () {
         // $('.wb-1').addClass('active');
         $('.preloader').css('display','none');
     },0);
     // animateCanvas();
-    $('.js-wb__fishka-event').on('mousemove', animateBg);
-    $('.js-wb__fishka-event').on('mouseout', function (e) {
-        console.log(e);
-        let image = $(e.target).siblings('svg').find('image');
-        image[0].style.transition = 'x 0.35s cubic-bezier(.52,.27,.35,.97), y 0.3s cubic-bezier(.52,.27,.35,.97)';
-        image[0].style.x = null;
-        image[0].style.y = null;
-        setTimeout(function () {
-            image[0].style.transition = null;
-        },400)
-    });
-
 }
 
-function animateBg(e) {
-    let y = e.originalEvent.pageY;
-    let x = e.originalEvent.pageX;
 
-    let svg = $(e.target).siblings('svg');
-
-    let wrap = $(this);
-    let wrapX = wrap.offset().left;
-    let wrapY = wrap.offset().top;
-    // console.log(wrapX,wrapY);
-    let wrapH = wrap.height();
-    let wrapW = wrap.width();
-    // console.log('e',e);
-    // console.log('this', wrapX, wrapY);
-
-    let image = svg.find('image');
-    let imageH = image.height() ;
-    let imageW = image.width();
-
-    // console.log(svg.height() / wrapH);
-    let resY = (imageH / wrapH) * ( y - wrapY) * -1 * svg.height() / wrapH;
-    let resX = (imageW / wrapW)  * (x - wrapX) * -1 * svg.width() / wrapW;
-    image[0].style.x = resX ;
-    image[0].style.y = resY ;
-
-    // console.log(resX, resY);
-}
 
 function animateCanvas() {
     let ctx = $('.wb-2__fishka__canvas')[0].getContext('2d');

@@ -4,15 +4,26 @@
 	left: 0;
 	width: 100%;
 	height: 50px;
+	background: $wc;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	z-index: 200;
-	background: $wc;
+	transition: all 0.6s cubic-bezier(.09,.37,0,.55);
 	.tel{
 		position: absolute;
 		right: 160px;
 	}
+	&.no-scroll{
+		height: 96px;
+		background: transparent;
+		.logo img{
+			height: 50px;
+		}
+	}
+}
+.logo img{
+	height: 35px;
 }
 
 .burger{
@@ -41,11 +52,19 @@
 		margin-right: 10px;
 	}
 	&__link{
+		display: flex;
+		align-items: center;
 		text-decoration: none;
 		color: $text-black;
 		font-family: $default-font;
 		font-weight: 500;
 		font-size: 18px;
 		line-height: 24px;
+		&:hover{
+			color: green;
+			svg{
+				stroke: green;
+			}
+		}
 	}
 }

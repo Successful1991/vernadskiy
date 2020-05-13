@@ -50,17 +50,16 @@ class Smooth {
 
   scroll(slide, cl) {
     console.log('dsd', slide);
-    // this.elementsSlide[slide].classList.add(cl);
-    // this.elementsSlide[slide].classList.add('wb-animate');
+    if(slide === 0){
+      $('.header').addClass('no-scroll');
+    } else {
+      $('.header').removeClass('no-scroll');
+    }
     this.elementsSlide[slide].classList.add('wb-show');
 
     if(cl === 'up'){
-      // this.elementsSlide[slide].classList.add('wb-show');
-      // setTimeout(e => {
       this.elementsSlide[this.currentSlide].classList.add('wb-animate-end');
-      // },300)
     } else if (cl === 'down'){
-      // this.elementsSlide[slide].classList.add('wb-show');
       this.elementsSlide[slide].classList.add('wb-animate');
 
     }

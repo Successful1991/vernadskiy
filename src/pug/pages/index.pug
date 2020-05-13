@@ -9,6 +9,7 @@ block scripts
 	script(src='./assets/scripts/libs.js')
 	script(src='./assets/scripts/scroll.js')
 	script(src='./assets/scripts/index.js')
+	script(src='./assets/scripts/home.js')
 
 
 
@@ -46,7 +47,7 @@ block content
 			.wb-2__bg
 				include ../includes/wb-2-bg.html
 			.wb-2__fishka
-				.wb-2__fishka-event.js-wb__fishka-event
+				.wb-2__fishka-event.js-wb__fishka-event(data-index=2)
 				include ../includes/wb-2-fishka.html
 			.wb-2__content
 				.wb-2__title Комплекс
@@ -91,7 +92,7 @@ block content
 			.wb-5__bg
 				include ../includes/wb-2-bg.html
 			.wb-5__fishka
-				.wb-2__fishka-event.js-wb__fishka-event
+				.wb-2__fishka-event.js-wb__fishka-event(data-index=5)
 				include ../includes/wb-5-fishka.html
 			.wb-5__img
 				img(src='./assets/images/main/wb-5-1.jpg')
@@ -117,6 +118,6 @@ block footer
 	// include ../pages/includes/forms
 
 block header
-	header.header
+	header.header.no-scroll
 		include ../includes/header.pug
 
