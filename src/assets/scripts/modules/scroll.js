@@ -2,9 +2,6 @@ class Smooth {
   constructor({element = window, strength=20, acceleration = 1.1,deceleration = 0.95, ignore = ''}={}) {
     this.self = this;
     this.element = element;
-    // this.distance = strength;
-    // this.acceleration = acceleration;
-    // this.deceleration = deceleration;
     this.running = false;
     this.ignore = ignore;
     this.currentSlide = 0;
@@ -49,7 +46,6 @@ class Smooth {
   }
 
   scroll(slide, cl) {
-    console.log('dsd', slide);
     if(slide === 0){
       $('.header').addClass('no-scroll');
     } else {
@@ -70,18 +66,6 @@ class Smooth {
       this.elementsSlide[this.currentSlide].classList.remove('wb-animate-end');
       this.currentSlide = slide;
     },2000)
-    // if (this.running) {
-    //   Math.abs(this.currentDistance) >= Math.abs(this.distance) ? this.isDistanceAsc = false : 1;
-    //   this.top += this.currentDistance;
-    //   this.element.scrollTo(0, this.top);
-    //
-    //   this.currentDistance *= this.isDistanceAsc === true ? this.acceleration : this.deceleration;
-    //   ((Math.abs(this.currentDistance) < 0.1 ) && this.isDistanceAsc === false) ||
-    //   this.top > ( $(document).height() - document.documentElement.clientHeight) ||
-    //   this.top <= 0 ? this.running = false : 1;
-    //
-    //   requestAnimationFrame(this.scroll);
-    // }
   }
 
   key(){

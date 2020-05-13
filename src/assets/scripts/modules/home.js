@@ -4,8 +4,8 @@ function animatePosSvgImage(e, an) {
     let x = e.originalEvent.pageX;
     let index = e.target.dataset.index;
 
-    let resY = (an[index].imageH / an[index].wrapH) * ( y - an[index].wrapY) * -1 * an[index].svgH / an[index].wrapH;
-    let resX = (an[index].imageW / an[index].wrapW)  * (x - an[index].wrapX) * -1 * an[index].svgW / an[index].wrapW;
+    let resY = (an[index].imageH / an[index].wrapH) * 0.4 * ( y - an[index].wrapY) * -1 * an[index].svgH / an[index].wrapH;
+    let resX = (an[index].imageW / an[index].wrapW) * 0.4 * (x - an[index].wrapX) * -1 * an[index].svgW / an[index].wrapW;
     an[index].image[0].style.x = resX ;
     an[index].image[0].style.y = resY ;
 }

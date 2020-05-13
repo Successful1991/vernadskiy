@@ -38,10 +38,35 @@
 		height: 1px;
 		background: $wc;
 		margin-bottom: 7px;
-		&:nth-last-child(1){
-			width: 15%;
+		transition: transform 0.4s cubic-bezier(0.74, 0.01, 0.36, 0.99);
+
+		&:nth-child(1){
+			transform-origin: right;
+			transform: scale(1);
+		}
+		&:nth-child(2){
+			transform-origin: left;
+			transform: scale(1);
+		}
+		&:nth-child(3){
+			//width: 15%;
+			transform-origin: right;
 			margin: 0;
-			transform: translate(70% ,0);
+			transform: translate(40% ,0)scale(0.6,1);
+		}
+	}
+	&:hover{
+		span:nth-child(1){
+			//transform-origin: right;
+			transform: scale(1.2 ,1);
+		}
+		 span:nth-child(2){
+			 //transform-origin: left;
+			transform: scale(1.2 ,1);
+		}
+		 span:nth-child(3){
+			//transform-origin: right;
+			transform: translate( 0 ,0)scale(1.2 ,1);
 		}
 	}
 }
