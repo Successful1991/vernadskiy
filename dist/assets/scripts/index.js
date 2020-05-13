@@ -26,8 +26,8 @@ function init() {
         $('.preloader').css('display','none');
     },0);
     // animateCanvas();
-    $('.js-wb-2__fishka-event').on('mousemove', animateBg);
-    $('.js-wb-2__fishka-event').on('mouseout', function (e) {
+    $('.js-wb__fishka-event').on('mousemove', animateBg);
+    $('.js-wb__fishka-event').on('mouseout', function (e) {
         console.log(e);
         let image = $(e.target).siblings('svg').find('image');
         image[0].style.transition = 'x 0.35s cubic-bezier(.52,.27,.35,.97), y 0.3s cubic-bezier(.52,.27,.35,.97)';

@@ -22,7 +22,7 @@
         }
         rect{
           opacity: 0;
-          transition: opacity 0.3s linear 4s;
+          transition: opacity 0.5s cubic-bezier(.3,.24,1,.1) 2s;
         }
       }
     }
@@ -134,7 +134,7 @@
         }
         rect{
           opacity: 0;
-          transition: opacity 0.3s linear 4s;
+          transition: opacity 0.5s cubic-bezier(.3,.24,1,.1) 2s;
         }
       }
     }
@@ -347,13 +347,15 @@
           transition: stroke-dashoffset 0.8s cubic-bezier(.37,.67,1,.46) 0.6s;
           stroke-dashoffset: 0;
         }
+        rect{
+          transition: opacity 0.8s cubic-bezier(.37,.67,1,.46) 1.7s;
+        }
       }
     }
     &__fishka{
       svg{
         .fishka-img{
           transition: opacity 0.01s ease-in 1.3s;
-          //transition: x 0.01s ease-in 1.3s, y 0.01s ease-in 1.3s;
         }
         .fishka-1{
           transition:stroke-width 0.5s cubic-bezier(.09,.37,0,.55) 1.5s,stroke-dashoffset 0.65s cubic-bezier(.73,.01,1,.33) 0.7s;
@@ -420,21 +422,24 @@
       transition: clip-path 0.6s cubic-bezier(.65,.01,.27,1) 0.2s;
     }
     &__forms{
-      transition: opacity 0.4s cubic-bezier(1,.01,.54,.75) 1.3s;
+      transition: opacity 0.4s cubic-bezier(1,.01,.54,.75) 1.5s;
     }
     &__bg{
       svg{
         .long{
-          transition: stroke-dashoffset 0.7s cubic-bezier(.07,.62,.34,.01) 0.5s;
+          transition: stroke-dashoffset 1.3s cubic-bezier(.07,.62,.34,.01) 0.5s;
           stroke-dashoffset: 0;
         }
         .short{
-          transition: stroke-dashoffset 0.6s cubic-bezier(1,.57,.03,.41) 0.6s;
+          transition: stroke-dashoffset 1.5s cubic-bezier(1,.57,.03,.41) 0.6s;
           stroke-dashoffset: 0;
         }
         .circle{
           transition: stroke-dashoffset 0.8s cubic-bezier(.37,.67,1,.46) 1.2s;
           stroke-dashoffset: 0;
+        }
+        rect{
+          transition: opacity 0.8s cubic-bezier(.37,.67,1,.46) 1.7s;
         }
       }
     }
@@ -443,19 +448,18 @@
         .fishka-img{
           transition: opacity 0.01s ease-in 1.3s;
           opacity: 1;
-          //transition: x 0.01s ease-in 1.3s, y 0.01s ease-in 1.3s;
         }
         .fishka-1{
-          transition:stroke-width 0.5s cubic-bezier(.09,.37,0,.55) 1.4s,stroke-dashoffset 0.45s cubic-bezier(.73,.01,1,.33) 0.7s;
+          transition:stroke-width 0.5s cubic-bezier(.09,.37,0,.55) 1.5s,stroke-dashoffset 0.65s cubic-bezier(.73,.01,1,.33) 0.7s;
         }
         .fishka-2{
-          transition:stroke-width 0.55s cubic-bezier(.09,.37,0,.55) 1.4s,stroke-dashoffset 0.4s cubic-bezier(.73,.01,1,.33) 0.8s;
+          transition:stroke-width 0.55s cubic-bezier(.09,.37,0,.55) 1.5s,stroke-dashoffset 0.6s cubic-bezier(.73,.01,1,.33) 0.8s;
         }
         .fishka-3{
-          transition:stroke-width 0.6s cubic-bezier(.09,.37,0,.55) 1.4s,stroke-dashoffset 0.3s cubic-bezier(.18,.52,1,.07) .9s;
+          transition:stroke-width 0.6s cubic-bezier(.09,.37,0,.55) 1.5s,stroke-dashoffset 0.5s cubic-bezier(.18,.52,1,.07) .9s;
         }
         .fishka-4{
-          transition:stroke-width 0.55s cubic-bezier(.09,.37,0,.55) 1.4s,stroke-dashoffset 0.5s linear .9s;
+          transition:stroke-width 0.55s cubic-bezier(.09,.37,0,.55) 1.5s,stroke-dashoffset 0.7s linear .9s;
         }
       }
     }
@@ -483,7 +487,7 @@
           stroke-dashoffset: 2500;
         }
         rect{
-          transition: opacity 0.3s linear 1s;
+          transition: opacity 0.5s cubic-bezier(.37,.67,1,.46) 0.5s;
           opacity: 0;
         }
       }
@@ -581,7 +585,7 @@
           stroke-dashoffset: 2500;
         }
         rect{
-          transition: opacity 0.3s linear 0.5s;
+          transition: opacity 0.5s cubic-bezier(.37,.67,1,.46) 0.7s;
           opacity: 0!important;
         }
       }
