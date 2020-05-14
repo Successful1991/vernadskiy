@@ -2249,7 +2249,6 @@ a, button, input {
   background: #3B5F60;
   grid-row: 1;
   grid-column: 1;
-  padding-top: 50px;
   z-index: 2;
 }
 
@@ -2388,7 +2387,6 @@ a, button, input {
   position: relative;
   grid-row: 1;
   grid-column: 1;
-  padding-top: 50px;
   z-index: 3;
 }
 
@@ -2571,7 +2569,6 @@ a, button, input {
   position: relative;
   grid-row: 1;
   grid-column: 1;
-  padding-top: 50px;
   z-index: 4;
 }
 
@@ -2781,7 +2778,6 @@ a, button, input {
   grid-column: 1;
   background: #323131;
   visibility: hidden;
-  padding-top: 50px;
   z-index: 5;
 }
 
@@ -3106,6 +3102,16 @@ a, button, input {
   top: 50%;
   left: 50%;
   z-index: 8888;
+}
+
+.canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9989;
 }
 
 .wb-1 {

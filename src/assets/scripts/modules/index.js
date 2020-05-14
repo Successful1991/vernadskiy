@@ -25,27 +25,10 @@ function init() {
         // $('.wb-1').addClass('active');
         $('.preloader').css('display','none');
     },0);
-    // animateCanvas();
 }
 
 
 
-function animateCanvas() {
-    let ctx = $('.wb-2__fishka__canvas')[0].getContext('2d');
-    ctx.canvas.width = 388;
-    ctx.canvas.height = 352;
-    let img = new Image();   // Создает новый элемент изображения
-    img.src = '/assets/images/main/img1.jpg';
-    img.onload = function() {
-        ctx.drawImage(this, -100, 0,1225, 730);
-    };
-
-    let pointPath = 'M317.244 45.1903L291.084 0.718964H342.88L317.244 45.1903Z';
-    let point = new Path2D(pointPath);
-
-    // two.addPath(point);
-    ctx.clip(point);
-}
 function initMap() {
   var contentTranslate = [{
     ru: "<p class='content'>Украина, c. Гатне, ул. Свободы 1</p>",
@@ -121,3 +104,6 @@ document.addEventListener('DOMContentLoaded',function () {
     init();
 });
 
+// window.addEventListener('resize', function () {
+//     svg();
+// });

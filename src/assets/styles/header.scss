@@ -57,15 +57,12 @@
 	}
 	&:hover{
 		span:nth-child(1){
-			//transform-origin: right;
 			transform: scale(1.2 ,1);
 		}
 		 span:nth-child(2){
-			 //transform-origin: left;
 			transform: scale(1.2 ,1);
 		}
 		 span:nth-child(3){
-			//transform-origin: right;
 			transform: translate( 0 ,0)scale(1.2 ,1);
 		}
 	}

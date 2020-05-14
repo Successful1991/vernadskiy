@@ -196,7 +196,7 @@
     background: $mc3;
     grid-row: 1;
     grid-column: 1;
-    padding-top: $header-height;
+    //padding-top: $header-height;
     z-index: 2;
     &__title{
       font-weight: 800;
@@ -261,7 +261,9 @@
         width: 100%;
         display: inline-block;
         object-fit: contain;
+        //object-fit: cover;
       }
+
     }
     &__fishka{
       position: relative;
@@ -302,7 +304,7 @@
     position: relative;
     grid-row: 1;
     grid-column: 1;
-    padding-top: 50px;
+    //padding-top: 50px;
     z-index: 3;
     &__left{
       grid-column: 1;
@@ -432,7 +434,7 @@
     position: relative;
     grid-row: 1;
     grid-column: 1;
-    padding-top: 50px;
+    //padding-top: 50px;
     z-index: 4;
     &__line{
       position: absolute;
@@ -586,7 +588,7 @@
     grid-column: 1;
     background: $mc2;
     visibility: hidden;
-    padding-top: 50px;
+    //padding-top: 50px;
     z-index: 5;
     &__title{
       font-weight: 800;
@@ -843,4 +845,15 @@
   top: 50%;
   left: 50%;
   z-index: 8888;
+}
+
+.canvas{
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  //height: calc(100% - 50px);
+  width: 100%;
+  z-index: 9989;
 }
