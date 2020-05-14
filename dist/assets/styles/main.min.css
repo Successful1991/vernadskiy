@@ -3101,6 +3101,13 @@ a, button, input {
   border-left: 4px solid #e2e2e2;
 }
 
+.js-info {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 8888;
+}
+
 .wb-1 {
   visibility: hidden;
 }

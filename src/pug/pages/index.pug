@@ -54,7 +54,7 @@ block content
 				.wb-2__text
 					span Якщо ви шукаєте комплекс, де буде добре і затишно всій вашій родині? Вам у VERNADSKY.
 					span Ви фанат району «Академмістечко» з його розвиненою інфраструктурою, безліччю садочків, шкіл, парків і торговельних центрів? Вам у VERNADSKY.
-				a(href='#').wb-2__link Детальніше
+				a(href='/').wb-2__link Детальніше
 		.wb-3.js-wb
 			.wb-3__img-2
 				img(src='./assets/images/main/img2.jpg')
@@ -67,7 +67,7 @@ block content
 						.wb-3__title Інфраструктура
 						.wb-3__text
 							span Для малечі різного віку ми побудуємо різноманітні майданчики і спортивні простори, яким, до речі, забудовник приділяє особливу увагу. Мами та тати матимуть фітнес-зали і салони краси.
-						.wb-3__link Детальніше
+						a(href='/').wb-3__link Детальніше
 			.wb-3__logo
 				+svg('fishka')
 		.wb-4.js-wb
@@ -78,14 +78,14 @@ block content
 			.wb-4__comerc
 				.wb-4__img-3
 					img(src='./assets/images/main/wb-4-3.jpg')
-				.wb-4__left-link Комерційна нерухомість
+				a(href='/').wb-4__left-link Комерційна нерухомість
 			.wb-4__content-wrap
 				.wb-4__line
 				.wb-4__content
 					.wb-4__title Квартири
 					.wb-4__text
 						span Ми будуємо не просто комплекс, ми будуємо справжню домінанту району, місце, в якому комфортно жити, ростити дітей, працювати, розвиватися.
-					.wb-4__link Обрати квартиру
+					a(href='/').wb-4__link Обрати квартиру
 			.wb-4__logo
 				+svg('fishka')
 		.wb-5.js-wb
@@ -113,6 +113,7 @@ block content
 
 block footer
 	footer.footer
+		.js-info
 		include ../includes/footer
 	// include ../includes/menu
 	// include ../pages/includes/forms

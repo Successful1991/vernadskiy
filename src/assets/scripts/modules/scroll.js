@@ -8,7 +8,10 @@ class Smooth {
     this.elementsSlide = $('.js-wb');
     this.element.addEventListener('wheel', this.scrollHandler.bind(this));
     this.element.addEventListener('mousewheel', this.scrollHandler.bind(this));
+    this.element.addEventListener('touchstart', e => this.mouse = e.changedTouches[0].clientY);
+    this.element.addEventListener('touchmove', this.scrollHandler.bind(this));
     this.scroll = this.scroll.bind(this);
+    this.mouse = 0;
 
     this.elementsSlide[0].classList.add('wb-show');
     document.addEventListener('mousedown',function (e) {
@@ -28,10 +31,37 @@ class Smooth {
       scroll = false;
     }
 
-    console.log('this.running', this.running);
     if (!this.running && scroll) {
-      // console.log('dsd', e.deltaY);
-      if(e.deltaY < 0 && this.currentSlide > 0) {
+      console.log('touchstart', e.type);
+
+      if (e.type === 'touchmove') {
+        let mouseY = e.changedTouches[0].clientY;
+        console.log('mouseY', mouseY);
+        $('.js-info').html( mouseY );
+
+        if (  mouseY > this.mouse - 25) {
+          this.mouse = mouseY;
+          this.running = 1;
+          this.scroll(this.currentSlide+1, 'down');
+        } else if ( mouseY < this.mouse + 25  ){
+          this.mouse = mouseY;
+          this.running = 1;
+          this.scroll(this.currentSlide-1, 'up');
+        }
+        // function checkT(e) {
+
+          // this.element.removeEventListener('touchend', checkT);
+          // this.element.removeEventListener('touchstart', exidFnT);
+        // }
+        // this.element.addEventListener('touchend', checkT);
+        // this.element.addEventListener('touchstart', exidFnT);
+
+        // function exidFnT() {
+        //   this.element.removeEventListener('touchend', checkT);
+        //   this.element.removeEventListener('touchstart', exidFnT);
+        // }
+
+      } else if( e.deltaY < 0 && this.currentSlide > 0) {
         this.running = 1;
         this.scroll(this.currentSlide-1, 'up');
       } else if(e.deltaY > 0 && this.currentSlide < this.elementsSlide.length - 1) {
@@ -84,6 +114,7 @@ class Smooth {
     addEvent('keyup',false);
   }
 };
+
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 var body = new Smooth({ignore:'.map4'});
 body.key();
@@ -94,21 +125,27 @@ function preventDefault(e) {
     e.preventDefault();
   e.returnValue = false;
 };
+
 function preventDefaultForScrollKeys(e) {
   if (keys[e.keyCode]) {
     preventDefault(e);
     return false;
   }
 };
+
 function disableScroll() {
   if (window.addEventListener) // older FF
     window.addEventListener('DOMMouseScroll', preventDefault, false);
   document.addEventListener('wheel', preventDefault, {passive: false}); // Disable scrolling in Chrome
+  document.addEventListener('touchmove', preventDefault, {passive: false});
   window.onwheel = preventDefault; // modern standard
+  window.isScrollEnabled = false; // modern standard
+  window.scrollEnabled = false; // modern standard
   window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
   window.ontouchmove  = preventDefault; // mobile
   document.onkeydown  = preventDefaultForScrollKeys;
 };
+
 function enableScroll() {
   if (window.removeEventListener)
     window.removeEventListener('DOMMouseScroll', preventDefault, false);
