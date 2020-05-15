@@ -1798,6 +1798,30 @@ a, button, input {
   margin-right: 10px;
 }
 
+.footer__small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: transparent;
+  visibility: hidden;
+}
+
+.footer__small.active {
+  visibility: visible;
+}
+
+.footer__small .footer__top {
+  display: none;
+}
+
+.footer__small .footer__middle {
+  display: none;
+}
+
+.footer__small .footer__bottom {
+  border: none;
+}
+
 .page404-wrap {
   height: calc(100vh - 240px);
   display: -webkit-box;
@@ -2031,11 +2055,16 @@ a, button, input {
   transform: translateX(-50%) rotate(-45deg);
 }
 
+body {
+  height: 100vh;
+}
+
 .main {
   display: grid;
   grid-template-columns: 100%;
-  grid-auto-rows: 1fr;
+  grid-auto-rows: 100%;
   font-size: 0.735vw;
+  height: 100%;
 }
 
 .wb-1 {
@@ -2046,6 +2075,7 @@ a, button, input {
   display: -ms-flexbox;
   display: flex;
   background: #ffffff;
+  width: 100%;
   height: 100vh;
   z-index: 1;
 }
@@ -2317,7 +2347,9 @@ a, button, input {
 .wb-2__bg {
   grid-column: 1 / span 2;
   grid-row: 1;
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   height: 100%;
 }
@@ -2381,6 +2413,7 @@ a, button, input {
 
 .wb-3 {
   height: 100vh;
+  width: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 45% 55%;
@@ -2563,6 +2596,7 @@ a, button, input {
 
 .wb-4 {
   height: 100vh;
+  width: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 45% 28% 27%;
@@ -2777,7 +2811,6 @@ a, button, input {
   grid-row: 1;
   grid-column: 1;
   background: #323131;
-  visibility: hidden;
   z-index: 5;
 }
 
@@ -2847,7 +2880,9 @@ a, button, input {
   position: absolute;
   top: 0;
   left: 0;
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   height: 100%;
   z-index: 2;
@@ -3102,6 +3137,10 @@ a, button, input {
   top: 50%;
   left: 50%;
   z-index: 8888;
+  padding: 20px;
+  color: red;
+  font-size: 19px;
+  background: #ffffff;
 }
 
 .canvas {
@@ -3116,6 +3155,7 @@ a, button, input {
 
 .wb-1 {
   visibility: hidden;
+  opacity: 0;
 }
 
 .wb-2 {
@@ -3138,10 +3178,25 @@ a, button, input {
   stroke: #627F80;
 }
 
-.wb-2__bg svg .circle {
-  stroke-dasharray: 2500;
-  stroke-dashoffset: 2500;
+.wb-2__bg svg .circle1 {
+  stroke-dasharray: 314%;
+  stroke-dashoffset: 314%;
   stroke: #627F80;
+  -webkit-transform-origin: 25% center;
+  -ms-transform-origin: 25% center;
+  transform-origin: 25% center;
+}
+
+.wb-2__bg svg .circle2 {
+  stroke-dasharray: 314%;
+  stroke-dashoffset: 314%;
+  stroke: #627F80;
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -webkit-transform-origin: 25% center;
+  -ms-transform-origin: 25% center;
+  transform-origin: 25% center;
 }
 
 .wb-2__bg svg rect {
@@ -3214,6 +3269,7 @@ a, button, input {
 
 .wb-3 {
   visibility: hidden;
+  opacity: 0;
 }
 
 .wb-3__left {
@@ -3311,6 +3367,9 @@ a, button, input {
   stroke-dasharray: 2500;
   stroke-dashoffset: 2500;
   stroke: #5B5A5A;
+  -webkit-transform-origin: 25% center;
+  -ms-transform-origin: 25% center;
+  transform-origin: 25% center;
 }
 
 .wb-5__bg svg rect {
@@ -3378,23 +3437,21 @@ a, button, input {
 
 .wb-show .wb-2__bg svg .long {
   stroke-dashoffset: 0;
-  -webkit-transition: stroke-dashoffset 1.3s cubic-bezier(0.07, 0.62, 0.34, 0.01) 0.8s;
-  -o-transition: stroke-dashoffset 1.3s cubic-bezier(0.07, 0.62, 0.34, 0.01) 0.8s;
-  transition: stroke-dashoffset 1.3s cubic-bezier(0.07, 0.62, 0.34, 0.01) 0.8s;
 }
 
 .wb-show .wb-2__bg svg .short {
   stroke-dashoffset: 0;
-  -webkit-transition: stroke-dashoffset 1.5s cubic-bezier(1, 0.57, 0.03, 0.41) 1.1s;
-  -o-transition: stroke-dashoffset 1.5s cubic-bezier(1, 0.57, 0.03, 0.41) 1.1s;
-  transition: stroke-dashoffset 1.5s cubic-bezier(1, 0.57, 0.03, 0.41) 1.1s;
 }
 
-.wb-show .wb-2__bg svg .circle {
+.wb-show .wb-2__bg svg .circle1 {
   stroke-dashoffset: 0;
-  -webkit-transition: stroke-dashoffset 0.8s cubic-bezier(0.37, 0.67, 1, 0.46) 1.3s;
-  -o-transition: stroke-dashoffset 0.8s cubic-bezier(0.37, 0.67, 1, 0.46) 1.3s;
-  transition: stroke-dashoffset 0.8s cubic-bezier(0.37, 0.67, 1, 0.46) 1.3s;
+}
+
+.wb-show .wb-2__bg svg .circle2 {
+  stroke-dashoffset: 0;
+  -webkit-transform: rotate(125deg) scaleX(-1);
+  -ms-transform: rotate(125deg) scaleX(-1);
+  transform: rotate(125deg) scaleX(-1);
 }
 
 .wb-show .wb-2__bg svg rect {
@@ -3508,18 +3565,21 @@ a, button, input {
 }
 
 .wb-show .wb-5__bg svg .long {
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
+  stroke-dashoffset: 0;
 }
 
 .wb-show .wb-5__bg svg .short {
-  stroke-dasharray: 1300;
-  stroke-dashoffset: 1300;
+  stroke-dashoffset: 0;
 }
 
 .wb-show .wb-5__bg svg .circle {
-  stroke-dasharray: 2500;
-  stroke-dashoffset: 2500;
+  stroke-dashoffset: 0;
+}
+
+.wb-show .wb-5__bg svg .circle2 {
+  -webkit-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  transform: rotate(-35deg);
 }
 
 .wb-show .wb-5__bg svg rect {
@@ -3568,7 +3628,14 @@ a, button, input {
   stroke-dashoffset: 0;
 }
 
-.wb-animate .wb-2__bg svg .circle {
+.wb-animate .wb-2__bg svg .circle1 {
+  -webkit-transition: stroke-dashoffset 1.8s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.2s;
+  -o-transition: stroke-dashoffset 1.8s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.2s;
+  transition: stroke-dashoffset 1.8s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.2s;
+  stroke-dashoffset: 0;
+}
+
+.wb-animate .wb-2__bg svg .circle2 {
   -webkit-transition: stroke-dashoffset 1.8s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.2s;
   -o-transition: stroke-dashoffset 1.8s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.2s;
   transition: stroke-dashoffset 1.8s cubic-bezier(0.74, 0.01, 0.36, 0.99) 0.2s;
@@ -3725,11 +3792,18 @@ a, button, input {
   stroke-dashoffset: 0;
 }
 
-.wb-animate .wb-5__bg svg .circle {
+.wb-animate .wb-5__bg svg .circle1 {
   -webkit-transition: stroke-dashoffset 1.8s cubic-bezier(0.74, 0.01, 0.36, 0.99) 1s;
   -o-transition: stroke-dashoffset 1.8s cubic-bezier(0.74, 0.01, 0.36, 0.99) 1s;
   transition: stroke-dashoffset 1.8s cubic-bezier(0.74, 0.01, 0.36, 0.99) 1s;
   stroke-dashoffset: 0;
+}
+
+.wb-animate .wb-5__bg svg .circle2 {
+  -webkit-transition: stroke-dashoffset 1.8s cubic-bezier(0.74, 0.01, 0.36, 0.99) 1s;
+  -o-transition: stroke-dashoffset 1.8s cubic-bezier(0.74, 0.01, 0.36, 0.99) 1s;
+  transition: stroke-dashoffset 1.8s cubic-bezier(0.74, 0.01, 0.36, 0.99) 1s;
+  stroke-dashoffset: 5000;
 }
 
 .wb-animate .wb-5__bg svg rect {
@@ -3792,11 +3866,18 @@ a, button, input {
   stroke-dashoffset: 1300;
 }
 
-.wb-animate-end .wb-2__bg svg .circle {
+.wb-animate-end .wb-2__bg svg .circle1 {
   -webkit-transition: stroke-dashoffset 0.8s;
   -o-transition: stroke-dashoffset 0.8s;
   transition: stroke-dashoffset 0.8s;
-  stroke-dashoffset: 2500;
+  stroke-dashoffset: 314%;
+}
+
+.wb-animate-end .wb-2__bg svg .circle2 {
+  -webkit-transition: stroke-dashoffset 0.8s;
+  -o-transition: stroke-dashoffset 0.8s;
+  transition: stroke-dashoffset 0.8s;
+  stroke-dashoffset: 314%;
 }
 
 .wb-animate-end .wb-2__bg svg rect {

@@ -109,5 +109,24 @@
 			margin-right: 10px;
 		}
 	}
+	&__small{
+		position: absolute;
+		bottom: 0;
+		left: 0	;
+		background: transparent;
+		visibility: hidden;
+		&.active{
+			visibility: visible;
+		}
+		.footer__top{
+			display: none;
+		}
+		.footer__middle{
+			display: none;
+		}
+		.footer__bottom{
+			border: none;
+		}
+	}
 }
 

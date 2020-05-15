@@ -30,42 +30,23 @@ class Smooth {
     if( this.ignore && $(e.path).closest(this.ignore).length !== 0 || window.isKeyDown()) {
       scroll = false;
     }
-
     if (!this.running && scroll) {
       console.log('touchstart', e.type);
+      $('.footer').removeClass('active');
+      let mouseY;
+      if(e.changedTouches && e.changedTouches[0].clientY) mouseY = e.changedTouches[0].clientY;
+        $('.js-info').html( `${mouseY} - ${this.mouse}`);
 
-      if (e.type === 'touchmove') {
-        let mouseY = e.changedTouches[0].clientY;
-        console.log('mouseY', mouseY);
-        $('.js-info').html( mouseY );
-
-        if (  mouseY > this.mouse - 25) {
-          this.mouse = mouseY;
-          this.running = 1;
-          this.scroll(this.currentSlide+1, 'down');
-        } else if ( mouseY < this.mouse + 25  ){
-          this.mouse = mouseY;
-          this.running = 1;
-          this.scroll(this.currentSlide-1, 'up');
-        }
-        // function checkT(e) {
-
-          // this.element.removeEventListener('touchend', checkT);
-          // this.element.removeEventListener('touchstart', exidFnT);
-        // }
-        // this.element.addEventListener('touchend', checkT);
-        // this.element.addEventListener('touchstart', exidFnT);
-
-        // function exidFnT() {
-        //   this.element.removeEventListener('touchend', checkT);
-        //   this.element.removeEventListener('touchstart', exidFnT);
-        // }
-
-      } else if( e.deltaY < 0 && this.currentSlide > 0) {
+      if( this.currentSlide > 0 && (e.deltaY < 0 || mouseY > this.mouse + 15 )) {
         this.running = 1;
+        this.mouse = mouseY;
         this.scroll(this.currentSlide-1, 'up');
-      } else if(e.deltaY > 0 && this.currentSlide < this.elementsSlide.length - 1) {
+      } else if( this.currentSlide < this.elementsSlide.length - 1 && (e.deltaY > 0 || mouseY < this.mouse - 15) ) {
+          if(this.currentSlide === this.elementsSlide.length - 2) {
+            $('.footer').addClass('active');
+          }
         this.running = 1;
+        this.mouse = mouseY;
         this.scroll(this.currentSlide+1, 'down');
       } else {
         this.running = false;
@@ -84,16 +65,15 @@ class Smooth {
     this.elementsSlide[slide].classList.add('wb-show');
 
     if(cl === 'up'){
+      this.elementsSlide[this.currentSlide].classList.remove('wb-animate');
       this.elementsSlide[this.currentSlide].classList.add('wb-animate-end');
     } else if (cl === 'down'){
+      this.elementsSlide[this.currentSlide].classList.remove('wb-animate-end');
       this.elementsSlide[slide].classList.add('wb-animate');
-
     }
     setTimeout(e => {
       this.running = false;
-      this.elementsSlide[this.currentSlide].classList.remove('wb-show');
-      this.elementsSlide[this.currentSlide].classList.remove('wb-animate');
-      this.elementsSlide[this.currentSlide].classList.remove('wb-animate-end');
+      this.elementsSlide[this.currentSlide].classList.remove('wb-show','wb-animate','wb-animate-end');
       this.currentSlide = slide;
     },2000)
   }

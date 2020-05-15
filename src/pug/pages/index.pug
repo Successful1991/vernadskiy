@@ -13,10 +13,8 @@ block scripts
 	script(src='./assets/scripts/svgBg.js')
 
 
-
 block content
 	section.main
-		canvas.canvas
 		.wb-1.js-wb
 			.wb-1__left
 				.wb-1__icon
@@ -114,13 +112,13 @@ block content
 					button(type='submit' value='Надіслати').wb-5__form-button Надіслати
 
 block footer
-	footer.footer
-		.js-info
-		include ../includes/footer
 	// include ../includes/menu
+	footer.footer.footer__small
+		include ../includes/footer
 	// include ../pages/includes/forms
 
 block header
 	header.header.no-scroll
+		.js-info
 		include ../includes/header.pug
 
