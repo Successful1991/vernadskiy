@@ -132,25 +132,6 @@ body{
       color: $text-light-1;
       margin-bottom: 20px;
     }
-    &__link{
-      font-weight: 600;
-      font-size: 2.4em;
-      line-height: 1.3em;
-      color: $text-dark;
-      text-decoration: none;
-      white-space: nowrap;
-      &::after{
-        content: '';
-        display: inline-block;
-        width: 20px;
-        height: 18px;
-        margin-left: 20px;
-        border-left: 10px solid $text-dark;
-        border-right: 10px solid transparent;
-        border-top: 9px solid transparent;
-        border-bottom: 9px solid transparent;
-      }
-    }
     &__mouse{
       @include flexCenter();
       width: 100%;
@@ -236,25 +217,6 @@ body{
         }
       }
     }
-    &__link{
-      font-weight: 600;
-      font-size: 2.4em;
-      line-height: 1.3em;
-      color: $text-dark;
-      text-decoration: none;
-      white-space: nowrap;
-      &::after{
-        content: '';
-        display: inline-block;
-        width: 20px;
-        height: 18px;
-        margin-left: 20px;
-        border-left: 10px solid $text-dark;
-        border-right: 10px solid transparent;
-        border-top: 9px solid transparent;
-        border-bottom: 9px solid transparent;
-      }
-    }
     &__bg{
       grid-column: 1 / span 2;
       grid-row: 1;
@@ -299,6 +261,7 @@ body{
       grid-column: 2;
       grid-row: 1;
       width: 100%;
+      z-index: 5;
       padding: 50px 34% 50px 24%;
     }
   }
@@ -400,24 +363,8 @@ body{
       }
     }
     &__link{
-      font-weight: 600;
-      font-size: 2.4em;
-      line-height: 1.3em;
       color: $text-dark;
-      text-decoration: none;
-      white-space: nowrap;
       margin-bottom: auto;
-      &::after{
-        content: '';
-        display: inline-block;
-        width: 20px;
-        height: 18px;
-        margin-left: 20px;
-        border-left: 10px solid $text-dark;
-        border-right: 10px solid transparent;
-        border-top: 9px solid transparent;
-        border-bottom: 9px solid transparent;
-      }
     }
     &__logo{
       grid-column: 1;
@@ -523,25 +470,6 @@ body{
         }
       }
     }
-    &__link{
-      font-weight: 600;
-      font-size: 2.4em;
-      line-height: 1.3em;
-      color: $text-dark;
-      text-decoration: none;
-      white-space: nowrap;
-      &::after{
-        content: '';
-        display: inline-block;
-        width: 20px;
-        height: 18px;
-        margin-left: 20px;
-        border-left: 10px solid $text-dark;
-        border-right: 10px solid transparent;
-        border-top: 9px solid transparent;
-        border-bottom: 9px solid transparent;
-      }
-    }
     &__logo{
       grid-column: 2;
       grid-row: 2;
@@ -627,22 +555,9 @@ body{
       }
     }
     &__link{
-      font-weight: 600;
-      font-size: 2.4em;
-      line-height: 1.3em;
       color: $text-dark;
-      text-decoration: none;
-      white-space: nowrap;
       &::after{
-        content: '';
-        display: inline-block;
-        width: 20px;
-        height: 18px;
-        margin-left: 20px;
         border-left: 10px solid $text-dark;
-        border-right: 10px solid transparent;
-        border-top: 9px solid transparent;
-        border-bottom: 9px solid transparent;
       }
     }
     &__bg{
@@ -761,27 +676,9 @@ body{
         }
       }
       &-button{
-        display: inline-block;
-        font-weight: 600;
-        font-size: 2.4em;
-        line-height: 1.3em;
-        color: $text-dark;
-        text-decoration: none;
-        white-space: nowrap;
         background: none;
         border: none;
         margin: 0 auto 0 0;
-        &::after{
-          content: '';
-          display: inline-block;
-          width: 20px;
-          height: 18px;
-          margin-left: 20px;
-          border-left: 10px solid $text-dark;
-          border-right: 10px solid transparent;
-          border-top: 9px solid transparent;
-          border-bottom: 9px solid transparent;
-        }
       }
     }
     &__img{

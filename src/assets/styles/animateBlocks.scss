@@ -45,16 +45,10 @@
       }
     }
     &__fishka{
-      @include flexCenter();
-      width: 100%;
-      grid-column: 1;
-      grid-row: 1;
       svg{
         width: 50%;
         .fishka-img{
           opacity: 0;
-          //x: -100;
-          //y: 0;
         }
         .fishka-1{
           stroke: #FFFFFF;
