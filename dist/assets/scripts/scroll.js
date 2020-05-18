@@ -31,7 +31,6 @@ class Smooth {
       scroll = false;
     }
     if (!this.running && scroll) {
-      console.log('touchstart', e.type);
       $('.footer').removeClass('active');
       let mouseY;
       if(e.changedTouches && e.changedTouches[0].clientY) mouseY = e.changedTouches[0].clientY;

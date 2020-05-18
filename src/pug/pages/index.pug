@@ -25,7 +25,7 @@ block content
 						+svg('fb')
 						.icon__hover facebook
 				.wb-1__mouse
-					+svg('mouse')
+					+svg('mouse').js-wb-1__mouse
 			.wb-1__content
 				.wb-1__title Житловий комплекс VERNADSKY
 				a(href='#').wb-1__link Квартири
@@ -45,7 +45,7 @@ block content
 			img(src='./assets/images/main/render.png').wb-1__bg-img
 		.wb-2.js-wb
 			.wb-2__bg
-				include ../includes/wb-2-bg.html
+				include ../includes/svg-bg.html
 			.wb-2__fishka
 				.wb-2__fishka-event.js-wb__fishka-event(data-index=2)
 				include ../includes/wb-2-fishka.html
@@ -90,7 +90,7 @@ block content
 				+svg('fishka')
 		.wb-5.js-wb
 			.wb-5__bg
-				include ../includes/wb-2-bg.html
+				include ../includes/svg-bg.html
 			.wb-5__fishka
 				.wb-2__fishka-event.js-wb__fishka-event(data-index=5)
 				include ../includes/wb-5-fishka.html
@@ -119,6 +119,5 @@ block footer
 
 block header
 	header.header.no-scroll
-		.js-info
 		include ../includes/header.pug
 

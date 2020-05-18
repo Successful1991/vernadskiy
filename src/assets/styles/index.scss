@@ -63,7 +63,6 @@ body{
     grid-column: 1;
     display: flex;
     background: $wc;
-    //height: 100%;
     width: 100%;
     height: 100vh;
     z-index: 1;
@@ -158,6 +157,9 @@ body{
       height: 96px;
       margin-top: auto;
       background: $mc2;
+      svg{
+        animation: mouse 0.7s alternate cubic-bezier(0.74, 0.01, 0.36, 0.99) infinite;
+      }
     }
     &__fishka{
       @include flexCenter();
@@ -197,12 +199,10 @@ body{
     grid-template-columns: 50% 50%;
     grid-template-rows: 1fr;
     width: 100%;
-    //height: 100%;
     height: 100vh;
     background: $mc3;
     grid-row: 1;
     grid-column: 1;
-    //padding-top: $header-height;
     z-index: 2;
     &__title{
       font-weight: 800;
@@ -261,13 +261,12 @@ body{
       display: flex;
       width: 100%;
       height: 100%;
-
+      z-index: 3;
       svg{
         height: 100%;
         width: 100%;
         display: inline-block;
         object-fit: contain;
-        //object-fit: cover;
       }
 
     }
@@ -277,6 +276,7 @@ body{
       width: 100%;
       grid-column: 1;
       grid-row: 1;
+      z-index: 5;
       svg{
         width: 50%;
       }
@@ -287,7 +287,7 @@ body{
         width: 50vw;
         height: 50vw;
         transform: translate(-50%, -50%);
-        z-index: 2;
+        z-index: 4;
       }
 
 
@@ -303,7 +303,6 @@ body{
     }
   }
   &-3{
-    //height: 100%;
     height: 100vh;
     width: 100%;
     display: grid;
@@ -312,7 +311,6 @@ body{
     position: relative;
     grid-row: 1;
     grid-column: 1;
-    //padding-top: 50px;
     z-index: 3;
     &__left{
       grid-column: 1;
@@ -435,7 +433,6 @@ body{
     }
   }
   &-4{
-    //height: 100%;
     height: 100vh;
     width: 100%;
     display: grid;
@@ -444,7 +441,6 @@ body{
     position: relative;
     grid-row: 1;
     grid-column: 1;
-    //padding-top: 50px;
     z-index: 4;
     &__line{
       position: absolute;
@@ -593,12 +589,10 @@ body{
     position: relative;
     display: flex;
     width: 100%;
-    //height: 100%;
     height: 100vh;
     grid-row: 1;
     grid-column: 1;
     background: $mc2;
-    //padding-top: 50px;
     z-index: 5;
     &__title{
       font-weight: 800;
@@ -854,20 +848,9 @@ body{
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 8888;
-  padding: 20px;
-  color: red;
-  font-size: 19px;
+  z-index: 777;
   background: #ffffff;
-}
-
-.canvas{
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  //height: calc(100% - 50px);
-  width: 100%;
-  z-index: 9989;
+  color: #000000;
+  font-size: 18px;
+  padding: 10px;
 }
