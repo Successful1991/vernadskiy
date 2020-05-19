@@ -1489,25 +1489,19 @@ a, button, input {
   white-space: nowrap;
   color: #C2A7A1;
   margin: 0 auto 0 0;
-  padding: 0 50px 0 0;
 }
 
 .link::after {
-  position: absolute;
-  top: 50%;
-  left: calc(100% - 30px);
   content: '';
   display: inline-block;
   width: 20px;
   height: 18px;
+  margin-left: 20px;
   -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.74, 0.01, 0.36, 0.99);
   transition: -webkit-transform 0.4s cubic-bezier(0.74, 0.01, 0.36, 0.99);
   -o-transition: transform 0.4s cubic-bezier(0.74, 0.01, 0.36, 0.99);
   transition: transform 0.4s cubic-bezier(0.74, 0.01, 0.36, 0.99);
   transition: transform 0.4s cubic-bezier(0.74, 0.01, 0.36, 0.99), -webkit-transform 0.4s cubic-bezier(0.74, 0.01, 0.36, 0.99);
-  -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  transform: translate(0, -50%);
   border-left: 10px solid #C2A7A1;
   border-right: 10px solid transparent;
   border-top: 9px solid transparent;
@@ -1540,9 +1534,9 @@ a, button, input {
 }
 
 .link:hover::after {
-  -webkit-transform: translate(10px, -50%);
-  -ms-transform: translate(10px, -50%);
-  transform: translate(10px, -50%);
+  -webkit-transform: translate(10px, 0);
+  -ms-transform: translate(10px, 0);
+  transform: translate(10px, 0);
 }
 
 .header {
@@ -2366,6 +2360,9 @@ body {
 }
 
 .wb-2__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
   grid-column: 1 / span 2;
   grid-row: 1;
   display: -webkit-box;
@@ -2755,6 +2752,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   z-index: 2;
   background: #3B5F60;
 }
@@ -2764,27 +2764,13 @@ body {
 }
 
 .wb-4__left-link {
-  width: 50%;
-  padding: 0 10%;
-  margin: auto 0;
-  font-weight: 600;
-  font-size: 2.4em;
-  line-height: 1.3em;
+  width: 30%;
+  padding: 0;
+  margin: 0 auto;
   color: #C2A7A1;
+  text-align: left;
   text-decoration: none;
   white-space: pre-wrap;
-}
-
-.wb-4__left-link::after {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 18px;
-  margin-left: 20px;
-  border-left: 10px solid #C2A7A1;
-  border-right: 10px solid transparent;
-  border-top: 9px solid transparent;
-  border-bottom: 9px solid transparent;
 }
 
 .wb-5 {
@@ -3111,20 +3097,16 @@ body {
 }
 
 .wb-2__bg svg .svg-long {
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
   stroke: #627F80;
 }
 
 .wb-2__bg svg .svg-short {
-  stroke-dasharray: 1300;
-  stroke-dashoffset: 1300;
   stroke: #627F80;
 }
 
 .wb-2__bg svg .svg-circle1 {
-  stroke-dasharray: 314%;
-  stroke-dashoffset: 314%;
+  stroke-dasharray: calc(3.14 * 50vw);
+  stroke-dashoffset: calc(3.14 * 50vw);
   stroke: #627F80;
   -webkit-transform-origin: 25% center;
   -ms-transform-origin: 25% center;
@@ -3132,8 +3114,8 @@ body {
 }
 
 .wb-2__bg svg .svg-circle2 {
-  stroke-dasharray: 314%;
-  stroke-dashoffset: 314%;
+  stroke-dasharray: calc(3.14 * 50vw);
+  stroke-dashoffset: calc(3.14 * 50vw);
   stroke: #627F80;
   -webkit-transform: rotate(125deg) scaleX(-1);
   -ms-transform: rotate(125deg) scaleX(-1);
@@ -3143,7 +3125,7 @@ body {
   transform-origin: 25% center;
 }
 
-.wb-2__bg svg rect {
+.wb-2__bg svg .svg-min-line {
   opacity: 0;
   -webkit-transition: opacity 0.5s cubic-bezier(0.3, 0.24, 1, 0.1) 2s;
   -o-transition: opacity 0.5s cubic-bezier(0.3, 0.24, 1, 0.1) 2s;
@@ -3279,20 +3261,16 @@ body {
 }
 
 .wb-5__bg svg .svg-long {
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
   stroke: #5B5A5A;
 }
 
 .wb-5__bg svg .svg-short {
-  stroke-dasharray: 1300;
-  stroke-dashoffset: 1300;
   stroke: #5B5A5A;
 }
 
 .wb-5__bg svg .svg-circle1 {
-  stroke-dasharray: 314%;
-  stroke-dashoffset: 314%;
+  stroke-dasharray: calc(3.14 * 50vw);
+  stroke-dashoffset: calc(3.14 * 50vw);
   stroke: #5B5A5A;
   -webkit-transform-origin: 25% center;
   -ms-transform-origin: 25% center;
@@ -3300,8 +3278,8 @@ body {
 }
 
 .wb-5__bg svg .svg-circle2 {
-  stroke-dasharray: 314%;
-  stroke-dashoffset: 314%;
+  stroke-dasharray: calc(3.14 * 50vw);
+  stroke-dashoffset: calc(3.14 * 50vw);
   stroke: #5B5A5A;
   -webkit-transform: rotate(125deg) scaleX(-1);
   -ms-transform: rotate(125deg) scaleX(-1);
@@ -3397,7 +3375,7 @@ body {
   stroke-dashoffset: 0;
 }
 
-.wb-show .wb-2__bg svg rect {
+.wb-show .wb-2__bg svg .svg-min-line {
   -webkit-transition: opacity 0.8s cubic-bezier(0.37, 0.67, 1, 0.46) 1.5s;
   -o-transition: opacity 0.8s cubic-bezier(0.37, 0.67, 1, 0.46) 1.5s;
   transition: opacity 0.8s cubic-bezier(0.37, 0.67, 1, 0.46) 1.5s;
@@ -3810,28 +3788,26 @@ body {
   -webkit-transition: stroke-dashoffset 0.7s;
   -o-transition: stroke-dashoffset 0.7s;
   transition: stroke-dashoffset 0.7s;
-  stroke-dashoffset: 2000;
 }
 
 .wb-animate-end .wb-2__bg svg .svg-short {
   -webkit-transition: stroke-dashoffset 0.6s;
   -o-transition: stroke-dashoffset 0.6s;
   transition: stroke-dashoffset 0.6s;
-  stroke-dashoffset: 1300;
 }
 
 .wb-animate-end .wb-2__bg svg .svg-circle1 {
   -webkit-transition: stroke-dashoffset 0.8s;
   -o-transition: stroke-dashoffset 0.8s;
   transition: stroke-dashoffset 0.8s;
-  stroke-dashoffset: 314%;
+  stroke-dashoffset: calc(3.14 * 50vw);
 }
 
 .wb-animate-end .wb-2__bg svg .svg-circle2 {
   -webkit-transition: stroke-dashoffset 0.8s;
   -o-transition: stroke-dashoffset 0.8s;
   transition: stroke-dashoffset 0.8s;
-  stroke-dashoffset: 314%;
+  stroke-dashoffset: calc(3.14 * 50vw);
 }
 
 .wb-animate-end .wb-2__bg svg rect {
@@ -3972,28 +3948,26 @@ body {
   -webkit-transition: stroke-dashoffset 0.5s;
   -o-transition: stroke-dashoffset 0.5s;
   transition: stroke-dashoffset 0.5s;
-  stroke-dashoffset: 2000;
 }
 
 .wb-animate-end .wb-5__bg svg .svg-short {
   -webkit-transition: stroke-dashoffset 0.6s;
   -o-transition: stroke-dashoffset 0.6s;
   transition: stroke-dashoffset 0.6s;
-  stroke-dashoffset: 1300;
 }
 
 .wb-animate-end .wb-5__bg svg .svg-circle1 {
   -webkit-transition: stroke-dashoffset 0.8s;
   -o-transition: stroke-dashoffset 0.8s;
   transition: stroke-dashoffset 0.8s;
-  stroke-dashoffset: 314%;
+  stroke-dashoffset: calc(3.14 * 50vw);
 }
 
 .wb-animate-end .wb-5__bg svg .svg-circle2 {
   -webkit-transition: stroke-dashoffset 0.8s;
   -o-transition: stroke-dashoffset 0.8s;
   transition: stroke-dashoffset 0.8s;
-  stroke-dashoffset: 314%;
+  stroke-dashoffset: calc(3.14 * 50vw);
 }
 
 .wb-animate-end .wb-5__bg svg rect {

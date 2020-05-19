@@ -218,6 +218,9 @@ body{
       }
     }
     &__bg{
+      position: absolute;
+      top: 0;
+      left: 0;
       grid-column: 1 / span 2;
       grid-row: 1;
       display: flex;
@@ -484,6 +487,7 @@ body{
       grid-column: 1;
       grid-row: 3;
       display: flex;
+      align-items: center;
       z-index: 2;
       background: $mc3;
       img{
@@ -491,26 +495,13 @@ body{
       }
     }
     &__left-link{
-      width: 50%;
-      padding: 0 10%;
-      margin: auto 0;
-      font-weight: 600;
-      font-size: 2.4em;
-      line-height: 1.3em;
+      width: 30%;
+      padding: 0;
+      margin: 0 auto;
       color: $text-dark;
+      text-align: left;
       text-decoration: none;
       white-space: pre-wrap;
-      &::after{
-        content: '';
-        display: inline-block;
-        width: 20px;
-        height: 18px;
-        margin-left: 20px;
-        border-left: 10px solid $text-dark;
-        border-right: 10px solid transparent;
-        border-top: 9px solid transparent;
-        border-bottom: 9px solid transparent;
-      }
     }
   }
   &-5{

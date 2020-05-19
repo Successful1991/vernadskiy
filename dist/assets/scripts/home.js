@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded',function () {
                 x: animates[ el.dataset.index].image[0].x.baseVal.value,
                 y: animates[ el.dataset.index].image[0].y.baseVal.value
             };
-
             el.addEventListener('mousemove', e => animatePosSvgImage(e,animates));
             el.addEventListener('mouseout', e => resetPosSvgImage(e,animates));
         });
