@@ -1,1 +1,23 @@
-.wrap-menu.js-menu
+.menu.js-menu
+    .menu__bg
+    .menu__header
+        .lang
+            .lang-list
+                a(href='#').lang-list__item RU
+                a(href='#').lang-list__item.lang-active UA
+                a(href='#').lang-list__item EN
+        a(href='#')
+            img(src='/assets/images/icon/Logo.svg')
+        .burger.js-menu
+            span
+            span
+            span
+    .menu__list
+        each el in menu
+            .menu__block
+                .menu__title= el.group
+                ul
+                    each link in el.list
+                        li
+                            a(href= link.href)= link.name
+    .menu__footer

@@ -58,7 +58,7 @@
 }
 
 //lang
-.lang {
+.lang,.header .menu .lang {
   position: relative;
   @include flexCenter();
   justify-content: flex-start;
@@ -89,7 +89,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 50px;
+    height: 96px;
     flex-shrink: 0;
     background: $mc1;
     overflow: hidden;
@@ -99,7 +99,7 @@
 
     &__item {
       @include flexCenter();
-      height: 34px;
+      height: 78px;
       width: 100%;
       text-decoration: none;
       flex: 0 0 auto;
@@ -139,7 +139,7 @@
 
   &:hover {
     .lang-list {
-      height: 120px;
+      height: 250px;
       border-radius: 0;
       &__item {
         visibility: visible;

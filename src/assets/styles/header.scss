@@ -3,7 +3,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 50px;
+	height: 96px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -13,6 +13,23 @@
 		position: absolute;
 		right: 160px;
 	}
+	&__small{
+		height: 50px;
+		.lang{
+			&-list{
+				height: 50px;
+				&__item{
+					height: 34px;
+				}
+			}
+			&:hover {
+				.lang-list {
+					height: 120px;
+				}
+			}
+		}
+	}
+
 }
 
 .burger{
@@ -21,6 +38,7 @@
 	height: 100%;
 	width: 96px;
 	background: $bc;
+	cursor: pointer;
 	@include flexCenter();
 	span{
 		width: 25%;
