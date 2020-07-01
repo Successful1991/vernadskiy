@@ -58,7 +58,7 @@
 }
 
 //lang
-.lang,.header .menu .lang {
+.lang,.menu .lang {
   position: relative;
   @include flexCenter();
   justify-content: flex-start;
@@ -69,7 +69,6 @@
   background: $mc1;
   width: 96px;
   height: 100%;
-
   &-active {
     position: relative;
     width: 100%;
@@ -89,17 +88,17 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 96px;
+    height: 50px;
     flex-shrink: 0;
     background: $mc1;
     overflow: hidden;
     padding: 9px;
     border-radius: 50px;
-    transition: height 0.2s ease-in, border-radius .15s linear 0.2s;
+    transition: height 0.6s cubic-bezier(0.09, 0.37, 0, 0.55),padding 0.6s cubic-bezier(0.09, 0.37, 0, 0.55), border-radius .2s linear 0.2s;
 
     &__item {
       @include flexCenter();
-      height: 78px;
+      height: 34px;
       width: 100%;
       text-decoration: none;
       flex: 0 0 auto;
@@ -125,13 +124,11 @@
         display: none;
         transition: all 0.2s ease;
       }
-
     }
   }
 
   &-item {
     text-transform: uppercase;
-
     &-arrow {
       margin-left: 5px;
     }
@@ -139,21 +136,31 @@
 
   &:hover {
     .lang-list {
-      height: 250px;
+      height: 120px;
       border-radius: 0;
       &__item {
         visibility: visible;
         opacity: 1;
       }
-
     }
 
     .lang-active .lang-item-arrow {
       transform: rotate(180deg);
     }
   }
-
 }
+.no-scroll .lang{
+  &-list{
+    height: 96px;
+    padding: 32px 9px;
+  }
+  &:hover {
+    .lang-list {
+      height: 164px;
+    }
+  }
+}
+
 
 // BUTTON
 .button {
@@ -188,3 +195,51 @@
 }
 
 
+.link{
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 2.4em;
+  line-height: 1.3em;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  color: $text-dark;
+  margin: 0 auto 0 0;
+  &::after{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 18px;
+    margin-left: 20px;
+    transition: transform 0.4s cubic-bezier(0.74, 0.01, 0.36, 0.99);
+    border-left: 10px solid $text-dark;
+    border-right: 10px solid transparent;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    width: calc(100% - 50px);
+    height: 2px;
+    background: $text-dark;
+    transform: translate(-100%, 0);
+    transition: transform 0.6s cubic-bezier(0.74, 0.01, 0.36, 0.99);
+  }
+
+  &:hover{
+
+    &::before{
+      transform: translate(0, 0);
+    }
+    &::after{
+      transform: translate(10px, 0);
+      //transform: translate(10px, -50%);
+    }
+  }
+}

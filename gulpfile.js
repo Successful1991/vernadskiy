@@ -124,6 +124,9 @@ function styles() {
         title: 'SCSS',
         message: '<%= error.message %>' // вывод сообщения об ошибке
     }))
+	.pipe(autoprefixer({
+		cascade: false
+	}))
     // .pipe(sourcemaps.write())
     .pipe(rename("main.min.css"))
     .pipe(gulp.dest(paths.styles.dest))

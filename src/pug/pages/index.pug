@@ -9,12 +9,13 @@ block scripts
 	script(src='./assets/scripts/libs.js')
 	script(src='./assets/scripts/scroll.js')
 	script(src='./assets/scripts/index.js')
-
+	script(src='./assets/scripts/home.js')
+	script(src='./assets/scripts/svgBg.js')
 
 
 block content
 	section.main
-		.wb-1.js-wb.wb-active
+		.wb-1.js-wb
 			.wb-1__left
 				.wb-1__icon
 					a(href='#').wb-1__icon__link.hover-right
@@ -24,10 +25,10 @@ block content
 						+svg('fb')
 						.icon__hover facebook
 				.wb-1__mouse
-					+svg('mouse')
+					+svg('mouse').js-wb-1__mouse
 			.wb-1__content
 				.wb-1__title Житловий комплекс VERNADSKY
-				a(href='#').wb-1__link Квартири
+				a(href='#').link.wb-1__link Квартири
 
 			.wb-1__right
 				.wb-1__icon
@@ -44,17 +45,16 @@ block content
 			img(src='./assets/images/main/render.png').wb-1__bg-img
 		.wb-2.js-wb
 			.wb-2__bg
-				include ../includes/wb-2-bg.html
-			//.wb-2__fishka
-			//	canvas.wb-2__fishka__canvas
+				include ../includes/svg-bg.html
 			.wb-2__fishka
+				.wb-2__fishka-event.js-wb__fishka-event(data-index=2)
 				include ../includes/wb-2-fishka.html
 			.wb-2__content
 				.wb-2__title Комплекс
 				.wb-2__text
 					span Якщо ви шукаєте комплекс, де буде добре і затишно всій вашій родині? Вам у VERNADSKY.
 					span Ви фанат району «Академмістечко» з його розвиненою інфраструктурою, безліччю садочків, шкіл, парків і торговельних центрів? Вам у VERNADSKY.
-				a(href='#').wb-2__link Детальніше
+				a(href='/').wb-2__link.link Детальніше
 		.wb-3.js-wb
 			.wb-3__img-2
 				img(src='./assets/images/main/img2.jpg')
@@ -67,7 +67,7 @@ block content
 						.wb-3__title Інфраструктура
 						.wb-3__text
 							span Для малечі різного віку ми побудуємо різноманітні майданчики і спортивні простори, яким, до речі, забудовник приділяє особливу увагу. Мами та тати матимуть фітнес-зали і салони краси.
-						.wb-3__link Детальніше
+						a(href='/').link.wb-3__link Детальніше
 			.wb-3__logo
 				+svg('fishka')
 		.wb-4.js-wb
@@ -78,20 +78,21 @@ block content
 			.wb-4__comerc
 				.wb-4__img-3
 					img(src='./assets/images/main/wb-4-3.jpg')
-				.wb-4__left-link Комерційна нерухомість
+				a(href='/').link.wb-4__left-link Комерційна нерухомість
 			.wb-4__content-wrap
 				.wb-4__line
 				.wb-4__content
 					.wb-4__title Квартири
 					.wb-4__text
 						span Ми будуємо не просто комплекс, ми будуємо справжню домінанту району, місце, в якому комфортно жити, ростити дітей, працювати, розвиватися.
-					.wb-4__link Обрати квартиру
+					a(href='/').link.wb-4__link Обрати квартиру
 			.wb-4__logo
 				+svg('fishka')
 		.wb-5.js-wb
 			.wb-5__bg
-				include ../includes/wb-2-bg.html
+				include ../includes/svg-bg.html
 			.wb-5__fishka
+				.wb-2__fishka-event.js-wb__fishka-event(data-index=5)
 				include ../includes/wb-5-fishka.html
 			.wb-5__img
 				img(src='./assets/images/main/wb-5-1.jpg')
@@ -108,15 +109,15 @@ block content
 					label.wb-5__form-label.wb-5__form-message
 						input(type='text' placeholder='повідомлення' required)
 						span.form__info
-					button(type='submit' value='Надіслати').wb-5__form-button Надіслати
+					button(type='submit' value='Надіслати').link.wb-5__form-button Надіслати
 
 block footer
-	footer.footer
+	include ../includes/menu
+	footer.footer.footer__small
 		include ../includes/footer
 	// include ../pages/includes/forms
 
 block header
-	header.header.header__small
-		include ../includes/menu
+	header.header
 		include ../includes/header.pug
 

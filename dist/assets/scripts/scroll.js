@@ -2,17 +2,18 @@ class Smooth {
   constructor({element = window, strength=20, acceleration = 1.1,deceleration = 0.95, ignore = ''}={}) {
     this.self = this;
     this.element = element;
-    // this.distance = strength;
-    // this.acceleration = acceleration;
-    // this.deceleration = deceleration;
     this.running = false;
     this.ignore = ignore;
     this.currentSlide = 0;
     this.elementsSlide = $('.js-wb');
     this.element.addEventListener('wheel', this.scrollHandler.bind(this));
     this.element.addEventListener('mousewheel', this.scrollHandler.bind(this));
+    this.element.addEventListener('touchstart', e => this.mouse = e.changedTouches[0].clientY);
+    this.element.addEventListener('touchmove', this.scrollHandler.bind(this));
     this.scroll = this.scroll.bind(this);
+    this.mouse = 0;
 
+    this.elementsSlide[0].classList.add('wb-show');
     document.addEventListener('mousedown',function (e) {
       function clickedOnScrollbar(mouseX) {
         if(document.documentElement.clientWidth <= mouseX){return true}
@@ -29,15 +30,22 @@ class Smooth {
     if( this.ignore && $(e.path).closest(this.ignore).length !== 0 || window.isKeyDown()) {
       scroll = false;
     }
-
-    console.log('this.running', this.running);
     if (!this.running && scroll) {
-      // console.log('dsd', e.deltaY);
-      if(e.deltaY < 0 && this.currentSlide > 0) {
+      $('.footer').removeClass('active');
+      let mouseY;
+      if(e.changedTouches && e.changedTouches[0].clientY) mouseY = e.changedTouches[0].clientY;
+        $('.js-info').html( `${mouseY} - ${this.mouse}`);
+
+      if( this.currentSlide > 0 && (e.deltaY < 0 || mouseY > this.mouse + 15 )) {
         this.running = 1;
+        this.mouse = mouseY;
         this.scroll(this.currentSlide-1, 'up');
-      } else if(e.deltaY > 0 && this.currentSlide < this.elementsSlide.length - 1) {
+      } else if( this.currentSlide < this.elementsSlide.length - 1 && (e.deltaY > 0 || mouseY < this.mouse - 15) ) {
+          if(this.currentSlide === this.elementsSlide.length - 2) {
+            $('.footer').addClass('active');
+          }
         this.running = 1;
+        this.mouse = mouseY;
         this.scroll(this.currentSlide+1, 'down');
       } else {
         this.running = false;
@@ -48,37 +56,25 @@ class Smooth {
   }
 
   scroll(slide, cl) {
-    console.log('dsd', slide);
-    // this.elementsSlide[slide].classList.add(cl);
-    this.elementsSlide[slide].classList.add('wb-active');
+    if(slide === 0){
+      $('.header').addClass('no-scroll');
+    } else {
+      $('.header').removeClass('no-scroll');
+    }
+    this.elementsSlide[slide].classList.add('wb-show');
 
     if(cl === 'up'){
-      this.elementsSlide[slide].classList.add('wb-active');
-      setTimeout(e => {
-      this.elementsSlide[this.currentSlide].classList.add('wb-active-end');
-      },300)
+      this.elementsSlide[this.currentSlide].classList.remove('wb-animate');
+      this.elementsSlide[this.currentSlide].classList.add('wb-animate-end');
     } else if (cl === 'down'){
-      this.elementsSlide[slide].classList.add('wb-active');
-
+      this.elementsSlide[this.currentSlide].classList.remove('wb-animate-end');
+      this.elementsSlide[slide].classList.add('wb-animate');
     }
     setTimeout(e => {
       this.running = false;
-      this.elementsSlide[this.currentSlide].classList.remove('wb-active');
-      this.elementsSlide[this.currentSlide].classList.remove('wb-active-end');
+      this.elementsSlide[this.currentSlide].classList.remove('wb-show','wb-animate','wb-animate-end');
       this.currentSlide = slide;
     },2000)
-    // if (this.running) {
-    //   Math.abs(this.currentDistance) >= Math.abs(this.distance) ? this.isDistanceAsc = false : 1;
-    //   this.top += this.currentDistance;
-    //   this.element.scrollTo(0, this.top);
-    //
-    //   this.currentDistance *= this.isDistanceAsc === true ? this.acceleration : this.deceleration;
-    //   ((Math.abs(this.currentDistance) < 0.1 ) && this.isDistanceAsc === false) ||
-    //   this.top > ( $(document).height() - document.documentElement.clientHeight) ||
-    //   this.top <= 0 ? this.running = false : 1;
-    //
-    //   requestAnimationFrame(this.scroll);
-    // }
   }
 
   key(){
@@ -97,6 +93,7 @@ class Smooth {
     addEvent('keyup',false);
   }
 };
+
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 var body = new Smooth({ignore:'.map4'});
 body.key();
@@ -107,21 +104,27 @@ function preventDefault(e) {
     e.preventDefault();
   e.returnValue = false;
 };
+
 function preventDefaultForScrollKeys(e) {
   if (keys[e.keyCode]) {
     preventDefault(e);
     return false;
   }
 };
+
 function disableScroll() {
   if (window.addEventListener) // older FF
     window.addEventListener('DOMMouseScroll', preventDefault, false);
   document.addEventListener('wheel', preventDefault, {passive: false}); // Disable scrolling in Chrome
+  document.addEventListener('touchmove', preventDefault, {passive: false});
   window.onwheel = preventDefault; // modern standard
+  window.isScrollEnabled = false; // modern standard
+  window.scrollEnabled = false; // modern standard
   window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
   window.ontouchmove  = preventDefault; // mobile
   document.onkeydown  = preventDefaultForScrollKeys;
 };
+
 function enableScroll() {
   if (window.removeEventListener)
     window.removeEventListener('DOMMouseScroll', preventDefault, false);

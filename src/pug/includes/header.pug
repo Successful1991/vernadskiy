@@ -3,11 +3,12 @@
        a(href='#').lang-list__item RU
        a(href='#').lang-list__item.lang-active UA
        a(href='#').lang-list__item EN
-a(href='#')
+a(href='#').logo
     img(src='/assets/images/icon/Logo.svg')
 .tel
-    +svg('phone').tel__icon
-    a(href='0442202222').tel__link (044)220-22-22
+    a(href='0442202222').tel__link
+        +svg('phone').tel__icon
+        |(044)220-22-22
 .burger.js-burger
    span
    span
