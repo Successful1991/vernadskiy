@@ -93,10 +93,21 @@ class Smooth {
     addEvent('keyup',false);
   }
 };
-
+const isDevice = (type = 'mobile' )=> {
+  let list = '';
+  type === 'ios' ?  list =/iPhone|iPad|iPod/ : list =/Android|webOS|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini|iPhone|iPad|iPod/ ;
+  return list.test( window.navigator.userAgent );
+};
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
-var body = new Smooth({ignore:'.map4'});
-body.key();
+document.addEventListener('DOMContentLoaded', function () {
+  console.log(window.innerWidth);
+  if(window.innerWidth > 1023){
+  // if(!isDevice('mobile')){
+    var body = new Smooth({ignore:'.menu'});
+    body.key();
+  }
+});
+
 
 function preventDefault(e) {
   e = e || window.event;

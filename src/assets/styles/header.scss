@@ -14,22 +14,6 @@
 		position: absolute;
 		right: 160px;
 	}
-	//&__small{
-	//	height: 50px;
-	//	.lang{
-	//		&-list{
-	//			height: 50px;
-	//			&__item{
-	//				height: 34px;
-	//			}
-	//		}
-	//		&:hover {
-	//			.lang-list {
-	//				height: 120px;
-	//			}
-	//		}
-	//	}
-	//}
 
 	&.no-scroll{
 		height: 96px;
@@ -48,7 +32,7 @@
 	flex-direction: column;
 	height: 100%;
 	width: 96px;
-	background: $bc;
+	background: #323131;
 	cursor: pointer;
 	@include flexCenter();
 	span{
@@ -105,6 +89,54 @@
 			svg{
 				stroke: green;
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 1023px){
+	.header{
+		&.no-scroll{
+			height: 50px;
+			.logo img{
+				height: 35px;
+			}
+		}
+		.tel{
+			right: 120px;
+		}
+	}
+	.burger{
+		width: 64px;
+	}
+	.tel{
+		&__link{
+			font-size: 14px;
+			line-height: 19px;
+		}
+	}
+}
+@media screen and (max-width: 767px){
+	.header{
+		height: 40px;
+		&.no-scroll{
+			height: 40px;
+			.logo img{
+				height: 30px;
+			}
+		}
+		.tel{
+			right: 67px;
+		}
+	}
+	.burger{
+		width: 40px;
+		span{
+			width: 50%;
+		}
+	}
+	.tel{
+		&__link{
+			font-size: 0;
 		}
 	}
 }

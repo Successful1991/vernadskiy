@@ -26,7 +26,10 @@ function init() {
         $('.preloader').css('display','none');
     },0);
     $('.js-burger').on('click', e => {
-        $('.js-menu').toggleClass('menu-active');
+        $('.js-menu').addClass('menu-active');
+    });
+    $('.js-close').on('click', e => {
+        $('.js-menu').removeClass('menu-active');
     })
 }
 

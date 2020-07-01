@@ -70,7 +70,7 @@
           </svg>(044)220-22-22</a></div>
       <div class="burger js-burger"><span></span><span></span><span></span></div>
     </header>
-    <section class="main">
+    <section class="main section-scroll">
       <div class="wb-1 js-wb">
         <div class="wb-1__left">
           <div class="wb-1__icon"><a class="wb-1__icon__link hover-right" href="#">
@@ -255,55 +255,74 @@
       <div class="menu__header">
         <div class="lang">
           <div class="lang-list"><a class="lang-list__item" href="#">RU</a><a class="lang-list__item lang-active" href="#">UA</a><a class="lang-list__item" href="#">EN</a></div>
-        </div><a href="#"><img src="/assets/images/icon/Logo.svg"></a>
-        <div class="burger js-menu"><span></span><span></span><span></span></div>
+        </div><a class="menu__header-logo" href="#"><img src="/assets/images/icon/Logo.svg"></a>
+        <div class="menu__close js-close"></div>
       </div>
       <div class="menu__list">
         <div class="menu__block">
-          <div class="menu__title">Комплекс</div>
+          <div class="menu__list-title">Комплекс</div>
           <ul>
-            <li><a href="advantage">Про комплекс</a></li>
-            <li><a href="infrastructure">Инфраструктура</a></li>
-            <li><a href="advantages">Преимущества</a></li>
-            <li><a href="genplan">Ген. план</a></li>
-            <li><a href="technical">Технические характеристики</a></li>
-            <li><a href="documentation">Документация</a></li>
-            <li><a href="About">Про застройщика</a></li>
+            <li class="menu__elem"><a class="menu__link" href="advantage">Про комплекс</a></li>
+            <li class="menu__elem"><a class="menu__link" href="infrastructure">Инфраструктура</a></li>
+            <li class="menu__elem"><a class="menu__link" href="advantages">Преимущества</a></li>
+            <li class="menu__elem"><a class="menu__link" href="genplan">Ген. план</a></li>
+            <li class="menu__elem"><a class="menu__link" href="technical">Технические характеристики</a></li>
+            <li class="menu__elem"><a class="menu__link" href="documentation">Документация</a></li>
+            <li class="menu__elem"><a class="menu__link" href="About">Про застройщика</a></li>
+            <li class="menu__elem"><a class="menu__link" href="webcam">Веб камера</a></li>
           </ul>
         </div>
         <div class="menu__block">
-          <div class="menu__title">Подбор квартир</div>
+          <div class="menu__list-title">Подбор квартир</div>
           <ul>
-            <li><a href="#">Обрати квартиру</a></li>
-            <li><a href="#">Подбор по параметрам</a></li>
-            <li><a href="#">1-комнатные</a></li>
-            <li><a href="#">2-комнатные</a></li>
-            <li><a href="#">3-комнатные</a></li>
+            <li class="menu__elem"><a class="menu__link" href="#">Обрати квартиру</a></li>
+            <li class="menu__elem"><a class="menu__link" href="#">Подбор по параметрам</a></li>
+            <li class="menu__elem"><a class="menu__link" href="#">1-комнатные</a></li>
+            <li class="menu__elem"><a class="menu__link" href="#">2-комнатные</a></li>
+            <li class="menu__elem"><a class="menu__link" href="#">3-комнатные</a></li>
           </ul>
         </div>
         <div class="menu__block">
-          <div class="menu__title">Условия приобретения</div>
+          <div class="menu__list-title">Условия приобретения</div>
           <ul>
-            <li><a href="#">С ремонтом</a></li>
-            <li><a href="#">Полная оплата</a></li>
-            <li><a href="#">Рассрочка</a></li>
-            <li><a href="#">Кредитование</a></li>
+            <li class="menu__elem"><a class="menu__link" href="#">С ремонтом</a></li>
+            <li class="menu__elem"><a class="menu__link" href="#">Полная оплата</a></li>
+            <li class="menu__elem"><a class="menu__link" href="#">Рассрочка</a></li>
+            <li class="menu__elem"><a class="menu__link" href="#">Кредитование</a></li>
           </ul>
         </div>
-        <div class="menu__block">
-          <div class="menu__title"></div>
+        <div class="menu__block menu__block-big">
           <ul>
-            <li><a href="news">Новости</a></li>
-            <li><a href="sale">Акции</a></li>
-            <li><a href="gallery">Галерея</a></li>
-            <li><a href="construction">Ход строительства</a></li>
-            <li><a href="nonResidential">Нежилые помещения</a></li>
-            <li><a href="contact">Контакты</a></li>
-            <li><a href="media">СМИ о Нас</a></li>
+            <li class="menu__elem"><a class="menu__link" href="news">Новости</a></li>
+            <li class="menu__elem"><a class="menu__link" href="sale">Акции</a></li>
+            <li class="menu__elem"><a class="menu__link" href="gallery">Галерея</a></li>
+            <li class="menu__elem"><a class="menu__link" href="construction">Ход строительства</a></li>
+            <li class="menu__elem"><a class="menu__link" href="nonResidential">Нежилые помещения</a></li>
+            <li class="menu__elem"><a class="menu__link" href="contact">Контакты</a></li>
           </ul>
         </div>
       </div>
-      <div class="menu__footer"></div>
+      <div class="menu__footer"><a class="menu__footer__block" href="0442222020">
+          <div class="menu__footer__icon">
+            <svg class="icon--phone menu__footer__icon-phone" role="presentation">
+              <use xlink:href="#icon-phone"></use>
+            </svg>
+          </div>
+          <div class="menu__footer__block-phone">(044) 222-20-20</div></a><a class="menu__footer__block" href="#">
+          <div class="menu__footer__icon">
+            <svg class="icon--instagram menu__footer__icon-instagram" role="presentation">
+              <use xlink:href="#icon-instagram"></use>
+            </svg>
+          </div>
+          <div class="menu__footer__social">Instagram</div></a><a class="menu__footer__block" href="#">
+          <div class="menu__footer__icon">
+            <svg class="icon--fb menu__footer__icon-fb" role="presentation">
+              <use xlink:href="#icon-fb"></use>
+            </svg>
+          </div>
+          <div class="menu__footer__social">Facebook</div></a>
+        <div class="menu__footer__block"><a class="js-call menu__footer__call" href="#">Зворотній дзвінок</a></div>
+      </div>
     </div>
     <footer class="footer footer__small">
       <div class="footer__top">
@@ -317,6 +336,7 @@
             <li class="menu__link"><a href="technical">Технические характеристики</a></li>
             <li class="menu__link"><a href="documentation">Документация</a></li>
             <li class="menu__link"><a href="About">Про застройщика</a></li>
+            <li class="menu__link"><a href="webcam">Веб камера</a></li>
           </ul>
         </div>
         <div class="menu__list">
@@ -346,7 +366,6 @@
             <li class="menu__link"><a href="construction">Ход строительства</a></li>
             <li class="menu__link"><a href="nonResidential">Нежилые помещения</a></li>
             <li class="menu__link"><a href="contact">Контакты</a></li>
-            <li class="menu__link"><a href="media">СМИ о Нас</a></li>
           </ul>
         </div>
       </div>
