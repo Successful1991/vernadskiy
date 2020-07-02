@@ -2514,16 +2514,54 @@ a, button, input {
     justify-content: flex-start;
     padding: 10px;
   }
-  .menu__list__title {
+  .menu__list-title {
     text-align: center;
+    margin-bottom: 20px;
   }
   .menu__block {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    margin-bottom: 30px;
   }
   .menu__elem {
     text-align: center;
+    margin: 0;
+  }
+  .menu__bg {
+    -webkit-clip-path: polygon(0% 40%, 100% 0%, 100% 55%, 0% 100%);
+    clip-path: polygon(0% 40%, 100% 0%, 100% 55%, 0% 100%);
+  }
+  .menu__footer {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .menu__footer__block {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: inherit;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 33%;
+    flex: 1 1 33%;
+    margin-bottom: 30px;
+  }
+  .menu__footer__block-phone {
+    display: none;
+  }
+  .menu__footer__social {
+    display: none;
+  }
+  .menu__footer__call {
+    white-space: nowrap;
+  }
+  .menu__link {
+    font-size: 18px;
+    line-height: 36px;
+    margin: 0;
   }
 }
 
