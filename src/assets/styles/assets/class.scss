@@ -66,4 +66,19 @@
 }
 
 
-
+@media screen and (max-width: 767px){
+	.icon{
+		&--mouse{
+			height: 15px;
+			width: 10px;
+		}
+		&--fishka{
+			height: 16px;
+			width: 18px;
+		}
+		&--smarto{
+			height: 22px;
+			width: 56px;
+		}
+	}
+}

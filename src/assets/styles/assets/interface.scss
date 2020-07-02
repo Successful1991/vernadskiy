@@ -267,6 +267,20 @@
       }
     }
   }
+  .link{
+    font-size: 20px;
+    &::after{
+      width: 14px;
+      height: 6px;
+      margin-left: 10px;
+      border-left: 7px solid $text-dark;
+      border-right: 7px solid transparent;
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      vertical-align: middle;
+
+    }
+  }
 }
 @media screen and (max-width: 767px){
   .lang,.menu .lang {
@@ -294,5 +308,7 @@
       }
     }
   }
-
+  .link{
+    font-size: 18px;
+  }
 }

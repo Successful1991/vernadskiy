@@ -103,6 +103,9 @@
 		}
 		.tel{
 			right: 120px;
+			&__icon{
+				margin: 0;
+			}
 		}
 	}
 	.burger{
@@ -118,10 +121,13 @@
 @media screen and (max-width: 767px){
 	.header{
 		height: 40px;
+		.logo img{
+			height: 28px;
+		}
 		&.no-scroll{
 			height: 40px;
 			.logo img{
-				height: 30px;
+				height: 28px;
 			}
 		}
 		.tel{
