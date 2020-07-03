@@ -9,6 +9,8 @@ function init() {
         $("html").animate({scrollTop: $('.main-first-screen').height()}, 600)
     });
 
+
+
     // $('body').on('click','.js-call',function () {
     //   $('.js-call__popup').css({'transform':'scale(1, 1)'});
     // });

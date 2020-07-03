@@ -128,5 +128,61 @@
 			border: none;
 		}
 	}
+	&__menu{
+		&__list{
+			&-title{
+				font-family: "Manrope";
+				font-weight: bold;
+				font-size: 10px;
+				line-height: 20px;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: #7E8888;
+				margin-bottom: 15px;
+			}
+			&-big{
+				.footer__menu__link{
+					font-weight: bold;
+					font-size: 10px;
+					line-height: 20px;
+					letter-spacing: 0.1em;
+					text-transform: uppercase;
+					color: #5B5A5A;
+				}
+			}
+		}
+		&__link{
+			font-family: "Manrope";
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 22px;
+			text-decoration: none;
+			color: #5B5A5A;
+		}
+	}
 }
 
+@media screen and (max-width: 1023px){
+	.footer{
+		padding: 0 64px;
+		&__top{
+			display: grid;
+			grid-template-columns: 200px 200px;
+			grid-template-rows: auto;
+			justify-content: center;
+			grid-gap: 30px 80px;
+			padding: 30px 20px;
+		}
+		&__middle{
+			flex-wrap: wrap;
+			padding: 30px 20px;
+		}
+		&__bottom{
+			padding: 18px 20px;
+		}
+		&__elem{
+			flex: 1 1 50%;
+			max-width: 200px;
+		}
+	}
+}

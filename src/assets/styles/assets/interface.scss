@@ -1,7 +1,7 @@
 // BREADCRUMBS
 .breadcrumb {
   z-index: 6000;
-  padding: 10px 30px;
+  padding: 10px 0;
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -13,10 +13,14 @@
     display: flex;
     align-items: center;
     list-style: none;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 22px;
-
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #C2A7A1;
     * {
       position: relative;
       padding: 0 20px;
@@ -31,18 +35,23 @@
       text-decoration: none;
     }
     a{
-      color: $text;
+      color: #5B5A5A;
     }
 
     &::before {
       position: absolute;
       top: 50%;
       left: 0;
-      width: 11px;
-      height: 16px;
-      background: url("../../assets/images/icon/leaf-breadcrumbs.svg") no-repeat center /contain;
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 10px;
+      line-height: 20px;
+      color: #5B5A5A;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       transform: translate(-50%, -50%);
-      content: '';
+      content: '·';
     }
 
   }

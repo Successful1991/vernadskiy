@@ -1,13 +1,22 @@
 .footer__top
 	each val in menu
-		.menu__list
-			if(val.group)
-				.menu__list-title=val.group
-			ul.menu__group
-				if(val.list)
-					each item in val.list
-						li.menu__link
-							a(href=item.href)=item.name
+		if(val.group)
+			.footer__menu__list
+				if(val.group)
+					.footer__menu__list-title=val.group
+				ul.footer__menu__group
+					if(val.list)
+						each item in val.list
+							li.footer__menu__elem
+								a(href=item.href class="footer__menu__link")=item.name
+		else
+			.footer__menu__list.footer__menu__list-big
+				ul.footer__menu__group
+					if(val.list)
+						each item in val.list
+							li.footer__menu__elem
+								a(href=item.href class="footer__menu__link")=item.name
+
 .footer__middle
 	.footer__elem
 		+svg('point')

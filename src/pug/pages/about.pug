@@ -1,0 +1,36 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/libs.js')
+    script(src='./assets/scripts/index.js')
+    script(src='./assets/scripts/scroll.js')
+    script(src='./assets/scripts/svgBg.js')
+
+block content
+    section.about
+        include ./includes/breadcrumb
+        .title Про комплекс
+        .about__bg.wb-all__bg
+            include ../includes/svg-all-bg.html
+        .about__block
+            .about__content
+                div.about__text Комплекс VERNADSKY розташований у Святошинському районі Києва за адресою вул. Вернадського, 32
+                div.about__text Якщо ви шукаєте комплекс, де буде добре і затишно всій вашій родині? Вам у VERNDSKY. Ви фанат району «Академмістечко» з його розвиненою інфраструктурою, безліччю садочків, шкіл, парків і торговельних центрів? Вам у VERNADSKY. Приглядаєтесь до комплексів у пішій доступності від метро та з чудовою транспортною розв’язкою? Вам у VERNADSKY - до станції метро «Академмістечко» всього 5 хвилин.
+                div.about__text У комплексі VERNADSKY запропонують як квартири (1-5 будинок) так і апартаменти (6 будинок).
+        .wb-all.wb-show
+            .wb-all__fishka
+                // svg лежит в php файле, повторяется на многих страницах, меняется только картинка внутри
+                include ../includes/svg-bg.php
+block footer
+    include ../includes/menu
+    footer.footer
+        include ../includes/footer
+    // include ../pages/includes/forms
+block header
+    header.header
+        include ../includes/header.pug
