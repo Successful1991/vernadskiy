@@ -6,7 +6,7 @@
   width: 100%;
   flex-wrap: wrap;
   letter-spacing: 0.32px;
-
+  margin-left: 40px;
   &__el {
     position: relative;
     margin: 0 0;
@@ -25,7 +25,7 @@
       position: relative;
       padding: 0 20px;
       @include to(768px) {
-        font-size: 14px;
+        font-size: 10px;
         padding: 0 15px 0;
       }
       @include to(480px) {
@@ -262,6 +262,9 @@
 
 
 @media screen and (max-width: 1023px){
+  .breadcrumb{
+    margin-left: 20px;
+  }
   .lang,.menu .lang {
     width: 64px;
   }

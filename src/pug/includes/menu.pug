@@ -17,13 +17,13 @@
                     ul
                         each link in el.list
                             li.menu__elem
-                                a(href= link.href class='menu__link')= link.name
+                                a(href= link.href+'.html' class='menu__link')= link.name
             else
                 .menu__block.menu__block-big
                     ul
                         each link in el.list
                             li.menu__elem
-                                a(href= link.href class='menu__link')= link.name
+                                a(href= link.href+'.html' class='menu__link')= link.name
     .menu__footer
         a(href="0442222020").menu__footer__block
             .menu__footer__icon

@@ -14,6 +14,7 @@
 	font-size: 48px;
 	line-height: 66px;
 	color: #7E8888;
+	margin-left: 40px;
 }
 
 .wrap{
@@ -90,10 +91,16 @@
 	.title{
 		font-size: 36px;
 		line-height: 49px;
+		margin-left: 20px;
 	}
 }
 
 @media screen and (max-width: 767px){
+	.title{
+		font-size: 24px;
+		line-height: 33px;
+		margin-top: 0;
+	}
 	.icon{
 		&--mouse{
 			height: 15px;

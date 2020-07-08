@@ -3,13 +3,7 @@
   display: inline-block;
   width: 100%;
   min-height: 100vh;
-  padding: 96px 140px;
-  &__content{
-    grid-column: 1;
-    grid-row: 1;
-    padding: 20px 0;
-    width: 39%;
-  }
+  padding: 96px;
   &__text{
     font-family: "Manrope";
     font-weight: normal;
@@ -19,6 +13,36 @@
     color: #7E8888;
   }
   &__bg{
+
+  }
+}
+.beautiful{
+  &__content{
+    grid-column: 1;
+    grid-row: 1;
+    margin: 30px 0 0 40px;
+    padding: 106px 0;
+  }
+  &__block{
+    &.beautiful__block-first{
+      margin-top: -106px;
+      height: calc(100vh - 192px);
+    }
+  }
+
+}
+.wb-all{
+  position: relative;
+  display: grid;
+  grid-template-columns: 45% 5% 5% 45%;
+  grid-template-rows: auto;
+  width: 100%;
+  height: 100%;
+  &__bg{
+    //height: 100%;
+    //width: 100%;
+    grid-column: 1 / span 2;
+    grid-row: 1;
     position: absolute;
     top: 0;
     left: 0;
@@ -39,63 +63,43 @@
       }
     }
   }
-  .wb-all{
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: grid;
-    grid-template-columns: 45% 5% 5% 45%;
-    grid-template-rows: auto;
+
+  &__fishka{
+    grid-column: 2 / span 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-    &__bg{
+    .svg-fishka{
+      position: absolute;
+      z-index: 5;
+    }
+    .svg-bg{
+      max-width: 100%;
+      max-height:100%;
+      width: initial;
       height: 100%;
-      width: 100%;
-      grid-column: 1 / span 2;
+    }
+    &-wrap{
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 45% 55%;
+      grid-column: 2;
       grid-row: 1;
-    }
-
-    &__fishka{
-      grid-column: 2 / span 4;
-      display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: center;
-      width: 100%;
       height: 100%;
-      .svg-fishka{
-        position: absolute;
-        z-index: 5;
-      }
-      .svg-bg{
-        max-width: 100%;
-        max-height: 100%;
-        width: auto;
-        height: 100%;
-      }
-      &-wrap{
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: 45% 55%;
-        grid-column: 2;
-        grid-row: 1;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        margin-left: auto;
-      }
-
-
+      width: 100%;
+      margin-left: auto;
     }
+
+
   }
 }
 
-
 @media screen and (min-width: 1600px){
   .about{
-    padding: 96px 180px;
+    padding: 96px 0;
     &__text{
       font-size: 16px;
       line-height: 26px;
@@ -103,7 +107,7 @@
     }
     &__content{
       padding: 30px 0;
-      width: 42%;
+      //width: 42%;
     }
   }
 }
@@ -123,6 +127,60 @@
 
 @media screen and (max-width: 1023px){
   .about{
-    padding: 64px 84px;
+    padding: 64px 64px;
+  }
+  .beautiful{
+    &__block{
+      &.beautiful__block-first{
+        margin: 0;
+        height: initial;
+        justify-content: center;
+        justify-items: center;
+        grid-gap: 20px 0;
+        padding: 20px 0 40px;
+      }
+    }
+    &__content{
+      padding: 0;
+      margin: 0;
+      grid-column: 1;
+      grid-row: 2;
+    }
+  }
+  .wb-all{
+    grid-template-columns: 80%;
+    grid-template-rows: auto;
+    &__fishka{
+      grid-column: 1;
+      grid-row: 1;
+      height: 556px;
+      width: 556px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  .about{
+    padding: 40px;
+  }
+  .beautiful{
+
+  }
+  .wb-all{
+    grid-template-columns: calc(100vw - 120px);
+    &__fishka{
+      width: calc(100vw - 120px);
+      height: calc(100vw - 120px);
+    }
+  }
+}
+
+@media screen and (max-width: 480px){
+  .wb-all{
+    grid-template-columns: calc(100vw - 100px);
+    &__fishka{
+      width: calc(100vw - 100px);
+      height: calc(100vw - 100px);
+    }
   }
 }
