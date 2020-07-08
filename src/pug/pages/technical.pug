@@ -1,0 +1,43 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/libs.js')
+    script(src='./assets/scripts/index.js')
+    script(src='./assets/scripts/scroll.js')
+    script(src='./assets/scripts/svgBg.js')
+
+
+block content
+    section.technical
+        include ./includes/breadcrumb
+        h1.title Технічні </br> характеристики
+        .about__bg.wb-all__bg
+            include ../includes/svg-all-bg.html
+        .beautiful__block.beautiful__block-first.wb-all.wb-show
+            .about__content.beautiful__content
+                div.about__text Комплекс включає 6 будинків по 16 поверхів. Будують за монолітно-каркасною технологією, стіни зводять з керамічних блоків, фасади утеплять мінеральною ватою і обштукатурять.
+                div.about__text Покупцям запропонують різноманітні варіанти 1-кімнатних, 2-кімнатних і 3-кімнатних планувань. Також пропонуватимуться дворівневі квартири.
+            .wb-all__fishka
+                // svg лежит в php файле, повторяется на многих страницах, меняется только картинка внутри
+                include ../includes/svg-bg.php
+        .beautiful__block.wb-all.wb-show.flex-reverce
+            .about__content.beautiful__content
+                div.about__text Комплекс включає 6 будинків по 16 поверхів. Будують за монолітно-каркасною технологією, стіни зводять з керамічних блоків, фасади утеплять мінеральною ватою і обштукатурять.
+                div.about__text Покупцям запропонують різноманітні варіанти 1-кімнатних, 2-кімнатних і 3-кімнатних планувань. Також пропонуватимуться дворівневі квартири.
+            .wb-all__fishka
+                // svg лежит в php файле, повторяется на многих страницах, меняется только картинка внутри
+                include ../includes/svg-bg.php
+
+block footer
+    include ../includes/menu
+    footer.footer
+        include ../includes/footer
+    // include ../pages/includes/forms
+block header
+    header.header
+        include ../includes/header.pug

@@ -1,0 +1,19 @@
+.technical{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-height: 100vh;
+  //padding: var(--padding-wrap) 0;
+  //padding: 96px;
+  .beautiful__block{
+    &:nth-child(2n+1){
+      .beautiful__content{
+        grid-column: 4;
+      }
+      .wb-all__fishka{
+        grid-column: 1 /span 3;
+        justify-content: flex-start;
+      }
+    }
+  }
+}

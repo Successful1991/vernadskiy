@@ -14,7 +14,7 @@
 	font-size: 48px;
 	line-height: 66px;
 	color: #7E8888;
-	margin-left: 40px;
+	margin: 0 0 30px calc(40px + var(--padding-wrap));
 }
 
 .wrap{
@@ -84,7 +84,7 @@
 	.title{
 		font-size: 72px;
 		line-height: 72px;
-		margin-top: 70px;
+		//margin-top: 70px;
 	}
 }
 @media screen and (max-width: 1023px){

@@ -1,4 +1,20 @@
 @charset "UTF-8";
+body {
+  --padding-wrap: 96px;
+}
+
+@media screen and (max-width: 1023px) {
+  body {
+    --padding-wrap: 64px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    --padding-wrap: 40px;
+  }
+}
+
 /* Slider */
 .slick-slider {
   position: relative;
@@ -876,6 +892,22 @@ a, button, input {
   cursor: pointer;
 }
 
+body {
+  --padding-wrap: 96px;
+}
+
+@media screen and (max-width: 1023px) {
+  body {
+    --padding-wrap: 64px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    --padding-wrap: 40px;
+  }
+}
+
 @-webkit-keyframes mouse {
   from {
     -webkit-transform: translateY(-10%);
@@ -1161,7 +1193,7 @@ a, button, input {
   font-size: 48px;
   line-height: 66px;
   color: #7E8888;
-  margin-left: 40px;
+  margin: 0 0 30px calc(40px + var(--padding-wrap));
 }
 
 .wrap {
@@ -1238,7 +1270,6 @@ a, button, input {
   .title {
     font-size: 72px;
     line-height: 72px;
-    margin-top: 70px;
   }
 }
 
@@ -1280,7 +1311,7 @@ a, button, input {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   letter-spacing: 0.32px;
-  margin-left: 40px;
+  margin: var(--padding-wrap) 0 0 calc(40px + var(--padding-wrap));
 }
 
 .breadcrumb__el {
@@ -5319,7 +5350,6 @@ a, button, input {
   display: inline-block;
   width: 100%;
   min-height: 100vh;
-  padding: 96px;
 }
 
 .about__text {
@@ -5334,13 +5364,27 @@ a, button, input {
 .beautiful__content {
   grid-column: 1;
   grid-row: 1;
-  margin: 30px 0 0 40px;
+  margin: 0 0 0 calc(40px + var(--padding-wrap));
   padding: 106px 0;
 }
 
-.beautiful__block.beautiful__block-first {
-  margin-top: -106px;
+.beautiful__block {
+  height: calc(100vw - var(--padding-wrap) * 2);
+}
+
+.beautiful__block.beautiful__block-full {
+  margin-top: -136px;
   height: calc(100vh - 192px);
+}
+
+.beautiful__block.beautiful__block-first {
+  margin-top: -136px;
+  height: calc(100vh - var(--padding-wrap));
+}
+
+.beautiful__block.beautiful__block-last {
+  margin-top: var(--padding-wrap);
+  height: calc(100vh - var(--padding-wrap));
 }
 
 .wb-all {
@@ -5385,6 +5429,12 @@ a, button, input {
 }
 
 .wb-all__fishka {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
   grid-column: 2 / span 4;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5396,6 +5446,7 @@ a, button, input {
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
+  height: calc(55vw - var(--padding-wrap));
 }
 
 .wb-all__fishka .svg-fishka {
@@ -5428,16 +5479,25 @@ a, button, input {
 }
 
 @media screen and (min-width: 1600px) {
-  .about {
-    padding: 96px 0;
-  }
   .about__text {
     font-size: 16px;
     line-height: 26px;
     margin-bottom: 20px;
   }
-  .about__content {
-    padding: 30px 0;
+  .beautiful__content {
+    padding: 178px 0;
+  }
+  .beautiful__block {
+    height: 100vh;
+  }
+  .beautiful__block.beautiful__block-full {
+    margin-top: -178px;
+  }
+  .beautiful__block.beautiful__block-first {
+    margin-top: -178px;
+  }
+  .beautiful__block.beautiful__block-last {
+    margin-top: 96px;
   }
 }
 
@@ -5447,17 +5507,13 @@ a, button, input {
     line-height: 32px;
     margin-bottom: 30px;
   }
-  .about__content {
-    padding: 40px 0;
-    width: 32%;
-  }
 }
 
 @media screen and (max-width: 1023px) {
   .about {
     padding: 64px 64px;
   }
-  .beautiful__block.beautiful__block-first {
+  .beautiful__block {
     margin: 0;
     height: initial;
     -webkit-box-pack: center;
@@ -5465,7 +5521,16 @@ a, button, input {
     justify-content: center;
     justify-items: center;
     grid-gap: 20px 0;
+  }
+  .beautiful__block.beautiful__block-full {
     padding: 20px 0 40px;
+    margin: 0;
+  }
+  .beautiful__block.beautiful__block-first {
+    padding: 20px 0 0;
+  }
+  .beautiful__block.beautiful__block-last {
+    padding: 0 0 40px;
   }
   .beautiful__content {
     padding: 0;
@@ -5478,6 +5543,10 @@ a, button, input {
     grid-template-rows: auto;
   }
   .wb-all__fishka {
+    position: static;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
     grid-column: 1;
     grid-row: 1;
     height: 556px;
@@ -5633,4 +5702,22 @@ a, button, input {
   .infrastructure-first__list {
     grid-template-columns: 1fr;
   }
+}
+
+.technical {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.technical .beautiful__block:nth-child(2n+1) .beautiful__content {
+  grid-column: 4;
+}
+
+.technical .beautiful__block:nth-child(2n+1) .wb-all__fishka {
+  grid-column: 1 /span 3;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }

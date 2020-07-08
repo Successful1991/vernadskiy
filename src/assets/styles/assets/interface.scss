@@ -6,7 +6,7 @@
   width: 100%;
   flex-wrap: wrap;
   letter-spacing: 0.32px;
-  margin-left: 40px;
+  margin: var(--padding-wrap) 0 0 calc(40px + var(--padding-wrap));
   &__el {
     position: relative;
     margin: 0 0;

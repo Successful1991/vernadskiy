@@ -22,10 +22,25 @@ $mc5: #292929;
 $wc: #ffffff;
 $bc: #000;
 
-$padding-wrap: 45px;
-$padding-wrap--small: 20px;
+$padding-wrap: 96px;
 
-$--bg : #71A461;
-$--bg-opacity : rgba(113,164,97, 0.6);
+  $padding-wrap--small: 20px;
 
-$header-height: 50px;
+  $--bg : #71A461;
+  $--bg-opacity : rgba(113,164,97, 0.6);
+
+  $header-height: 50px;
+
+body{
+  --padding-wrap: 96px;
+}
+  @media screen and (max-width: 1023px){
+    body{
+      --padding-wrap: 64px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    body{
+      --padding-wrap: 40px;
+    }
+  }
