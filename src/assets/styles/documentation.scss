@@ -1,0 +1,116 @@
+.documentation{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  &__slider{
+    display: flex;
+    width: 55%;
+    margin: 0 auto 170px;
+    padding: 60px;
+    position: relative;
+  }
+  &__arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-150%);
+    display: flex;
+    height: 50px;
+    width: 50px;
+    flex-shrink: 0;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #E2E2E2;
+    svg{
+      stroke-dasharray: 75,75, 75;
+      stroke-dashoffset: 150;
+    }
+    &-left{
+      left: -60px;
+    }
+    &-right{
+      right: -60px;
+      svg{
+        transform: rotate(180deg);
+      }
+    }
+    &:hover{
+      svg{
+        animation: arrows 0.9s;
+      }
+    }
+  }
+  &__elem{
+    display: inline-block;
+    margin: 0 30px;
+    text-decoration: none;
+    color: #7E8888;
+    text-align: center;
+    &-image{
+      margin-bottom: 20px;
+    }
+  }
+  &__bg{
+    &-left{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: calc(var(--padding-wrap) * 1.25);
+      background: url("/assets/images/documentation/bg-left.png") no-repeat center /contain;
+    }
+    &-right{
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: calc(var(--padding-wrap) * 1.25);
+      background: url("/assets/images/documentation/bg-right.png") no-repeat center center /contain;
+    }
+  }
+}
+
+@keyframes arrows {
+  from{
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@media screen and (max-width: 1023px){
+  .documentation{
+    &__slider{
+      width: 80%;
+      margin: 0 auto 100px;
+      padding: 60px;
+    }
+    &__arrow{
+      &-left{
+        left: 0;
+      }
+      &-right{
+        right: 0;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px){
+  .documentation{
+    &__slider{
+      width: 280px;
+      margin: 0 auto 30px;
+      padding: 20px;
+    }
+    &__arrow{
+      &-left{
+        left: -20px;
+      }
+      &-right{
+        right: -20px;
+      }
+    }
+  }
+}

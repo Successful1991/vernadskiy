@@ -7,10 +7,10 @@
       &__bg{
         svg{
           .svg-long{
-            stroke:#627F80;
+            stroke: #E5E7E7;
           }
           .svg-short{
-            stroke:#627F80;
+            stroke: #E5E7E7;
           }
           //.svg-circle1{
           //  stroke-dasharray: calc(3.14 * 50vw);
@@ -1139,6 +1139,14 @@
   .footer__small{
     visibility: visible;
   }
+  .svg-line{
+    &-1,&-2,&-3,&-4{
+      width: 30px;
+    }
+    &-5,&-6,&-7,&-8{
+      height: 30px;
+    }
+  }
 }
 
 @media screen and (max-width: 767px){
@@ -1337,6 +1345,14 @@
           }
         }
       }
+    }
+  }
+  .svg-line{
+    &-1,&-2,&-3,&-4{
+      width: 15px;
+    }
+    &-5,&-6,&-7,&-8{
+      height: 15px;
     }
   }
    //.footer{

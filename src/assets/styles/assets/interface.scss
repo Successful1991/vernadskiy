@@ -213,16 +213,23 @@
 
 .link{
   position: relative;
-  display: inline-block;
+  //display: inline-block;
   font-weight: 600;
   font-size: 2.4em;
   line-height: 1.3em;
   text-align: center;
-  text-decoration: none;
+  //text-decoration: none;
   overflow: hidden;
   white-space: nowrap;
   color: $text-dark;
   margin: 0 auto 0 0;
+
+  text-decoration: none;
+  background-image: linear-gradient($text-dark, #C2A7A1);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size .5s cubic-bezier(0.74, 0.01, 0.36, 0.99);
   &::after{
     content: '';
     display: inline-block;
@@ -235,24 +242,24 @@
     border-top: 9px solid transparent;
     border-bottom: 9px solid transparent;
   }
-  &::before{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: inline-block;
-    width: calc(100% - 50px);
-    height: 2px;
-    background: $text-dark;
-    transform: translate(-100%, 0);
-    transition: transform 0.6s cubic-bezier(0.74, 0.01, 0.36, 0.99);
-  }
+  //&::before{
+  //  content: '';
+  //  position: absolute;
+  //  bottom: 0;
+  //  left: 0;
+  //  display: inline-block;
+  //  width: calc(100% - 50px);
+  //  height: 2px;
+  //  background: $text-dark;
+  //  transform: translate(-100%, 0);
+  //  transition: transform 0.6s cubic-bezier(0.74, 0.01, 0.36, 0.99);
+  //}
 
   &:hover{
-
-    &::before{
-      transform: translate(0, 0);
-    }
+    background-size: 100% 2px;
+    //&::before{
+    //  transform: translate(0, 0);
+    //}
     &::after{
       transform: translate(10px, 0);
       //transform: translate(10px, -50%);
@@ -263,7 +270,7 @@
 
 @media screen and (max-width: 1023px){
   .breadcrumb{
-    margin-left: 20px;
+    margin: var(--padding-wrap) 0 0 calc(20px + var(--padding-wrap));
   }
   .lang,.menu .lang {
     width: 64px;

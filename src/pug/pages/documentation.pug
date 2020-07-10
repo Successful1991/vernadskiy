@@ -1,0 +1,68 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/libs.js')
+    script(src='./assets/scripts/index.js')
+    script(src='./assets/scripts/scroll.js')
+    script(src='./assets/scripts/svgBg.js')
+
+block content
+    section.documentation
+        include ./includes/breadcrumb
+        h1.title Документація
+        // svg лежит в html файле, повторяется на многих страницах.
+        .documentation__bg.wb-all__bg
+            include ../includes/svg-all-bg.html
+        .documentation__bg-left
+        .documentation__bg-right
+        .documentation__slider.js-documentation__slider
+            a(href='#').documentation__elem
+                .documentation__elem-image
+                    img(src='assets/images/documentation/document.svg')
+                p.documentation__elem-title Розпорядження про зімельну ділянку
+            a(href='#').documentation__elem
+                .documentation__elem-image
+                    img(src='assets/images/documentation/document.svg')
+                p.documentation__elem-title Дозвіл на будівництво
+            a(href='#').documentation__elem
+                .documentation__elem-image
+                    img(src='assets/images/documentation/document.svg')
+                p.documentation__elem-title Експертиза
+            a(href='#').documentation__elem
+                .documentation__elem-image
+                    img(src='assets/images/documentation/document.svg')
+                p.documentation__elem-title Розпорядження про зімельну ділянку
+            a(href='#').documentation__elem
+                .documentation__elem-image
+                    img(src='assets/images/documentation/document.svg')
+                p.documentation__elem-title Дозвіл на будівництво
+            a(href='#').documentation__elem
+                .documentation__elem-image
+                    img(src='assets/images/documentation/document.svg')
+                p.documentation__elem-title Експертиза
+            a(href='#').documentation__elem
+                .documentation__elem-image
+                    img(src='assets/images/documentation/document.svg')
+                p.documentation__elem-title Розпорядження про зімельну ділянку
+            a(href='#').documentation__elem
+                .documentation__elem-image
+                    img(src='assets/images/documentation/document.svg')
+                p.documentation__elem-title Дозвіл на будівництво
+            a(href='#').documentation__elem
+                .documentation__elem-image
+                    img(src='assets/images/documentation/document.svg')
+                p.documentation__elem-title Експертиза
+
+block footer
+    include ../includes/menu
+    footer.footer
+        include ../includes/footer
+    // include ../pages/includes/forms
+block header
+    header.header
+        include ../includes/header.pug

@@ -1,4 +1,4 @@
-.technical{
+.payment{
   position: relative;
   display: inline-block;
   width: 100%;
@@ -20,11 +20,32 @@
   .title{
     display: none;
   }
-
+  &__list{
+    padding-left: 20px;
+    margin-bottom: 40px;
+    &-title{
+      font-family: "Manrope";
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 25px;
+      color: #7E8888;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    &-el{
+      font-family: "Manrope";
+      font-size: 14px;
+      line-height: 22px;
+      color: #7E8888;
+      list-style: disc;
+      padding: 0 10px;
+      margin-bottom: 5px;
+    }
+  }
 
 }
 @media screen and (min-width: 1600px){
-  .technical{
+  .payment{
     &__text{
       font-size: 16px;
       line-height: 26px;
@@ -37,7 +58,7 @@
   }
 }
 @media screen and (min-width: 1900px){
-  .technical{
+  .payment{
     &__text{
       font-size: 20px;
       line-height: 32px;
@@ -46,14 +67,17 @@
   }
 }
 @media screen and (max-width: 1023px){
-  .technical{
+  .payment{
+    padding-bottom: calc(30px + var(--padding-wrap));
     .title{
       display: block;
       margin: 0 0 0 calc(20px + var(--padding-wrap));
     }
     .beautiful__block .title{
       display: none;
-
+    }
+    &__list{
+      margin-bottom: 15px;
     }
   }
 }

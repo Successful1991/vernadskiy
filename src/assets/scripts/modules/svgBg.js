@@ -130,8 +130,23 @@ const offset = {
         small: 25
     }
 };
-document.addEventListener('DOMContentLoaded',function () {
+document.addEventListener('DOMContentLoaded',function (e) {
+    setTimeout(() => {
+        const width = window.innerWidth;
+        if(width > 1023){
+            svg(offset['desctop'].big,offset['desctop'].small );
+        } else if(width > 767){
+            svg(offset['tablet'].big,offset['tablet'].small );
+        } else {
+            svg(offset['mobile'].big,offset['mobile'].small );
+        }
+    },300);
+
+});
+document.addEventListener('load',function (e) {
+    console.log(e.type);
     const width = window.innerWidth;
+    console.log(width);
     if(width > 1023){
         svg(offset['desctop'].big,offset['desctop'].small );
     } else if(width > 767){
@@ -139,11 +154,12 @@ document.addEventListener('DOMContentLoaded',function () {
     } else {
         svg(offset['mobile'].big,offset['mobile'].small );
     }
-
 });
 
-window.addEventListener('resize', function () {
+window.addEventListener('resize', function (e) {
+    console.log(e.type);
     const width = window.innerWidth;
+    console.log(width);
     if(width > 1023){
         svg(offset['desctop'].big,offset['desctop'].small );
     } else if(width > 767){
