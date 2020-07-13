@@ -1,0 +1,61 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/libs.js')
+    script(src='./assets/scripts/index.js')
+    script(src='./assets/scripts/scroll.js')
+    script(src='./assets/scripts/svgBg.js')
+
+block content
+    section.advantage-first
+        // svg лежит в html файле, повторяется на многих страницах. svg-all-bg.html
+        .advantage__bg.wb-all__bg
+            include ../includes/svg-all-bg.html
+        .advantage__left
+            include ./includes/breadcrumb
+            h1.title Про комплекс
+            .advantage__bg-v32.wb-all__bg
+                include ../includes/V32.svg
+            .advantage__text Компанія «Інтергал-Буд», заснована 2003 року у Львові, сьогодні є найбільшою недержавною будівельною компанією країни. За час свого існування «Інтергал-Буд» пройшов стрімкий шлях розвитку і зайняв лідерські позиції в сфері будівництва житлової та комерційної нерухомості в Україні.
+            .advantage__text Географія нашого представництва постійно розширюється. На сьогодні комфортні та сучасні житлові проекти реалізуються у Києві, Львові, Рівному, Чернівцях, Житомирі, Ужгороді, Мукачевому та Одесі.
+            .advantage__text Драйвером успіху «Інтергал-Буд» є постійне прагнення відповідати високим вимогам сучасного ринку нерухомості. На наше переконання, будівництво житла забезпечує людей найціннішим, - комфортним проживанням та омріяним стилем життя.
+            .advantage__logo
+                img(src='/assets/images/logo-integral.svg').logo-integral
+        .advantage__right
+            ul.advantage__list
+                li.advantage__el
+                    .advantage__el-title Стабільність
+                    .advantage__el-desc 17 років роботи
+                li.advantage__el
+                    .advantage__el-title Надійність
+                    .advantage__el-desc 74 реалізовані проекти
+                li.advantage__el
+                    .advantage__el-title Велике портфоліо
+                    .advantage__el-desc Понад 3,8 млн м2 нерухомості у проектному портфелі
+                li.advantage__el
+                    .advantage__el-title Лідерство
+                    .advantage__el-desc Лідер будівельної галузі у 2016-2019
+                li.advantage__el
+                    .advantage__el-title Масштабність
+                    .advantage__el-desc 1,3 млн м2 житла зводиться одночасно
+                li.advantage__el
+                    .advantage__el-title Якість
+                    .advantage__el-desc Побудовано 136 житлових будинків
+                li.advantage__el
+                    .advantage__el-title Соціальність
+                    .advantage__el-desc Понад 18 тис щасливих власників квартир
+
+
+block footer
+    include ../includes/menu
+    footer.footer
+        include ../includes/footer
+    // include ../pages/includes/forms
+block header
+    header.header
+        include ../includes/header.pug

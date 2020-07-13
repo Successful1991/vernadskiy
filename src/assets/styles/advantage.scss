@@ -1,0 +1,62 @@
+.advantage{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  &-first{
+    position: relative;
+    display: flex;
+  }
+  &__left{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 calc(var(--padding-wrap) + 20px) var(--padding-wrap) 0;
+  }
+  &__right{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 41%;
+    flex: 0 0 41%;
+    padding: 145px 0 145px 110px;
+    z-index: -5;
+    background: linear-gradient(0deg, #F9F9F9, #F9F9F9), #F3EDEC;
+  }
+  &__text{
+    font-family: "Manrope";
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #7E8888;
+    margin: 0 0 20px calc(var(--padding-wrap) + 40px);
+    &:nth-last-child{
+      margin-bottom: 30px;
+    }
+  }
+  &__logo{
+    margin-left: calc(var(--padding-wrap) + 40px);
+  }
+  &__list{
+    width: 100%;
+    max-width: 22.8vw;
+  }
+  &__el{
+    margin-bottom: 10px;
+    &-title{
+      font-family: "Manrope";
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 33px;
+      color: #7E8888;
+    }
+    &-desc{
+      font-family: "Manrope";
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+      color: #7E8888;
+    }
+  }
+}

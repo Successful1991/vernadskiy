@@ -144,9 +144,7 @@ document.addEventListener('DOMContentLoaded',function (e) {
 
 });
 document.addEventListener('load',function (e) {
-    console.log(e.type);
     const width = window.innerWidth;
-    console.log(width);
     if(width > 1023){
         svg(offset['desctop'].big,offset['desctop'].small );
     } else if(width > 767){
@@ -155,9 +153,24 @@ document.addEventListener('load',function (e) {
         svg(offset['mobile'].big,offset['mobile'].small );
     }
 });
+function debounce(f, t) {
+    return function (args) {
+        let previousCall = this.lastCall;
+        this.lastCall = Date.now();
+        if (previousCall && ((this.lastCall - previousCall) <= t)) {
+            clearTimeout(this.lastCallTimer);
+        }
+        this.lastCallTimer = setTimeout(() => f(args), t);
+    }
+}
 
-window.addEventListener('resize', function (e) {
-    console.log(e.type);
+let logger = (args) => console.log(`My args are ${args}`);
+// debounce: call the logger when two seconds have elapsed since the last call
+// let debouncedLogger = debounce(logger, 2000);
+
+window.addEventListener('resize', debounce(ressize, 100));
+
+function ressize() {
     const width = window.innerWidth;
     console.log(width);
     if(width > 1023){
@@ -167,4 +180,16 @@ window.addEventListener('resize', function (e) {
     } else {
         svg(offset['mobile'].big,offset['mobile'].small );
     }
-});
+}
+// window.addEventListener('resize', function (e) {
+//     console.log(e.type);
+//     const width = window.innerWidth;
+//     console.log(width);
+//     if(width > 1023){
+//         svg(offset['desctop'].big,offset['desctop'].small );
+//     } else if(width > 767){
+//         svg(offset['tablet'].big,offset['tablet'].small );
+//     } else {
+//         svg(offset['mobile'].big,offset['mobile'].small );
+//     }
+// });
