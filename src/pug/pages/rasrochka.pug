@@ -1,0 +1,44 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/libs.js')
+    script(src='./assets/scripts/index.js')
+    script(src='./assets/scripts/scroll.js')
+    script(src='./assets/scripts/svgBg.js')
+
+block content
+    section.rasrochka
+        include ./includes/breadcrumb
+        h1.title Розстрочка
+        // svg лежит в html файле, повторяется на многих страницах. svg-all-bg.html
+        .rasrochka__bg.wb-all__bg
+            include ../includes/svg-all-bg.html
+        .beautiful__block.beautiful__block-first.wb-all.wb-show
+            .rasrochka__content.beautiful__content
+                h1.title Розстрочка
+                div.rasrochka__text Для бажаючих придбати квартиру в ЖК «Озерний гай Гатне» компанія «Інтергал-Буд» пропонує різні умови розстрочки без переплат. Така інвестиція легка в оформленні, надійна в простих умовах угоди та у відсутності комісій і банківських відсотків. Розстрочка безпосередньо від забудовника – це завжди вигідно та зручно!
+                div.rasrochka__list-title Переваги розстрочки від забудовника:
+                ul.rasrochka__list
+                    li.rasrochka__list-el Від 6-ти місяців до 5-ти років
+                    li.rasrochka__list-el Мінімальний перший внесок від 30%.
+                    li.rasrochka__list-el Виплати у національній валюті - гривні
+                    li.rasrochka__list-el Дострокове погашення без штрафних санкцій
+                div.rasrochka__text Ми цінуємо час та гроші своїх клієнтів! Відвідайте відділ продажу комплексу і наші фахівці розрахують для вас оптимальний варіант оформлення розстрочки.
+            .wb-all__fishka
+                // svg лежит в php файле, повторяется на многих страницах, меняется только картинка внутри svg-bg.php
+                include ../includes/svg-bg.php
+
+
+block footer
+    include ../includes/menu
+    footer.footer
+        include ../includes/footer
+    // include ../pages/includes/forms
+block header
+    header.header
+        include ../includes/header.pug

@@ -1,9 +1,10 @@
-.payment{
+.rasrochka{
   position: relative;
   display: inline-block;
   width: 100%;
-  min-height: 100vh;
-
+  &__content:not(.active){
+    margin-right: 0;
+  }
   &__text{
     font-family: "Manrope";
     font-weight: normal;
@@ -30,8 +31,7 @@
       line-height: 25px;
       color: #323131;
       text-transform: uppercase;
-      padding: 15px 20px 0;
-      background: linear-gradient(0deg, #F9F9F9, #F9F9F9), #F3EDEC;
+      margin-bottom: 10px;
     }
     &-el{
       font-family: "Manrope";
@@ -46,7 +46,7 @@
 
 }
 @media screen and (min-width: 1600px){
-  .payment{
+  .rasrochka{
     &__text{
       font-size: 16px;
       line-height: 26px;
@@ -59,7 +59,7 @@
   }
 }
 @media screen and (min-width: 1900px){
-  .payment{
+  .rasrochka{
     &__text{
       font-size: 20px;
       line-height: 32px;
@@ -68,7 +68,7 @@
   }
 }
 @media screen and (max-width: 1023px){
-  .payment{
+  .rasrochka{
     padding-bottom: calc(30px + var(--padding-wrap));
     .title{
       display: block;

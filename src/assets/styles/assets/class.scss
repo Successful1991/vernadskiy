@@ -139,9 +139,9 @@
 }
 .beautiful{
 	&__content{
-		width: 23%;
-		margin: 0 auto 0 calc(40px + var(--padding-wrap));
-		padding: 40px 0;
+		//width: 23%;
+		margin: 0 100px 0 var(--padding-wrap);
+		padding: 40px 50px;
 	}
 	&__block{
 		justify-content:flex-start;
@@ -154,7 +154,7 @@
 			flex-direction: row-reverse;
 			justify-content: flex-end;
 			.beautiful__content{
-				margin: 0 calc(40px + var(--padding-wrap)) 0 150px;
+				margin: 0 var(--padding-wrap) 0 100px;
 			}
 			.wb-all__fishka{
 				justify-content: flex-start;
@@ -163,7 +163,7 @@
 		&.beautiful__block-first{
 			margin-top: -136px;
 			.beautiful__content{
-				padding: 106px 0;
+				padding: 106px 50px 106px;
 				align-self: flex-start;
 			}
 		}
@@ -201,7 +201,7 @@
 @media screen and (max-width: 1360px){
 	.beautiful{
 		&__content{
-			width: calc(40% - (40px + var(--padding-wrap)));
+			//width: calc(40% - (40px + var(--padding-wrap)));
 			margin: 0 auto 0 calc(40px + var(--padding-wrap));
 		}
 		&__block{
