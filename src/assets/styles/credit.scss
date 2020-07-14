@@ -1,0 +1,57 @@
+.credit{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  //min-height: 100vh;
+  padding:  0 var(--padding-wrap)  calc(80px + var(--padding-wrap)) 0;
+  &__content{
+    width: 57.35%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 50px auto 0;
+  }
+  &__bank{
+    width: 40%;
+    margin-bottom: 30px;
+    &-logo{
+      height: initial;
+      max-height: 40px;
+      width: initial;
+      margin-bottom: 20px;
+    }
+    &-text{
+      font-family: "Manrope";
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+      color: #7E8888;
+    }
+    &__link{
+      white-space: nowrap;
+    }
+  }
+  &__desc{
+    font-family: "Manrope";
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #7E8888;
+  }
+  &__bg-32 svg{
+    width: initial;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .credit{
+    min-height: initial;
+    &__content{
+      width: initial;
+      margin: var(--padding-wrap) 0 calc(20px + var(--padding-wrap)) calc(20px + var(--padding-wrap));
+    }
+    &__bank{
+      width: 100%;
+    }
+  }
+}

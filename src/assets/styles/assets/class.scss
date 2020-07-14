@@ -217,6 +217,7 @@
 	.title{
 		font-size: 36px;
 		line-height: 49px;
+		margin: var(--padding-wrap) 0 0 calc(20px + var(--padding-wrap));
 	}
 	.beautiful{
 		&__block{
