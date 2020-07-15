@@ -4,34 +4,33 @@ block meta
     title= 'Home'
     meta(name='description', content='')
 block head
-    link(rel='stylesheet', href="./assets/styles/main.min.css")
+    link(rel='stylesheet', href="/wp-content/themes/vernadskiy/assets/styles/main.min.css")
 block scripts
-    script(src='./assets/scripts/libs.js')
-    script(src='./assets/scripts/index.js')
-    script(src='./assets/scripts/scroll.js')
-    script(src='./assets/scripts/svgBg.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/libs.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/index.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/svgBg.js')
 
 block content
-    section.credit
-        include ./includes/breadcrumb
-        h1.title Кредитування
-        // svg лежит в html файле, повторяется на многих страницах. svg-all-bg.html
-        .credit__bg.wb-all__bg
-            include ../includes/svg-all-bg.html
-        .credit__bg-32.wb-all__bg
-            include ../includes/V32.svg
-        .credit__content
-            .credit__bank
-                img(src='/assets/images/globus-bank.png').credit__bank-logo
-                .credit__bank-text Іпотечний кредит надається на період до 20 років на суму від 10 тис. грн до 2,5 млн грн. Відсотковаставка становить від 2,99% річних.
-                a(href='').credit__bank-link.link Спільна програма </br>з «Глобус Банком»
-            .credit__bank
-                img(src='/assets/images/UkrGazBank.png').credit__bank-logo
-                .credit__bank-text Іпотечний кредит надається на період від 1 до 20 років на суму від 10 тис. грн до 5 млн грн. Відсоткова ставка становить від 4,7% річних.
-                a(href='').credit__bank-link.link Спільна програма </br>з «УкрГазБанком»
-            p.credit__desc Щоб отримати детальнішу інформацію, звертайтеся до спеціалістів відділу продажу за номером +38 (044) 392-30-59
-
-
+    section.main
+        .credit
+           include ./includes/breadcrumb
+           h1.title Кредитування
+           // svg лежит в html файле, повторяется на многих страницах. svg-all-bg.html
+           .credit__bg.wb-all__bg
+               include ../includes/svg-all-bg.html
+           .credit__bg-32.wb-all__bg
+               include ../includes/V32.svg
+           .credit__content
+               .credit__bank
+                   img(src='/wp-content/themes/vernadskiy/assets/images/globus-bank.png').credit__bank-logo
+                   .credit__bank-text Іпотечний кредит надається на період до 20 років на суму від 10 тис. грн до 2,5 млн грн. Відсотковаставка становить від 2,99% річних.
+                   a(href='').credit__bank-link.link Спільна програма </br>з «Глобус Банком»
+               .credit__bank
+                   img(src='/wp-content/themes/vernadskiy/assets/images/UkrGazBank.png').credit__bank-logo
+                   .credit__bank-text Іпотечний кредит надається на період від 1 до 20 років на суму від 10 тис. грн до 5 млн грн. Відсоткова ставка становить від 4,7% річних.
+                   a(href='').credit__bank-link.link Спільна програма </br>з «УкрГазБанком»
+               p.credit__desc Щоб отримати детальнішу інформацію, звертайтеся до спеціалістів відділу продажу за номером +38 (044) 392-30-59
 
 
 block footer

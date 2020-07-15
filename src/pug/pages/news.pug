@@ -1,0 +1,154 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/vernadskiy/assets/styles/main.min.css")
+block scripts
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/libs.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/svgBg.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/pagination.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/filter.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/index.js')
+
+block content
+    section.main
+        .news
+            include ./includes/breadcrumb
+            h1.title Новини
+            .news__bg.wb-all__bg
+                include ../includes/svg-all-bg.html
+            .news__filter
+                span.news__filter-name Фільтр:
+                label(for='year').news__filter-list.news__filter-list-year.js-news__filter-year
+                    input(type="radio" name="year2" value="not_changed" id='year')
+                    input(type="radio" name="year2" class="" value="not_changed" id="year-bg" checked)
+                    label(for="year-bg").select-bg
+                    .select__items.js-select__items
+                        input(type="radio" name="year" value="all" id="year[0]" checked)
+                        label(for="year[0]").news__filter-year all
+                        input(type="radio" name="year" value="2020" id="year[1]")
+                        label(for="year[1]").news__filter-year 2020
+                        input(type="radio" name="year" value="2019" id="year[2]")
+                        label(for="year[2]").news__filter-year 2019
+                        input(type="radio" name="year" value="2018" id="year[3]")
+                        label(for="year[3]").news__filter-year 2018
+                        input(type="radio" name="year" value="2017" id="year[4]")
+                        label(for="year[4]").news__filter-year 2017
+                        input(type="radio" name="year" value="2016" id="year[5]")
+                        label(for="year[5]").news__filter-year 2016
+                label(for='month').news__filter-list.news__filter-list-month.js-news__filter-month
+                    input(type="radio" name="month2" value="not_changed" id='month')
+                    input(type="radio" name="month2" value="not_changed" id="month-bg" checked)
+                    label(for="month-bg").select-bg
+                    .select__items.js-select__items
+                        input(type="radio" name="month" value="all" id="month[0]" checked)
+                        label(for="month[0]").news__filter-year all
+                        input(type="radio" name="month" value="1" id="month[1]")
+                        label(for="month[1]").news__filter-year Січень
+                        input(type="radio" name="month" value="2" id="month[2]")
+                        label(for="month[2]").news__filter-year Лютий
+                        input(type="radio" name="month" value="3" id="month[3]")
+                        label(for="month[3]").news__filter-year Березень
+                        input(type="radio" name="month" value="4" id="month[4]")
+                        label(for="month[4]").news__filter-year Квітень
+                        input(type="radio" name="month" value="5" id="month[5]")
+                        label(for="month[5]").news__filter-year Травень
+                        input(type="radio" name="month" value="6" id="month[6]")
+                        label(for="month[6]").news__filter-year Червень
+                        input(type="radio" name="month" value="7" id="month[7]")
+                        label(for="month[7]").news__filter-year Липень
+                        input(type="radio" name="month" value="8" id="month[8]")
+                        label(for="month[8]").news__filter-year Серпень
+                        input(type="radio" name="month" value="9" id="month[9]")
+                        label(for="month[9]").news__filter-year Вересень
+                        input(type="radio" name="month" value="10" id="month[10]")
+                        label(for="month[10]").news__filter-year Жовтень
+                        input(type="radio" name="month" value="11" id="month[11]")
+                        label(for="month[11]").news__filter-year Листопад
+                        input(type="radio" name="month" value="12" id="month[12]")
+                        label(for="month[12]").news__filter-year Грудень
+            .news__content
+                .news__element.js-pagination__element(data-month='10' data-year='2016')
+                    .news__element-title Vernadsky. За перший день у відділ продажів завітало близько 70 покупців
+                    .news__element-img
+                        img(src='/wp-content/themes/vernadskiy/assets/images/news/1.jpg')
+                    .news__element-text 1 лютого урочисто і з прекрасним настроєм було розпочато історію житлового комлексу бізнес-класу CITY HUB. Продажі стартували! Хочете...
+                    .news__element-data 6 березня 2020
+                    a(href='./singlenews.html').news__element-link.link Читати новину
+                .news__element.js-pagination__element(data-month='10' data-year='2016')
+                    .news__element-title Vernadsky. За перший день у відділ продажів завітало близько 70 покупців
+                    .news__element-img
+                        img(src='/wp-content/themes/vernadskiy/assets/images/news/1.jpg')
+                    .news__element-text 1 лютого урочисто і з прекрасним настроєм було розпочато історію житлового комлексу бізнес-класу CITY HUB. Продажі стартували! Хочете...
+                    .news__element-data 6 березня 2020
+                    a(href='./singlenews.html').news__element-link.link Читати новину
+                .news__element.js-pagination__element(data-month='10' data-year='2016')
+                    .news__element-title Vernadsky. За перший день у відділ продажів завітало близько 70 покупців
+                    .news__element-img
+                        img(src='/wp-content/themes/vernadskiy/assets/images/news/1.jpg')
+                    .news__element-text 1 лютого урочисто і з прекрасним настроєм було розпочато історію житлового комлексу бізнес-класу CITY HUB. Продажі стартували! Хочете...
+                    .news__element-data 6 березня 2020
+                    a(href='./singlenews.html').news__element-link.link Читати новину
+                .news__element.js-pagination__element(data-month='10' data-year='2016')
+                    .news__element-title Vernadsky. За перший день у відділ продажів завітало близько 70 покупців
+                    .news__element-img
+                        img(src='/wp-content/themes/vernadskiy/assets/images/news/1.jpg')
+                    .news__element-text 1 лютого урочисто і з прекрасним настроєм було розпочато історію житлового комлексу бізнес-класу CITY HUB. Продажі стартували! Хочете...
+                    .news__element-data 6 березня 2020
+                    a(href='./singlenews.html').news__element-link.link Читати новину
+                .news__element.js-pagination__element(data-month='10' data-year='2016')
+                    .news__element-title Vernadsky. За перший день у відділ продажів завітало близько 70 покупців
+                    .news__element-img
+                        img(src='/wp-content/themes/vernadskiy/assets/images/news/1.jpg')
+                    .news__element-text 1 лютого урочисто і з прекрасним настроєм було розпочато історію житлового комлексу бізнес-класу CITY HUB. Продажі стартували! Хочете...
+                    .news__element-data 6 березня 2020
+                    a(href='./singlenews.html').news__element-link.link Читати новину
+                .news__element.js-pagination__element(data-month='10' data-year='2016')
+                    .news__element-title Vernadsky. За перший день у відділ продажів завітало близько 70 покупців
+                    .news__element-img
+                        img(src='/wp-content/themes/vernadskiy/assets/images/news/1.jpg')
+                    .news__element-text 1 лютого урочисто і з прекрасним настроєм було розпочато історію житлового комлексу бізнес-класу CITY HUB. Продажі стартували! Хочете...
+                    .news__element-data 6 березня 2020
+                    a(href='./singlenews.html').news__element-link.link Читати новину
+                .news__element.js-pagination__element(data-month='10' data-year='2016')
+                    .news__element-title Vernadsky. За перший день у відділ продажів завітало близько 70 покупців
+                    .news__element-img
+                        img(src='/wp-content/themes/vernadskiy/assets/images/news/1.jpg')
+                    .news__element-text 1 лютого урочисто і з прекрасним настроєм було розпочато історію житлового комлексу бізнес-класу CITY HUB. Продажі стартували! Хочете...
+                    .news__element-data 6 березня 2020
+                    a(href='./singlenews.html').news__element-link.link Читати новину
+                .news__element.js-pagination__element(data-month='10' data-year='2016')
+                    .news__element-title Vernadsky. За перший день у відділ продажів завітало близько 70 покупців
+                    .news__element-img
+                        img(src='/wp-content/themes/vernadskiy/assets/images/news/1.jpg')
+                    .news__element-text 1 лютого урочисто і з прекрасним настроєм було розпочато історію житлового комлексу бізнес-класу CITY HUB. Продажі стартували! Хочете...
+                    .news__element-data 6 березня 2020
+                    a(href='./singlenews.html').news__element-link.link Читати новину
+                .news__element.js-pagination__element(data-month='10' data-year='2016')
+                    .news__element-title Vernadsky. За перший день у відділ продажів завітало близько 70 покупців
+                    .news__element-img
+                        img(src='/wp-content/themes/vernadskiy/assets/images/news/1.jpg')
+                    .news__element-text 1 лютого урочисто і з прекрасним настроєм було розпочато історію житлового комлексу бізнес-класу CITY HUB. Продажі стартували! Хочете...
+                    .news__element-data 6 березня 2020
+                    a(href='./singlenews.html').news__element-link.link Читати новину
+                .news__element.js-pagination__element(data-month='10' data-year='2016')
+                    .news__element-title Vernadsky. За перший день у відділ продажів завітало близько 70 покупців
+                    .news__element-img
+                        img(src='/wp-content/themes/vernadskiy/assets/images/news/1.jpg')
+                    .news__element-text 1 лютого урочисто і з прекрасним настроєм було розпочато історію житлового комлексу бізнес-класу CITY HUB. Продажі стартували! Хочете...
+                    .news__element-data 6 березня 2020
+                    a(href='./singlenews.html').news__element-link.link Читати новину
+
+            .pagination.js-pagination
+
+block footer
+    include ../includes/menu
+    footer.footer
+        include ../includes/footer
+    // include ../pages/includes/forms
+block header
+    header.header
+        include ../includes/header.pug

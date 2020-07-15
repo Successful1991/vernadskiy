@@ -4,37 +4,38 @@ block meta
     title= 'Home'
     meta(name='description', content='')
 block head
-    link(rel='stylesheet', href="./assets/styles/main.min.css")
+    link(rel='stylesheet', href="/wp-content/themes/vernadskiy/assets/styles/main.min.css")
 block scripts
-    script(src='./assets/scripts/libs.js')
-    script(src='./assets/scripts/index.js')
-    script(src='./assets/scripts/scroll.js')
-    script(src='./assets/scripts/svgBg.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/libs.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/index.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/svgBg.js')
 
 
 block content
-    section.technical
-        include ./includes/breadcrumb
-        h1.title Технічні </br> характеристики
-        // svg лежит в html файле, повторяется на многих страницах. svg-all-bg.html
-        .technical__bg.wb-all__bg
-            include ../includes/svg-all-bg.html
-        .beautiful__block.beautiful__block-first.wb-all.wb-show
-            .technical__content.beautiful__content
-                h1.title Технічні </br> характеристики
-                div.technical__text Комплекс включає 6 будинків по 16 поверхів. Будують за монолітно-каркасною технологією, стіни зводять з керамічних блоків, фасади утеплять мінеральною ватою і обштукатурять.
-                div.technical__text Покупцям запропонують різноманітні варіанти 1-кімнатних, 2-кімнатних і 3-кімнатних планувань. Також пропонуватимуться дворівневі квартири.
-            .wb-all__fishka
-                // svg лежит в php файле, повторяется на многих страницах, меняется только картинка внутри svg-bg.php
-                include ../includes/svg-bg.php
-        .beautiful__block.wb-all.wb-show
-            .technical__content.beautiful__content
-                div.technical__text Бажаєте придбати квартиру одразу з ремонтом? Унікальною фішкою «Інтергал-Буд» є пропозиція  -   3 варіанти ремонту на вибір.
-                div.technical__text Тобто ви зможете вибрати стиль майбутньої квартири - класичний, скандинавський чи мінімалізм. Звичайно, придбати квартиру можна і просто з чистовим оздобленням.
-                a.technical__link.link Обрати <br> квартиру
-            .wb-all__fishka
-                // svg лежит в php файле, повторяется на многих страницах, меняется только картинка внутри svg-bg.php
-                include ../includes/svg-bg.php
+    section.main
+        .technical
+            include ./includes/breadcrumb
+            h1.title Технічні </br> характеристики
+            // svg лежит в html файле, повторяется на многих страницах. svg-all-bg.html
+            .technical__bg.wb-all__bg
+                include ../includes/svg-all-bg.html
+            .beautiful__block.beautiful__block-first.wb-all.wb-show
+                .technical__content.beautiful__content
+                    h1.title Технічні </br> характеристики
+                    div.technical__text Комплекс включає 6 будинків по 16 поверхів. Будують за монолітно-каркасною технологією, стіни зводять з керамічних блоків, фасади утеплять мінеральною ватою і обштукатурять.
+                    div.technical__text Покупцям запропонують різноманітні варіанти 1-кімнатних, 2-кімнатних і 3-кімнатних планувань. Також пропонуватимуться дворівневі квартири.
+                .wb-all__fishka
+                    // svg лежит в php файле, повторяется на многих страницах, меняется только картинка внутри svg-bg.php
+                    include ../includes/svg-bg.php
+            .beautiful__block.wb-all.wb-show
+                .technical__content.beautiful__content
+                    div.technical__text Бажаєте придбати квартиру одразу з ремонтом? Унікальною фішкою «Інтергал-Буд» є пропозиція  -   3 варіанти ремонту на вибір.
+                    div.technical__text Тобто ви зможете вибрати стиль майбутньої квартири - класичний, скандинавський чи мінімалізм. Звичайно, придбати квартиру можна і просто з чистовим оздобленням.
+                    a.technical__link.link Обрати <br> квартиру
+                .wb-all__fishka
+                    // svg лежит в php файле, повторяется на многих страницах, меняется только картинка внутри svg-bg.php
+                    include ../includes/svg-bg.php
 
 block footer
     include ../includes/menu

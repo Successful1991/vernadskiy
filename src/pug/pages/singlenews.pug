@@ -1,0 +1,46 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/vernadskiy/assets/styles/main.min.css")
+block scripts
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/libs.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/index.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/svgBg.js')
+
+block content
+    section.main
+        include ./includes/breadcrumb
+        .single-news__bg-v32.wb-all__bg
+            include ../includes/svg-all-bg.html
+        .single-news
+            h1.single-news__title Vernadsky. За перший день у відділ продажів завітало близько 70 покупців
+            .single-news__data 6 березня 2020
+            .single-news__text Мрієте жити у діловому центрі столиці на Солом’янці? Інтергал-Буд втілив ваші задуми у реальність. CITY HUB – яскраве відображення сучасності, функціональності, унікального місцерозташування та комфортних родзинок. Приємний бонус – зараз при купівлі квартири діє знижка 12%. Не зволікайте, телефонуйте, менеджери підберуть ідеальний саме для вас варіант. Встигайте, акція діє тільки до 06.04.20 р.
+            .single-news__text.single-news__text-important 1 лютого урочисто і з прекрасним настроєм було розпочато історію житлового комлексу бізнес-класу CITY HUB. Продажі стартували!
+            ul.single-news__list
+                li.single-news__el «Інтергал-Буд» входить у ТОП-3 найбільших та найнадійніших забудовників України
+                li.single-news__el Лауреат професійної премії «Український будівельний Олімп – 2018» у номінації «Лідер будівельної галузі»
+                li.single-news__el Переможець конкурсу «Бренд року» в 2016, 2017 та 2018 роках в категорії «Лідер за обсягами будівництва» в номінації «Бездоганна репутація»
+                li.single-news__el Лауреат премії IBuild-2017 у номінації «Якість та стабільність будівництва»
+                li.single-news__el Переможець номінації «Девелопер року в житловій нерухомості. Україна» міжнародної Премії Країн Східної Європи та Азії – EEА PROJECT AWARDS 2017
+                li.single-news__el Володар титулу «Лідер будівельної галузі 2016» згідно рейтингу незалежного агентства «Національний бізнес-рейтинг»
+
+            .single-news__slider.js-single-news__slider
+                .single-news__slider-el
+                    img(src='/wp-content/themes/vernadskiy/assets/images/news/1.jpg')
+                .single-news__slider-el
+                    img(src='/wp-content/themes/vernadskiy/assets/images/news/1.jpg')
+            .single-news__video
+                img(src='/wp-content/themes/vernadskiy/assets/images/news/1.jpg')
+block footer
+    include ../includes/menu
+    footer.footer
+        include ../includes/footer
+    // include ../pages/includes/forms
+block header
+    header.header
+        include ../includes/header.pug

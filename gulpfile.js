@@ -31,25 +31,25 @@ const paths = {
     templates: {
         pages: ['./src/pug/pages/*.pug','./src/pug/pages/includes/*.pug'],
         src: './src/pug/**/*.pug',
-        dest: './dist'
+        dest: './dist/wp-content/themes/vernadskiy'
     },
     styles: { 
         main: './src/assets/styles/main.scss',
         src: './src/assets/styles/**/*.scss',
-        dest: './dist/assets/styles'
+        dest: './dist/wp-content/themes/vernadskiy/assets/styles'
     },
     // scripts: {
     //     src: './src/assets/scripts/index-app.js',
     //     watch: './src/assets/scripts/**/*.js',
-    //     dest: './dist/assets/scripts/'
+    //     dest: './dist/wp-content/themes/vernadskiy/assets/scripts/'
     // },
     fonts: {
         src: './src/assets/fonts/**/*',
-        dest: './dist/assets/fonts'
+        dest: './dist/wp-content/themes/vernadskiy/assets/fonts'
     },
     images: {
         src: './src/assets/images/**/*',
-        dest: './dist/assets/images'
+        dest: './dist/wp-content/themes/vernadskiy/assets/images'
     },
     svgSprite: {
         src: './src/assets/svg-sprite/*.svg',
@@ -57,7 +57,7 @@ const paths = {
     },
     gulpModules: {
         src: './src/assets/scripts/modules/*.js',
-        dest: './dist/assets/scripts/'
+        dest: './dist/wp-content/themes/vernadskiy/assets/scripts/'
     },
     libs: {
         src: './src/assets/scripts/libs/libs.js',
@@ -66,11 +66,11 @@ const paths = {
     },
     static: {
         src: './src/static/**/*.*',
-        dest: './dist/static/'
+        dest: './dist/wp-content/themes/vernadskiy/static/'
     },
   	video: {
         src: './src/assets/video/**/*.*',
-        dest: './dist/assets/video/'
+        dest: './dist/wp-content/themes/vernadskiy/assets/video/'
     },
 };
 
@@ -124,9 +124,7 @@ function styles() {
         title: 'SCSS',
         message: '<%= error.message %>' // вывод сообщения об ошибке
     }))
-	.pipe(autoprefixer({
-		cascade: false
-	}))
+	.pipe(autoprefixer({cascade: false}))
     // .pipe(sourcemaps.write())
     .pipe(rename("main.min.css"))
     .pipe(gulp.dest(paths.styles.dest))
@@ -167,10 +165,12 @@ function images() {
     return gulp.src(paths.images.src)
         .pipe(gulp.dest(paths.images.dest));
 }
-
-gulp.task('clear', function () {
+function clear() {
 	return cache.clearAll();
-});
+};
+// gulp.task('clear', function () {
+// 	return cache.clearAll();
+// });
 
 // webpack
 // function scripts() {
@@ -221,6 +221,7 @@ exports.styles = styles;
 exports.gulpModules = gulpModules;
 exports.images = images;
 exports.clean = clean;
+exports.clear = clear;
 exports.fonts = fonts;
 exports.svgSprite = svgSprite;
 exports.libs = libs;
@@ -230,6 +231,7 @@ exports.video = video;
 gulp.task('default', gulp.series(
 		svgSprite,
 		clean,
+		clear,
 		libs,
 		// gulp.parallel(styles, templates, fonts, scripts, images, static),
 		gulp.parallel(styles, templates,video, fonts, gulpModules, images, static),
@@ -244,15 +246,15 @@ const pathsProd = {
 		dest: './prod'
 	},
 	style: {
-		src: './dist/assets/styles/*.css',
+		src: './dist/wp-content/themes/vernadskiy/assets/styles/*.css',
 		dest: './prod/assets/styles',
 	},
 	js: {
-		src: './dist/assets/scripts/*.js',
+		src: './dist/wp-content/themes/vernadskiy/assets/scripts/*.js',
 		dest: './prod/assets/scripts',
 	},
 	fonts: {
-		src: './dist/assets/fonts/**/*',
+		src: './dist/wp-content/themes/vernadskiy/assets/fonts/**/*',
 		dest: './prod/assets/fonts'
 	},
 	static: {
@@ -260,7 +262,7 @@ const pathsProd = {
 		dest: './prod/static/'
 	},
 	images: {
-		src: './dist/assets/images/**/*',
+		src: './dist/wp-content/themes/vernadskiy/assets/images/**/*',
 		dest: './prod/assets/images'
 	},
 };

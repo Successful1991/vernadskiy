@@ -1,23 +1,33 @@
 .page404 {
+  margin: 0 auto;
   &-wrap {
+    position: relative;
     height: calc(100vh - 240px);
     //background-color: lighten($mc, 5%);
     display: flex;
     justify-content: center;
+    padding-left: var(--padding-wrap);
     align-items: center;
-    color: $wc;
+    color: #7E8888;
+    .wb-all__fishka{
+      width: initial;
+      @include to(1023px){
+        display: none;
+      }
+    }
   }
 
   &__title {
     margin-bottom: 50px;
     font-weight: 700;
-    line-height: normal;
+    line-height: 0.8em;
     font-size: 150px;
     text-align: center;
     animation: tada 3s infinite;
 
     @include to(578px) {
       font-size: 70px;
+      line-height: 1em;
       margin-bottom: 30px;
     }
 
@@ -54,8 +64,8 @@
       justify-content: center;
       align-items: center;
       text-decoration: none;
-      border: 1px solid $wc;
-      color: $wc;
+      border: 1px solid #7E8888;
+      color: #321321;
       span {
         z-index: 1;
       }

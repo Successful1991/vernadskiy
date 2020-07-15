@@ -4,74 +4,75 @@ block meta
     title= 'Home'
     meta(name='description', content='')
 block head
-    link(rel='stylesheet', href="./assets/styles/main.min.css")
+    link(rel='stylesheet', href="/wp-content/themes/vernadskiy/assets/styles/main.min.css")
 block scripts
-    script(src='./assets/scripts/libs.js')
-    script(src='./assets/scripts/index.js')
-    script(src='./assets/scripts/scroll.js')
-    script(src='./assets/scripts/svgBg.js')
-    script(src='./assets/scripts/infrastructure.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/libs.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/index.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/svgBg.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/infrastructure.js')
 
 block content
-    section.infrastructure-first
-        include ./includes/breadcrumb
-        h1.title Інфраструктура
-        // svg лежит в html файле, повторяется на многих страницах. svg-all-bg.html
-        .infrastructure__bg.wb-all__bg
-            include ../includes/svg-all-bg.html
-        // svg лежит в V32.svg
-        .infrastructure__bg-v32.wb-all__bg
-            include ../includes/V32.svg
-        .infrastructure-first__content
-            ul.infrastructure-first__list
-                li.infrastructure-first__el
-                    .infrastructure-first__image
-                        image(src='./assets/images/infrastructure/1.svg')
-                    .infrastructure-first__text Рішення придбати власну квартиру  - одне з найважливіших у житті! Вибір на користь VERNADSKY точно буде правильним. Сучасний та  стильний комплекс будується у класі комфорт+ з урахуванням потреб всіх членів родини.
+    section.main
+        .infrastructure-first
+            include ./includes/breadcrumb
+            h1.title Інфраструктура
+            // svg лежит в html файле, повторяется на многих страницах. svg-all-bg.html
+            .infrastructure__bg.wb-all__bg
+                include ../includes/svg-all-bg.html
+            // svg лежит в V32.svg
+            .infrastructure__bg-v32.wb-all__bg
+                include ../includes/V32.svg
+            .infrastructure-first__content
+                ul.infrastructure-first__list
+                    li.infrastructure-first__el
+                        .infrastructure-first__image
+                            image(src='/wp-content/themes/vernadskiy/assets/images/infrastructure/1.svg')
+                        .infrastructure-first__text Рішення придбати власну квартиру  - одне з найважливіших у житті! Вибір на користь VERNADSKY точно буде правильним. Сучасний та  стильний комплекс будується у класі комфорт+ з урахуванням потреб всіх членів родини.
 
-                li.infrastructure-first__el
-                    .infrastructure-first__image
-                        image(src='./assets/images/infrastructure/2.svg')
-                    .infrastructure-first__text Для малечі різного віку ми побудуємо різноманітні майданчики і спортивні простори, яким, до речі, забудовник приділяє особливу увагу.
+                    li.infrastructure-first__el
+                        .infrastructure-first__image
+                            image(src='/wp-content/themes/vernadskiy/assets/images/infrastructure/2.svg')
+                        .infrastructure-first__text Для малечі різного віку ми побудуємо різноманітні майданчики і спортивні простори, яким, до речі, забудовник приділяє особливу увагу.
 
-                li.infrastructure-first__el
-                    .infrastructure-first__image
-                        image(src='./assets/images/infrastructure/3.svg')
-                    .infrastructure-first__text Мами та тати матимуть фітнес-зали і салони краси.
+                    li.infrastructure-first__el
+                        .infrastructure-first__image
+                            image(src='/wp-content/themes/vernadskiy/assets/images/infrastructure/3.svg')
+                        .infrastructure-first__text Мами та тати матимуть фітнес-зали і салони краси.
 
-                li.infrastructure-first__el
-                    .infrastructure-first__image
-                        image(src='./assets/images/infrastructure/4.svg')
-                    .infrastructure-first__text Попіклувались і про автівку. Для неї – власний паркінг. Також облаштуємо стоянку для ваших гостей.
+                    li.infrastructure-first__el
+                        .infrastructure-first__image
+                            image(src='/wp-content/themes/vernadskiy/assets/images/infrastructure/4.svg')
+                        .infrastructure-first__text Попіклувались і про автівку. Для неї – власний паркінг. Також облаштуємо стоянку для ваших гостей.
 
-                li.infrastructure-first__el
-                    .infrastructure-first__image
-                        image(src='./assets/images/infrastructure/5.svg')
-                    .infrastructure-first__text Дорослі, не хвилюйтесь про безпеку дітей! Закриті двори охоронятимуться і знаходитимуться під наглядом відеокамер.
+                    li.infrastructure-first__el
+                        .infrastructure-first__image
+                            image(src='/wp-content/themes/vernadskiy/assets/images/infrastructure/5.svg')
+                        .infrastructure-first__text Дорослі, не хвилюйтесь про безпеку дітей! Закриті двори охоронятимуться і знаходитимуться під наглядом відеокамер.
 
-                li.infrastructure-first__el
-                    .infrastructure-first__image
-                        image(src='./assets/images/infrastructure/6.svg')
-                    .infrastructure-first__text Родина зможе відпочити у затишних зелених міні-парках з продуманим ландшафтним дизайном. У комплексі зведуть власний дитячий садок.
-    section.infrastructure
-        .infrastructure__maps
-            ul.infrastructure__maps-list
-                li.infrastructure__maps-elem
-                    .infrastructure__maps-image
-                        img(src='./assets/images/infrastructure/icon/sport.svg')
-                    .infrastructure__maps-title Спорт комплекси
-                li.infrastructure__maps-elem
-                    .infrastructure__maps-image
-                        img(src='./assets/images/infrastructure/icon/sport.svg')
-                    .infrastructure__maps-title Спорт комплекси
-                li.infrastructure__maps-elem
-                    .infrastructure__maps-image
-                        img(src='./assets/images/infrastructure/icon/sport.svg')
-                    .infrastructure__maps-title Спорт комплекси
-                li.infrastructure__maps-elem
-                    .infrastructure__maps-image
-                        img(src='./assets/images/infrastructure/icon/sport.svg')
-                    .infrastructure__maps-title Спорт комплекси
+                    li.infrastructure-first__el
+                        .infrastructure-first__image
+                            image(src='/wp-content/themes/vernadskiy/assets/images/infrastructure/6.svg')
+                        .infrastructure-first__text Родина зможе відпочити у затишних зелених міні-парках з продуманим ландшафтним дизайном. У комплексі зведуть власний дитячий садок.
+        .infrastructure
+            .infrastructure__maps
+                ul.infrastructure__maps-list
+                    li.infrastructure__maps-elem
+                        .infrastructure__maps-image
+                            img(src='/wp-content/themes/vernadskiy/assets/images/infrastructure/icon/sport.svg')
+                        .infrastructure__maps-title Спорт комплекси
+                    li.infrastructure__maps-elem
+                        .infrastructure__maps-image
+                            img(src='/wp-content/themes/vernadskiy/assets/images/infrastructure/icon/sport.svg')
+                        .infrastructure__maps-title Спорт комплекси
+                    li.infrastructure__maps-elem
+                        .infrastructure__maps-image
+                            img(src='/wp-content/themes/vernadskiy/assets/images/infrastructure/icon/sport.svg')
+                        .infrastructure__maps-title Спорт комплекси
+                    li.infrastructure__maps-elem
+                        .infrastructure__maps-image
+                            img(src='/wp-content/themes/vernadskiy/assets/images/infrastructure/icon/sport.svg')
+                        .infrastructure__maps-title Спорт комплекси
 
 
 
