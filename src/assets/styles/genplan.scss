@@ -1,0 +1,27 @@
+.genplan{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  &__image{
+    width: calc(100% - (var(--padding-wrap) * 2 + 90px));
+    margin: 0 auto calc(var(--padding-wrap) + 40px) ;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .genplan{
+    &__image{
+      width: calc(100% - (var(--padding-wrap) * 2 + 40px));
+      margin: 0 auto calc(var(--padding-wrap) + 30px) ;
+    }
+  }
+}
+@media screen and (max-width: 767px){
+  .genplan{
+    &__image{
+      width: calc(100% - (var(--padding-wrap) * 2 + 20px));
+      margin: 0 auto calc(var(--padding-wrap) + 20px) ;
+    }
+  }
+}
