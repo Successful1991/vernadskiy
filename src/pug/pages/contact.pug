@@ -1,0 +1,69 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/vernadskiy/assets/styles/main.min.css")
+block scripts
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/libs.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/index.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/vernadskiy/assets/scripts/svgBg.js')
+
+block content
+    section.main
+        .contacts
+            include ./includes/breadcrumb
+            h1.title Контакти
+            .contacts__bg.wb-all__bg
+                include ../includes/svg-all-bg.html
+            .contacts__bg-v32.wb-all__bg
+                include ../includes/V32.svg
+            .contacts__bg-image.wb-all__bg
+                img(src='/wp-content/themes/vernadskiy/assets/images/contact/bg.jpg')
+            .contacts__content
+                .contacts__data
+                    .contacts__title Зв’яжіться з нами:
+                    ul.contacts__list
+                        li.contacts__list-elem.contacts__list-addres
+                            .contacts__list-title Адреса об'єкта:
+                            .contacts__list-text Київ, вул. Вернадського, 32
+                        li.contacts__list-elem.contacts__list-tel
+                            .contacts__list-title Телефон:
+                            .contacts__list-text (044) 220-22-22
+                        li.contacts__list-elem.contacts__list-mail
+                            .contacts__list-title E-mail:
+                            .contacts__list-text vernadsky@gmail.com
+                        li.contacts__list-elem.contacts__list-v32
+                            .contacts__list-title Відділ продажу:
+                            .contacts__list-text Київ, вул. Вернадського, 32
+                .contacts__maps
+                    .contacts__title Ми на мапі:
+                    .contacts__maps-image
+                        img(src='/wp-content/themes/vernadskiy/assets/images/contact/maps.jpg')
+                    .contacts__maps-link.link Відкрити </br>у навігаторі
+                .contacts__forms
+                    .contacts__title Напишіть нам
+                    form(name='message' class='contacts__form')
+                        legend.contacts__form-legend Наші менеджери зв’яжуться з вами у найкоротший час
+                        label.contacts__form-label.contacts__form-label-name
+                            input(type='text' name='name' placeholder='ваше ім’я' required).contacts__form-input.js-contacts__form-input
+                            span.form__info
+                        label.contacts__form-label.contacts__form-label-tel
+                            input(type='tell' name='phone' placeholder='Телефон' required).contacts__form-input.js-contacts__form-input
+                            span.form__info
+                        label.contacts__form-label.contacts__form-label-message
+                            input(type='text' name='message' placeholder='повідомлення').contacts__form-input.js-contacts__form-input
+                            span.form__info
+                        button(type='submit' value='Надіслати').js-form__submit.contacts__form-submit Надіслати
+
+
+block footer
+    include ../includes/menu
+    footer.footer
+        include ../includes/footer
+    // include ../pages/includes/forms
+block header
+    header.header
+        include ../includes/header.pug

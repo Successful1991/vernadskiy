@@ -1,0 +1,233 @@
+.contacts{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 0 calc(var(--padding-wrap) + 30px);
+  &__bg{
+    z-index: -1;
+    &-v32{
+      z-index: -3;
+    }
+    &-image{
+
+      z-index: -2;
+      clip-path: polygon(0% 50%, 100% 0%, 100% 50%, 0% 100%);
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  &__content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: calc(100% - (var(--padding-wrap) * 2 + 90px));
+    margin: 0 auto;
+  }
+  &__title{
+    font-family: "Manrope";
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1.6em;
+    color: #323131;
+    margin-bottom: 20px;
+  }
+  &__list{
+    padding: 0 0 0 60px;
+    &-elem{
+      position: relative;
+      margin-bottom: 20px;
+      max-width: 200px;
+      &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -50px;
+        display: inline-block;
+        height: 22px;
+        width: 22px;
+      }
+    }
+    &-title{
+      font-family: "Manrope";
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.6em;
+      color: #323131;
+    }
+    &-text{
+      font-family: "Manrope";
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 1.6em;
+      color: #728596;
+    }
+    &-addres:before{
+      background: url('/wp-content/themes/vernadskiy/assets/images/icon/point.svg') no-repeat center / contain;
+    }
+    &-tel:before{
+      background: url('/wp-content/themes/vernadskiy/assets/images/icon/call.svg') no-repeat center / contain;
+    }
+    &-mail:before{
+      background: url('/wp-content/themes/vernadskiy/assets/images/icon/mail.svg') no-repeat center / contain;
+    }
+    &-v32:before{
+      background: url('/wp-content/themes/vernadskiy/assets/images/icon/v32.svg') no-repeat center / contain;
+    }
+  }
+  &__maps{
+    margin: 0 0 0 auto;
+    flex: 0 0 auto;
+    &-image{
+      width: 100%;
+      max-width: 200px;
+      margin-bottom: 10px;
+    }
+    &-link{
+      text-align: left;
+    }
+  }
+  &__forms{
+    //flex: 0.5 0 auto;
+    margin: 0 auto;
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+    width: 310px;
+    padding: 0 0 0 50px;
+    &-legend{
+      position: relative;
+      font-family: "Manrope";
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.5em;
+      color: #5B5A5A;
+      padding: 0;
+      margin-bottom: 20px;
+      &:before{
+        content: '';
+        position: absolute;
+        top: 0.5em;
+        left: -40px;
+        display: inline-block;
+        height: 2px;
+        width: 30px;
+        background: linear-gradient(#7E8888, #C2A7A1);
+      }
+    }
+    &-label{
+      position: relative;
+      width: 100%;
+      //padding: 0 0 0 50px;
+      margin-bottom: 20px;
+      &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -40px;
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+      }
+      &-name:before{
+        background: url("/wp-content/themes/vernadskiy/assets/images/icon/user.svg") no-repeat center/ contain;
+      }
+      &-tel:before{
+        background: url("/wp-content/themes/vernadskiy/assets/images/icon/call.svg") no-repeat center/ contain;
+      }
+      &-message:before{
+        background: url("/wp-content/themes/vernadskiy/assets/images/icon/message.svg") no-repeat center/ contain;
+      }
+    }
+    &-input{
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #7A7979;
+      background: none;
+      padding-bottom: 10px;
+      font-size: 14px;
+      line-height: 1.6em;
+      color: #7A7979;
+    }
+    &-submit{
+      @extend .link;
+      background: none;
+      border: none;
+    }
+    .form__info{
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      font-size: 10px;
+      color: #CC4438;
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px){
+  .contacts{
+    &__content{
+      width: calc(100% - (var(--padding-wrap) * 2 + 40px));
+    }
+    &__maps{
+      margin: 0 auto;
+    }
+    &__data{
+      margin: 0 auto 40px;
+    }
+    &__forms{
+      order: -1;
+      margin-bottom: 40px;
+    }
+    &__form{
+      width: 100%;
+      padding: 0 0 0 30px;
+      &-legend{
+        font-size: 14px;
+        &:before{
+          width: 20px;
+          left: -30px;
+        }
+      }
+      &-label{
+        margin-bottom: 10px;
+        &:before{
+          left: -30px;
+          height: 14px;
+          width: 14px;
+        }
+      }
+    }
+    &__title{
+      font-size: 20px;
+    }
+    &__list{
+      padding: 0 0 0 30px;
+      &-elem{
+        margin-bottom: 15px;
+        max-width: 200px;
+        &:before{
+          left: -30px;
+          height: 15px;
+          width: 15px;
+        }
+      }
+      &-title{
+        font-size: 16px;
+      }
+      &-text{
+        font-size: 12px;
+      }
+    }
+  }
+
+}
