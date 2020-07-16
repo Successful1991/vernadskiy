@@ -71,15 +71,33 @@
       <div class="burger js-burger"><span></span><span></span><span></span></div>
     </header>
     <section class="main">
-      <!-- breadcrumb start-->
-      <ul class="breadcrumb">
-        <li class="breadcrumb__el"><a href="/">Главная</a></li>
-        <li class="breadcrumb__el"><a href="/news.html">Новости</a></li>
-        <!-- repeat-->
-        <li class="breadcrumb__el"><span>Новость</span></li>
-      </ul>
-      <!-- breadcrumb end-->
-      <div class="advantage__bg-v32 wb-all__bg"><svg width="750" height="750" viewBox="0 0 750 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="webcam">
+        <!-- breadcrumb start-->
+        <ul class="breadcrumb">
+          <li class="breadcrumb__el"><a href="/">Главная</a></li>
+          <li class="breadcrumb__el"><a href="/news.html">Новости</a></li>
+          <!-- repeat-->
+          <li class="breadcrumb__el"><span>Новость</span></li>
+        </ul>
+        <!-- breadcrumb end-->
+        <h1 class="title">Розстрочка</h1>
+        <!-- svg лежит в html файле, повторяется на многих страницах. svg-all-bg.html-->
+        <div class="webcam__bg wb-all__bg"><svg viewBox="0 0 1361 700" class="js-svg-bg-animate" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line class="svg-short svg-left" x1="95.5" y1="1100" x2="95.5" y2="-400" />
+    <line class="svg-short svg-right" x1="1264.5" y1="-400" x2="1264.5" y2="1100" />
+    <line class="svg-long svg-top" x1="-400" y1="96.5" x2="1900" y2="96.5" />
+    <line class="svg-long svg-bottom" x1="100%" y1="603.5" x2="0" y2="603.5" />
+    <rect class="svg-min-line svg-min-line-1 svg-line-1" x="48" y="604" width="48" height="2"/>
+    <rect class="svg-min-line svg-min-line-2 svg-line-2" x="96" y="604" width="47" height="2"/>
+    <rect class="svg-min-line svg-min-line-1 svg-line-3" x="1216" y="96" width="48" height="2"/>
+    <rect class="svg-min-line svg-min-line-2 svg-line-4" x="1264" y="96" width="47" height="2"/>
+    <rect class="svg-min-line svg-min-line-1 svg-line-5" x="1265" y="603" width="2" height="49"/>
+    <rect class="svg-min-line svg-min-line-2 svg-line-6" x="1265" y="554" width="2" height="48"/>
+    <rect class="svg-min-line svg-min-line-1 svg-line-7" x="96" y="48" width="2" height="48" />
+    <rect class="svg-min-line svg-min-line-2 svg-line-8" x="96" y="96" width="2" height="47"/>
+</svg>
+        </div>
+        <div class="webcam__bg-v32 wb-all__bg"><svg width="750" height="750" viewBox="0 0 750 750" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M742.5 375C742.5 577.843 577.843 742.5 375 742.5C172.157 742.5 7.5 577.843 7.5 375C7.5 172.157 172.157 7.5 375 7.5C577.843 7.5 742.5 172.157 742.5 375Z" stroke="#F9F9F9" stroke-width="15" stroke-miterlimit="10"/>
 <path d="M475.979 363.501C483.645 371.167 487.478 381.069 487.478 391.929C487.478 402.79 483.326 412.692 475.979 420.038C468.313 427.705 458.411 431.857 447.551 431.857C436.69 431.857 426.788 427.705 419.122 420.038C411.456 412.372 407.623 402.47 407.623 391.929V390.652H424.872V391.929C424.872 404.387 435.093 414.608 447.551 414.608C460.008 414.608 470.23 404.387 470.23 391.929C470.23 379.472 460.327 369.25 447.551 369.25C443.398 369.25 439.565 370.528 436.051 372.125L425.191 362.862L453.3 328.045H407.623V310.797H489.714L456.175 352.641C463.202 354.238 470.229 358.071 475.979 363.501Z" fill="#F9F9F9"/>
 <path d="M594.803 429.94H502.81C503.129 429.94 529.003 398.957 542.099 383.624C549.126 375.639 556.473 367.973 562.861 359.348C566.375 354.557 569.25 349.446 567.972 343.377C566.694 338.267 563.5 335.072 560.625 333.475C556.792 330.92 552.001 329.323 547.21 329.323C534.113 329.323 523.253 340.183 523.253 353.279H503.449C503.449 341.461 507.921 330.601 516.226 321.976C524.531 313.671 535.71 309.199 547.529 309.199C556.153 309.199 565.097 312.074 572.444 316.865C580.429 322.296 586.179 330.601 587.776 339.225C589.692 347.849 588.415 356.474 583.623 364.779C578.832 373.403 571.805 380.111 565.736 387.457L544.974 411.414H594.803V429.94Z" fill="#F9F9F9"/>
@@ -87,24 +105,21 @@
 <path d="M517.185 256.176L489.076 207.304H545.614L517.185 256.176Z" fill="#F9F9F9"/>
 </svg>
 
-      </div>
-      <div class="single-news">
-        <h1 class="single-news__title">Vernadsky. За перший день у відділ продажів завітало близько 70 покупців</h1>
-        <div class="single-news__data">6 березня 2020</div>
-        <div class="single-news__text">Мрієте жити у діловому центрі столиці на Солом’янці? Інтергал-Буд втілив ваші задуми у реальність. CITY HUB – яскраве відображення сучасності, функціональності, унікального місцерозташування та комфортних родзинок. Приємний бонус – зараз при купівлі квартири діє знижка 12%. Не зволікайте, телефонуйте, менеджери підберуть ідеальний саме для вас варіант. Встигайте, акція діє тільки до 06.04.20 р.</div>
-        <div class="single-news__text single-news__text-important">1 лютого урочисто і з прекрасним настроєм було розпочато історію житлового комлексу бізнес-класу CITY HUB. Продажі стартували!</div>
-        <ul class="single-news__list">
-          <li class="single-news__el">«Інтергал-Буд» входить у ТОП-3 найбільших та найнадійніших забудовників України</li>
-          <li class="single-news__el">Лауреат професійної премії «Український будівельний Олімп – 2018» у номінації «Лідер будівельної галузі»</li>
-          <li class="single-news__el">Переможець конкурсу «Бренд року» в 2016, 2017 та 2018 роках в категорії «Лідер за обсягами будівництва» в номінації «Бездоганна репутація»</li>
-          <li class="single-news__el">Лауреат премії IBuild-2017 у номінації «Якість та стабільність будівництва»</li>
-          <li class="single-news__el">Переможець номінації «Девелопер року в житловій нерухомості. Україна» міжнародної Премії Країн Східної Європи та Азії – EEА PROJECT AWARDS 2017</li>
-          <li class="single-news__el">Володар титулу «Лідер будівельної галузі 2016» згідно рейтингу незалежного агентства «Національний бізнес-рейтинг»</li>
-        </ul>
-        <div class="single-news__slider">
-          <div class="single-news__slider-el"><img src="/wp-content/themes/vernadskiy/assets/images/news/1.jpg"></div>
         </div>
-        <div class="single-news__video"><img src="/wp-content/themes/vernadskiy/assets/images/news/1.jpg"></div>
+        <div class="webcam__slider js-webcam__slider">
+          <div class="webcam__slider-el">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/q0hyYWKXF0Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="webcam__slider-el">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/eJnQBXmZ7Ek" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="webcam__slider-el">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ywvRgGAd2XI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="webcam__slider-el">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/L3wKzyIN1yk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
     </section>
     <div class="menu js-menu no-scroll">

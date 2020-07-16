@@ -13,44 +13,45 @@ block scripts
 
 
 block content
-    section.payment
-        include ./includes/breadcrumb
-        h1.title Повна оплата
-        // svg лежит в html файле, повторяется на многих страницах. svg-all-bg.html
-        .payment__bg.wb-all__bg
-            include ../includes/svg-all-bg.html
-        .beautiful__block.beautiful__block-first.wb-all.wb-show
-            .payment__content.beautiful__content
-                h1.title Повна оплата
-                div.payment__text Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.
-                div.payment__text Розстрочка безпосередньо від забудовника – це завжди вигідно та зручно! Така інвестиція легка в оформленні, надійна в простих умовах угоди та у відсутністі комісій і банківських відсотків.
-                div.payment__text Компанія «Інтергал-Буд» дбає про своїх покупців. Забудовник пропонує унікальну можливість придбати житло бізнес-класу без будь-якого фінансового для вас дискомфорту: не потрібно виводити великі суми із власного обігу та витрачати свій цінний час на зайве оформлення документів.
-            .wb-all__fishka
-                // svg лежит в php файле, повторяется на многих страницах, меняется только картинка внутри svg-bg.php
-                include ../includes/svg-bg.php
-        .beautiful__block.wb-all.wb-show
-            .payment__content.beautiful__content
-                div.payment__text Крім стандартних умов розстрочки до 1 років, з мінімальним першим внеском 30% ви маєте можливість обрати квартиру у розстрочку до 6 місяців з мінімальним першим внеском 50%.
-                div.payment__list-title ПЕРЕВАГИ:
-                ul.payment__list
-                    li.payment__list-el лише паспорт та код для оформлення договору;
-                    li.payment__list-el не потрібна довідка про доходи та поручитель;
-                    li.payment__list-el дострокове погашення без штрафних санкцій;
-                    li.payment__list-el найкоротший термін укладення угоди.
-            .wb-all__fishka
-                // svg лежит в php файле, повторяется на многих страницах, меняется только картинка внутри svg-bg.php
-                include ../includes/svg-bg.php
-        .beautiful__block.wb-all.wb-show
-            .payment__content.beautiful__content
-                div.payment__text «Інтергал-Буд» цінує час та гроші своїх клієнтів! Відвідайте відділ продажу комплексу, наші фахівці розрахують оптимальний для вас варіант оформлення розтермінування.
-                ul.payment__list
-                    li.payment__list-el мінімальний перший внесок - 30%;
-                    li.payment__list-el виплати у національній валюті - гривні;
-                    li.payment__list-el розстрочка до 1 року.
-                a.payment__link.link Обрати <br> квартиру
-            .wb-all__fishka
-                // svg лежит в php файле, повторяется на многих страницах, меняется только картинка внутри svg-bg.php
-                include ../includes/svg-bg.php
+    section.main
+        .payment
+            include ./includes/breadcrumb
+            h1.title Повна оплата
+            // svg лежит в html файле, повторяется на многих страницах. svg-all-bg.html
+            .payment__bg.wb-all__bg
+                include ../includes/svg-all-bg.html
+            .beautiful__block.beautiful__block-first.wb-all.wb-show
+                .payment__content.beautiful__content
+                    h1.title Повна оплата
+                    div.payment__text Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.
+                    div.payment__text Розстрочка безпосередньо від забудовника – це завжди вигідно та зручно! Така інвестиція легка в оформленні, надійна в простих умовах угоди та у відсутністі комісій і банківських відсотків.
+                    div.payment__text Компанія «Інтергал-Буд» дбає про своїх покупців. Забудовник пропонує унікальну можливість придбати житло бізнес-класу без будь-якого фінансового для вас дискомфорту: не потрібно виводити великі суми із власного обігу та витрачати свій цінний час на зайве оформлення документів.
+                .wb-all__fishka
+                    // svg лежит в php файле, повторяется на многих страницах, меняется только картинка внутри svg-bg.php
+                    include ../includes/svg-bg.php
+            .beautiful__block.wb-all.wb-show
+                .payment__content.beautiful__content
+                    div.payment__text Крім стандартних умов розстрочки до 1 років, з мінімальним першим внеском 30% ви маєте можливість обрати квартиру у розстрочку до 6 місяців з мінімальним першим внеском 50%.
+                    div.payment__list-title ПЕРЕВАГИ:
+                    ul.payment__list
+                        li.payment__list-el лише паспорт та код для оформлення договору;
+                        li.payment__list-el не потрібна довідка про доходи та поручитель;
+                        li.payment__list-el дострокове погашення без штрафних санкцій;
+                        li.payment__list-el найкоротший термін укладення угоди.
+                .wb-all__fishka
+                    // svg лежит в php файле, повторяется на многих страницах, меняется только картинка внутри svg-bg.php
+                    include ../includes/svg-bg.php
+            .beautiful__block.wb-all.wb-show
+                .payment__content.beautiful__content
+                    div.payment__text «Інтергал-Буд» цінує час та гроші своїх клієнтів! Відвідайте відділ продажу комплексу, наші фахівці розрахують оптимальний для вас варіант оформлення розтермінування.
+                    ul.payment__list
+                        li.payment__list-el мінімальний перший внесок - 30%;
+                        li.payment__list-el виплати у національній валюті - гривні;
+                        li.payment__list-el розстрочка до 1 року.
+                    a.payment__link.link Обрати <br> квартиру
+                .wb-all__fishka
+                    // svg лежит в php файле, повторяется на многих страницах, меняется только картинка внутри svg-bg.php
+                    include ../includes/svg-bg.php
 
 block footer
     include ../includes/menu

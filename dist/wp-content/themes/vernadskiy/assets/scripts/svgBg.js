@@ -143,16 +143,7 @@ document.addEventListener('DOMContentLoaded',function (e) {
     },300);
 
 });
-document.addEventListener('load',function (e) {
-    const width = window.innerWidth;
-    if(width > 1023){
-        svg(offset['desctop'].big,offset['desctop'].small );
-    } else if(width > 767){
-        svg(offset['tablet'].big,offset['tablet'].small );
-    } else {
-        svg(offset['mobile'].big,offset['mobile'].small );
-    }
-});
+document.addEventListener('load',ressize);
 function debounce(f, t) {
     return function (args) {
         let previousCall = this.lastCall;

@@ -12,7 +12,11 @@ class Smooth {
         this.scroll = this.scroll.bind(this);
 
         document.addEventListener('mousedown',function (e) {
+            console.log(e);
+
             function clickedOnScrollbar(mouseX) {
+                console.log('mouseX', mouseX);
+                console.log('document.documentElement.clientWidth', document.documentElement.clientWidth);
                 if(document.documentElement.clientWidth <= mouseX){return true}
                 return false;
             }
@@ -25,8 +29,10 @@ class Smooth {
     scrollHandler(e) {
         var scroll = true;
         if( this.ignore && $(e.path).closest(this.ignore).length !== 0 || window.isKeyDown()) {
+
             scroll = false;
         }
+
         if (!this.running && scroll) {
             this.top = this.element.pageYOffset || this.element.scrollTop || 0;
             this.running = true;
@@ -46,11 +52,9 @@ class Smooth {
             this.element.scrollTo(0, this.top);
 
             this.currentDistance *= this.isDistanceAsc === true ? this.acceleration : this.deceleration;
-
             ((Math.abs(this.currentDistance) < 0.1 ) && this.isDistanceAsc === false) ||
-            this.top > ( $(document).height() - document.documentElement.clientHeight) ||
+            this.top > ( $(document).height() - window.innerHeight) ||
             this.top <= 0 ? this.running = false : 1;
-
             requestAnimationFrame(this.scroll);
         }
     }
@@ -73,10 +77,10 @@ class Smooth {
 };
 const keys = {37: 1, 38: 1, 39: 1, 40: 1};
 let body;
-document.addEventListener('DOMContentLoaded',function () {
+// document.addEventListener('DOMContentLoaded',function () {
     body = new Smooth({ignore:'.map4'});
     body.key();
-});
+// });
 
 function preventDefault(e) {
     e = e || window.event;

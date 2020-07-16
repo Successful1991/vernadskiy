@@ -1,8 +1,9 @@
 .payment{
-  position: relative;
+  //position: relative;
   display: inline-block;
   width: 100%;
   min-height: 100vh;
+  height: initial;
 
   &__text{
     font-family: "Manrope";

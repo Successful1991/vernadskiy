@@ -4,10 +4,10 @@
 function init() {
     // sliders init start
 
-    $('.js-mouse-scroll').on('click',function (e) {
-        e.preventDefault();
-        $("html").animate({scrollTop: $('.main-first-screen').height()}, 600)
-    });
+    // $('.js-mouse-scroll').on('click',function (e) {
+    //     //     e.preventDefault();
+    //     //     $("html").animate({scrollTop: $('.main-first-screen').height()}, 600)
+    //     // });
 
     $('.js-documentation__slider').slick({
         slidesToShow: 3,
@@ -43,6 +43,59 @@ function init() {
             '<path fill-rule="evenodd" clip-rule="evenodd" d="M21 11.7291C16.4177 11.7291 11.8353 11.7291 7.25298 11.7291C8.8043 13.2804 10.3556 14.8317 11.9069 16.3831C11.1432 17.1706 10.3556 17.9344 9.59189 18.6981C6.72792 15.8341 3.86396 12.9702 1 10.1062C3.86396 7.21838 6.72793 4.35442 9.59189 1.49045C10.3556 2.25418 11.1432 3.04177 11.9069 3.80549C10.3556 5.3568 8.8043 6.90811 7.25298 8.45943C11.8353 8.45943 16.4177 8.45943 21 8.45943C21 9.55728 21 10.6551 21 11.7291Z" stroke="#323131"/>\n' +
             '</svg>',
     });
+    $('.js-webcam__slider').slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        // autoplay: true,
+        autoplaySpeed: 2000,
+        // arrows: true,
+        prevArrow: '<div class="webcam__arrow webcam__arrow-left"><svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+            '<path fill-rule="evenodd" clip-rule="evenodd" d="M21 11.7291C16.4177 11.7291 11.8353 11.7291 7.25298 11.7291C8.8043 13.2804 10.3556 14.8317 11.9069 16.3831C11.1432 17.1706 10.3556 17.9344 9.59189 18.6981C6.72792 15.8341 3.86396 12.9702 1 10.1062C3.86396 7.21838 6.72793 4.35442 9.59189 1.49045C10.3556 2.25418 11.1432 3.04177 11.9069 3.80549C10.3556 5.3568 8.8043 6.90811 7.25298 8.45943C11.8353 8.45943 16.4177 8.45943 21 8.45943C21 9.55728 21 10.6551 21 11.7291Z" stroke="#323131"/>\n' +
+            '</svg>',
+        nextArrow: '<div class="webcam__arrow webcam__arrow-right"><svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+            '<path fill-rule="evenodd" clip-rule="evenodd" d="M21 11.7291C16.4177 11.7291 11.8353 11.7291 7.25298 11.7291C8.8043 13.2804 10.3556 14.8317 11.9069 16.3831C11.1432 17.1706 10.3556 17.9344 9.59189 18.6981C6.72792 15.8341 3.86396 12.9702 1 10.1062C3.86396 7.21838 6.72793 4.35442 9.59189 1.49045C10.3556 2.25418 11.1432 3.04177 11.9069 3.80549C10.3556 5.3568 8.8043 6.90811 7.25298 8.45943C11.8353 8.45943 16.4177 8.45943 21 8.45943C21 9.55728 21 10.6551 21 11.7291Z" stroke="#323131"/>\n' +
+            '</svg>',
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1
+                }
+            },
+        ]
+    });
+    $('.js-gallery__slider').on('init', function (event, slick, currentSlide, nextSlide) {
+        console.log('init');
+        console.log(slick);
+        $('.js-gallery__amount-slide-all').html( slick.slideCount);
+        $('.js-gallery__amount-slide-current').html(slick.currentSlide+1);
+    });
+    $('.js-gallery__slider').slick({
+        slidesToShow: 1,
+        // slidesToScroll: 1,
+        // autoplay: true,
+        autoplaySpeed: 2000,
+        centerMode: true,
+        variableWidth: true,
+        prevArrow: '<div class="gallery__arrow gallery__arrow-left"><svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+            '<path fill-rule="evenodd" clip-rule="evenodd" d="M21 11.7291C16.4177 11.7291 11.8353 11.7291 7.25298 11.7291C8.8043 13.2804 10.3556 14.8317 11.9069 16.3831C11.1432 17.1706 10.3556 17.9344 9.59189 18.6981C6.72792 15.8341 3.86396 12.9702 1 10.1062C3.86396 7.21838 6.72793 4.35442 9.59189 1.49045C10.3556 2.25418 11.1432 3.04177 11.9069 3.80549C10.3556 5.3568 8.8043 6.90811 7.25298 8.45943C11.8353 8.45943 16.4177 8.45943 21 8.45943C21 9.55728 21 10.6551 21 11.7291Z" stroke="#323131"/>\n' +
+            '</svg>',
+        nextArrow: '<div class="gallery__arrow gallery__arrow-right"><svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+            '<path fill-rule="evenodd" clip-rule="evenodd" d="M21 11.7291C16.4177 11.7291 11.8353 11.7291 7.25298 11.7291C8.8043 13.2804 10.3556 14.8317 11.9069 16.3831C11.1432 17.1706 10.3556 17.9344 9.59189 18.6981C6.72792 15.8341 3.86396 12.9702 1 10.1062C3.86396 7.21838 6.72793 4.35442 9.59189 1.49045C10.3556 2.25418 11.1432 3.04177 11.9069 3.80549C10.3556 5.3568 8.8043 6.90811 7.25298 8.45943C11.8353 8.45943 16.4177 8.45943 21 8.45943C21 9.55728 21 10.6551 21 11.7291Z" stroke="#323131"/>\n' +
+            '</svg>',
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+        ]
+    });
+
+    $('.js-gallery__slider').on('afterChange', function (event, slick, currentSlide, nextSlide) {
+        $('.js-gallery__amount-slide-current').html(currentSlide + 1);
+    });
 
     // $('body').on('click','.js-call',function () {
     //   $('.js-call__popup').css({'transform':'scale(1, 1)'});
@@ -56,10 +109,10 @@ function init() {
     // $('.js-video__popup-close').on('click',function () {
     //     $('.js-video__popup').removeClass('active');
     // });
-    setTimeout(function () {
-        // $('.wb-1').addClass('active');
-        $('.preloader').css('display','none');
-    },0);
+    // setTimeout(function () {
+    //     // $('.wb-1').addClass('active');
+    //     $('.preloader').css('display','none');
+    // },0);
     $('.js-burger').on('click', e => {
         $('.js-menu').addClass('menu-active');
     });

@@ -29,7 +29,7 @@
         padding: 0 15px 0;
       }
       @include to(480px) {
-        font-size: 12px;
+        //font-size: 12px;
         padding: 0 10px 0;
       }
       text-decoration: none;
@@ -270,6 +270,7 @@
 
 @media screen and (max-width: 1023px){
   .breadcrumb{
+    width: calc(100% - 20px - var(--padding-wrap));
     margin: var(--padding-wrap) 0 0 calc(20px + var(--padding-wrap));
   }
   .lang,.menu .lang {
