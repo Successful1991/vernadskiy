@@ -58,7 +58,7 @@
       left: 0;
       height: 100%;
       width: calc(var(--padding-wrap) * 1.25);
-      background: url("/assets/images/documentation/bg-left.png") no-repeat center /contain;
+      background: url("/wp-content/themes/vernadsky/assets/images/documentation/bg-left.png") no-repeat center /contain;
     }
     &-right{
       position: absolute;
@@ -66,7 +66,7 @@
       right: 0;
       height: 100%;
       width: calc(var(--padding-wrap) * 1.25);
-      background: url("/assets/images/documentation/bg-right.png") no-repeat center center /contain;
+      background: url("/wp-content/themes/vernadsky/assets/images/documentation/bg-right.png") no-repeat center center /contain;
     }
   }
 }

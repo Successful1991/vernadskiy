@@ -1,0 +1,107 @@
+extends ../layout/main
+block variable
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="/wp-content/themes/vernadsky/assets/styles/main.min.css")
+block scripts
+    script(src='/wp-content/themes/vernadsky/assets/scripts/libs.js')
+    script(src='/wp-content/themes/vernadsky/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/vernadsky/assets/scripts/svgBg.js')
+    script(src='/wp-content/themes/vernadsky/assets/scripts/pagination.js')
+    script(src='/wp-content/themes/vernadsky/assets/scripts/index.js')
+    script paginationInit({wrap: '.js-pagination',dots: true,dotsAmount: 3,dotsLast: true,arrow: true,extremeArrow: false, elementInPage: 8, el:'.js-pagination__element'});
+
+
+block content
+    section.main
+        .construction
+            include ./includes/breadcrumb
+            h1.title Хід будівництва
+            .construction__bg.wb-all__bg
+                include ../includes/svg-all-bg.html
+            .construction__content.js-construction
+                .construction__element.js-pagination__element(data-id='10')
+
+                    .construction__element-img
+                        img(src='/wp-content/themes/vernadsky/assets/images/construction/1.jpg')
+                    .construction__element-text Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.
+                    .construction__element-data березня 2020
+                    .construction__element-link.link Дивитися звіт
+                .construction__element.js-pagination__element(data-id='10')
+
+                    .construction__element-img
+                        img(src='/wp-content/themes/vernadsky/assets/images/construction/1.jpg')
+                    .construction__element-text Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.
+                    .construction__element-data березня 2020
+                    .construction__element-link.link Дивитися звіт
+                .construction__element.js-pagination__element(data-id='10')
+
+                    .construction__element-img
+                        img(src='/wp-content/themes/vernadsky/assets/images/construction/1.jpg')
+                    .construction__element-text Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.
+                    .construction__element-data березня 2020
+                    .construction__element-link.link Дивитися звіт
+                .construction__element.js-pagination__element(data-id='10')
+
+                    .construction__element-img
+                        img(src='/wp-content/themes/vernadsky/assets/images/construction/1.jpg')
+                    .construction__element-text Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.
+                    .construction__element-data березня 2020
+                    .construction__element-link.link Дивитися звіт
+                .construction__element.js-pagination__element(data-id='10')
+
+                    .construction__element-img
+                        img(src='/wp-content/themes/vernadsky/assets/images/construction/1.jpg')
+                    .construction__element-text Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.
+                    .construction__element-data березня 2020
+                    .construction__element-link.link Дивитися звіт
+                .construction__element.js-pagination__element(data-id='10')
+
+                    .construction__element-img
+                        img(src='/wp-content/themes/vernadsky/assets/images/construction/1.jpg')
+                    .construction__element-text Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.
+                    .construction__element-data березня 2020
+                    .construction__element-link.link Дивитися звіт
+                .construction__element.js-pagination__element(data-id='10')
+
+                    .construction__element-img
+                        img(src='/wp-content/themes/vernadsky/assets/images/construction/1.jpg')
+                    .construction__element-text Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.
+                    .construction__element-data березня 2020
+                    .construction__element-link.link Дивитися звіт
+                .construction__element.js-pagination__element(data-id='10')
+
+                    .construction__element-img
+                        img(src='/wp-content/themes/vernadsky/assets/images/construction/1.jpg')
+                    .construction__element-text Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.
+                    .construction__element-data березня 2020
+                    .construction__element-link.link Дивитися звіт
+                .construction__element.js-pagination__element(data-id='10')
+
+                    .construction__element-img
+                        img(src='/wp-content/themes/vernadsky/assets/images/construction/1.jpg')
+                    .construction__element-text Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.
+                    .construction__element-data березня 2020
+                    .construction__element-link.link Дивитися звіт
+                .construction__element.js-pagination__element(data-id='10')
+
+                    .construction__element-img
+                        img(src='/wp-content/themes/vernadsky/assets/images/construction/1.jpg')
+                    .construction__element-text Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.
+                    .construction__element-data березня 2020
+                    .construction__element-link.link Дивитися звіт
+
+            .construction__popup
+                a(href='/wp-content/themes/vernadsky/assets/images/construction/2.jpg').js-construction__popup
+            .pagination.js-pagination
+
+block footer
+    include ../includes/menu
+    footer.footer
+        include ../includes/footer
+    // include ../pages/includes/forms
+block header
+    header.header
+        include ../includes/header.pug

@@ -1,8 +1,17 @@
-var dotsAmount = 0;
-var elementInPage = 8;
-var currentPage = 1;
-var filterElements = [];
-let currentDots = {first: 1, last: 3};
+
+let paginationDefaults = {
+    wrap: '.pagination',
+    clickClass : 'js-pagination',
+    dots: false,
+    dotsLast: false,
+    arrow: false,
+    extremeArrow: false,
+    dotsAmount : 0,
+    elementInPage : 8,
+    currentPage : 1,
+    filterElements : [],
+    currentDots : {first: 1, last: 3},
+};
 
 (function () {
     $('.js-pagination').on('click', function (e) {
@@ -11,61 +20,56 @@ let currentDots = {first: 1, last: 3};
 })();
 
 function paginationInit(conf) {
-    elementInPage = conf.elementInPage || 8;
-    filterElements = filterElements.length === 0 ? $(conf.el) : filterElements;
-    var defaults = {
-        wrap: conf.wrap||'.pagination',
-        clickClass : 'js-pagination',
-        dots: conf.dots,
-        dotsAmount: conf.dotsAmount,
-        dotsLast: conf.dotsLast,
-        arrow: conf.arrow,
-        extremeArrow: conf.extremeArrow
-    };
-    dotsAmount = defaults.dotsAmount;
+    updateConf(conf);
 
-    if(defaults.dots) {
-        $(defaults.wrap).append(createDots(defaults.dotsAmount,defaults.dotsLast ) );
+    if(paginationDefaults.dots) {
+        $(paginationDefaults.wrap).append(createDots(paginationDefaults.dotsAmount,paginationDefaults.dotsLast ) );
     }
-    if(defaults.arrow) {
-        $(defaults.wrap).prepend(createArrow(['pagination__arrow--left','disabled'], "prev", 1));
-        $(defaults.wrap).append(createArrow(['pagination__arrow--right'], "next", 1));
+    if(paginationDefaults.arrow) {
+        $(paginationDefaults.wrap).prepend(createArrow(['pagination__arrow--left','disabled'], "prev", 1));
+        $(paginationDefaults.wrap).append(createArrow(['pagination__arrow--right'], "next", 1));
     }
-    if(defaults.extremeArrow) {
-        $(defaults.wrap).prepend(createArrow(['pagination__arrow--left','disabled'], "first", 2));
-        $(defaults.wrap).append(createArrow(['pagination__arrow--right'], "last", 2));
+    if(paginationDefaults.extremeArrow) {
+        $(paginationDefaults.wrap).prepend(createArrow(['pagination__arrow--left','disabled'], "first", 2));
+        $(paginationDefaults.wrap).append(createArrow(['pagination__arrow--right'], "last", 2));
     }
 
-    checkedPage(currentPage);
+    checkedPage(paginationDefaults.currentPage);
 }
 
 function update(conf) {
-    elementInPage = conf.elementInPage || 8;
-    filterElements = filterElements.length === 0 ? $(conf.el) : filterElements;
-    var defaults = {
-        wrap: conf.wrap||'.pagination',
-        clickClass : 'js-pagination',
-        dots: true,
-        dotsAmount: 3,
-        dotsLast: true,
-        arrow: true,
-        extremeArrow: true
-    };
-    dotsAmount = defaults.dotsAmount;
+    updateConf(conf);
+    // if(paginationDefaults.dots) {
+    //     $(paginationDefaults.wrap).append(createDots(paginationDefaults.dotsAmount,paginationDefaults.dotsLast ) );
+    // }
 
-    console.log(filterElements, conf.el);
-    if(defaults.dots) {
-        $(defaults.wrap).append(createDots(defaults.dotsAmount,defaults.dotsLast ) );
-    }
-    checkedPage(currentPage);
+    checkedPage(paginationDefaults.currentPage);
 }
+
+function updateConf(conf) {
+    paginationDefaults.elementInPage = conf.elementInPage || 8;
+    paginationDefaults.filterElements = paginationDefaults.filterElements.length === 0 ? $(conf.el) : paginationDefaults.filterElements;
+    paginationDefaults.wrap = conf.wrap||'.pagination';
+    paginationDefaults.clickClass = 'js-pagination';
+    paginationDefaults.dots = conf.dots;
+    paginationDefaults.dotsAmount = conf.dotsAmount;
+    paginationDefaults.dotsLast = conf.dotsLast;
+    paginationDefaults.arrow = conf.arrow;
+    paginationDefaults.extremeArrow = conf.extremeArrow;
+    paginationDefaults.dotsAmount = conf.dotsAmount;
+
+    // if(paginationDefaults.dots) {
+    //     $(paginationDefaults.wrap).append(createDots(paginationDefaults.dotsAmount,paginationDefaults.dotsLast ) );
+    // }
+}
+
 
 function createDots(amount) {
     var el = document.createElement('ul');
     el.className = 'dots';
     for (let i = 1; i <= amount; i++){
         el.append(createDot(i, i));
-        currentDots.last = i;
+        paginationDefaults.currentDots.last = i;
     }
     return el
 }
@@ -90,8 +94,9 @@ function createDot(index, data){
 }
 function pagination(page) {
     // $('html,body').animate( {scrollTop: $('.js-pagination__list').offset().top}, 0 );
-    $(filterElements).each(function (i, el) {
-       if(i+1 > page * elementInPage - elementInPage && i+1 <= page * elementInPage) {
+    let elAmount = paginationDefaults.elementInPage;
+    $(paginationDefaults.filterElements).each(function (i, el) {
+       if(i+1 > page * elAmount - elAmount && i+1 <= page * elAmount) {
             $(el).show();
        } else {
            $(el).hide();
@@ -101,15 +106,15 @@ function pagination(page) {
     ressize();
 }
 
-function checkedPage(pages) {
+function checkedPage(pages, conf) {
     var page = {
-        last: Math.ceil(filterElements.length/elementInPage),
+        last: Math.ceil(paginationDefaults.filterElements.length/paginationDefaults.elementInPage),
         current: pages,
     };
     $('.dots__element.active').removeClass('active');
     hideDots(page);
-    changePage(page);
-    $('.dots__element[data-page='+ currentPage +']').addClass('active');
+    changePage(page, conf);
+    $('.dots__element[data-page='+ paginationDefaults.currentPage +']').addClass('active');
 }
 
 function hideDots(page) {
@@ -126,30 +131,31 @@ function hideDots(page) {
     }
 }
 
-function changePage(page){
+function changePage(page, conf){
     if(page.current !== undefined) {
         switch (page.current){
             case "first":
-                currentPage = 1;
+                paginationDefaults.currentPage = 1;
                 break;
             case "prev":
-                currentPage = currentPage > 1?currentPage-1: 1;
+                paginationDefaults.currentPage = paginationDefaults.currentPage > 1?paginationDefaults.currentPage-1: 1;
                 break;
             case "next":
-                currentPage = currentPage < page.last?currentPage+1: page.last;
+                paginationDefaults.currentPage = paginationDefaults.currentPage < page.last?paginationDefaults.currentPage+1: page.last;
                 break;
             case "last":
-                currentPage = page.last;
+                paginationDefaults.currentPage = page.last;
                 break;
             // case "more":
             //     currentPage = currentPage + 3 < page.last?currentPage+3: page.last - 3;
             //     break;
             default:
-                currentPage = +page.current;
+                paginationDefaults.currentPage = +page.current;
         }
     }
-    changeDots(currentPage, page.last);
-    pagination(currentPage);
+
+    changeDots(paginationDefaults.currentPage, page.last, conf);
+    pagination(paginationDefaults.currentPage);
 }
 
 function changeDots(page, last) {
@@ -166,61 +172,76 @@ function changeDots(page, last) {
         $('.pagination__arrow--right').removeClass('disabled');
     }
     if(last >= 3) {
+    //     console.log('page', page );
+    //     console.log('currentDots', currentDots );
+    //     console.log('last', last );
 
-        if( page < currentDots.first && page < 2 ){
-            currentDots.first = 1;
-            $('.dots__element').map( (i,li) => {
-                li.dataset.page =  i;
-                li.innerHTML =  i;
-                currentDots.last = i ;
-            })
-        } else if( page < currentDots.first && page === 2 ){
-            currentDots.first = page - 1;
-            $('.dots__element').map( (i,li) => {
-                li.dataset.page =  page + i - 1;
-                li.innerHTML =  page + i - 1;
-                currentDots.last = page + i - 1;
-            })
-        } else if(page > currentDots.last && page < last -1) {
-            currentDots.first = page;
-            $('.dots__element').map( (i,li) => {
-                li.dataset.page =  page + i - 2;
-                li.innerHTML =  page + i - 2;
-                currentDots.last = page + i - 2;
-            })
-        } else if(page > currentDots.last && page < last ) {
-            currentDots.first = page - 1;
-            $('.dots__element').map( (i,li) => {
-                li.dataset.page =  page + i - 1;
-                li.innerHTML =  page + i - 1;
-                currentDots.last = page + i - 1;
-            })
-        }
-        if(page === last) {
-            currentDots.first = page - 2;
-            $('.dots__element').map( (i,li) => {
-                li.dataset.page =  page + i - 2;
-                li.innerHTML =  page + i - 2;
-                currentDots.last = page + i - 2;
-            })
-        } else if( page === 1 ) {
-            currentDots.first = 1;
-            $('.dots__element').map( (i,li) => {
-                li.dataset.page = page + i;
-                li.innerHTML =  page + i;
-                currentDots.last = page + i;
-            })
-        }
+        // if( page < currentDots.first && page < 2 ){
+        //     currentDots.first = 1;
+        //     $('.dots__element').map( (i,li) => {
+        //         li.dataset.page =  i;
+        //         li.innerHTML =  i;
+        //         currentDots.last = i ;
+        //     })
+        // } else if( page < currentDots.first && page === 2 ){
+        //     currentDots.first = page - 1;
+        //     $('.dots__element').map( (i,li) => {
+        //         li.dataset.page =  page + i - 1;
+        //         li.innerHTML =  page + i - 1;
+        //         currentDots.last = page + i - 1;
+        //     })
+        // } else if(page > currentDots.last && page < last -1) {
+        //     currentDots.first = page;
+        //     $('.dots__element').map( (i,li) => {
+        //         li.dataset.page =  page + i - 2;
+        //         li.innerHTML =  page + i - 2;
+        //         currentDots.last = page + i;
+        //     })
+        // } else if(page > currentDots.last && page < last ) {
+        //     currentDots.first = page - 1;
+        //     $('.dots__element').map( (i,li) => {
+        //         li.dataset.page =  page + i - 1;
+        //         li.innerHTML =  page + i - 1;
+        //         currentDots.last = page + i - 1;
+        //     })
+        // }
+        // if(page === last) {
+        //     currentDots.first = page - 2;
+        //     $('.dots__element').map( (i,li) => {
+        //         li.dataset.page =  page + i - 2;
+        //         li.innerHTML =  page + i - 2;
+        //         currentDots.last = page + i - 2;
+        //     })
+        // } else if( page === 1 ) {
+        //     currentDots.first = 1;
+        //     $('.dots__element').map( (i,li) => {
+        //         li.dataset.page = page + i;
+        //         li.innerHTML =  page + i;
+        //         currentDots.last = page + i;
+        //     })
+        // }
+    // }
 
-
+    let centerAmountMin =  Math.floor(paginationDefaults.dotsAmount/2);
+    let centerAmountMax =  Math.ceil(paginationDefaults.dotsAmount/2);
+    if(page > last -  centerAmountMax) {
+        paginationDefaults.currentDots.first = last - paginationDefaults.dotsAmount + 1;
+        paginationDefaults.currentDots.last = last;
+    } else if ( page <= 1 + centerAmountMin ) {
+        paginationDefaults.currentDots.first = 1;
+        paginationDefaults.currentDots.last = paginationDefaults.dotsAmount;
+    } else {
+        paginationDefaults.currentDots.first = page - centerAmountMin;
+        paginationDefaults.currentDots.last = page + centerAmountMax;
     }
 
-
-
-    if(last <= 3) {
+    // if(last > paginationDefaults.dotsAmount) {
         $('.dots__element').map( (i,li) => {
-            $(li).removeClass('active');
-            if(i+1 === page) {$(li).addClass('active');}
+            let el = $(li);
+            el.remove('active');
+            li.dataset.page = paginationDefaults.currentDots.first + i;
+            el.html( paginationDefaults.currentDots.first + i);
+            if(paginationDefaults.currentDots.first + i === page) $(li).add('active');
         })
     }
 }

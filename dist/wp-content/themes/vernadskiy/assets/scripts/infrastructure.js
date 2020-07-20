@@ -1,5 +1,5 @@
 
-(function ($) {
+function initMap() {
 	const jsonArrData = [
         {
             "name_ua": "Гатне",
@@ -118,21 +118,21 @@
             "name_en": "",
             "name_ru": "Укрпочта 08160",
             "cor": "50.357198, 30.406656",
-            "categorie": "postOffice"
+            "categorie": "np"
         },
         {
             "name_ua": "Укрпошта 08136",
             "name_en": "",
             "name_ru": "Укрпочта 08136",
             "cor": "50.372546, 30.371576",
-            "categorie": "postOffice"
+            "categorie": "np"
         },
         {
             "name_ua": "Нова пошта №1, Крюковщина",
             "name_en": "",
             "name_ru": "Новая почта №1, Крюковщина",
             "cor": "50.372871, 30.371940",
-            "categorie": "postOffice"
+            "categorie": "np"
         },
         {
             "name_ua": "Відділення ПриватБанк",
@@ -427,58 +427,49 @@
 			leg = null;
 		}
 		let pathIcon;
-		let dirs = '/dist/assets/images/';
-		// let dirs = '/wp-content/themes/gatne/assets/images/';
+		// let dirs = '/dist/assets/images/';
+		let dirs = '/wp-content/themes/vernadskiy/assets/images/';
 
 		switch (categorie) {
 			case 'child':
-				pathIcon = dirs+'location/child.svg';
+				pathIcon = dirs+'infrastructure/icon/point-child.svg';
 				break;
 			case 'school':
-				pathIcon = dirs+'location/school.svg';
-				break;
-			case 'aero':
-				pathIcon = dirs+'location/aero.svg';
+				pathIcon = dirs+'infrastructure/icon/point-school.svg';
 				break;
 			case 'supermarket':
-				pathIcon = dirs+'location/supermarket.svg';
+				pathIcon = dirs+'infrastructure/icon/point-supermarket.svg';
 				break;
 			case 'hospital':
-				pathIcon = dirs+'location/hospital.svg';
+				pathIcon = dirs+'infrastructure/icon/point-hospital.svg';
 				break;
 			case 'metro':
-				pathIcon = dirs+'location/metro.svg';
+				pathIcon = dirs+'infrastructure/icon/point-metro.svg';
 				break;
 			case 'cafe':
-				pathIcon = dirs+'location/cafe.svg';
+				pathIcon = dirs+'infrastructure/icon/point-cafe.svg';
 				break;
 			case 'sport':
-				pathIcon = dirs+'location/sport.svg';
-				break;
-			case 'mall':
-				pathIcon = dirs+'location/mall.svg';
-				break;
-			case 'builderMarket':
-				pathIcon = dirs+'location/builderMarket.svg';
+				pathIcon = dirs+'infrastructure/icon/point-sport.svg';
 				break;
 			case 'park':
-				pathIcon = dirs+'location/park.svg';
+				pathIcon = dirs+'infrastructure/icon/point-park.svg';
 				break;
-			case 'postOffice':
-				pathIcon = dirs+'location/postOffice.svg';
+			case 'np':
+				pathIcon = dirs+'infrastructure/icon/point-np.svg';
 				break;
 			case 'bank':
-				pathIcon = dirs+'location/bank.svg';
+				pathIcon = dirs+'infrastructure/icon/point-bank.svg';
 				break;
-			case 'market':
-				pathIcon = dirs+'location/market.svg';
+			case 'trc':
+				pathIcon = dirs+'infrastructure/icon/point-trc.svg';
 				break;
 			case 'main':
-				pathIcon = dirs+'location/gatne.svg';
+				pathIcon = dirs+'infrastructure/icon/point-jk.svg';
 				break;
 		
 			default:
-				pathIcon = dirs+'location/point.svg';
+				pathIcon = dirs+'infrastructure/icon/point.svg';
 				break;
 		}
 		const nameUA = obj.name_ua;
@@ -961,4 +952,4 @@ var styleMap = [
 		addMarker(markers1[i]);
 	}
 
-})(jQuery);
+};

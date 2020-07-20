@@ -31,25 +31,25 @@ const paths = {
     templates: {
         pages: ['./src/pug/pages/*.pug','./src/pug/pages/includes/*.pug'],
         src: './src/pug/**/*.pug',
-        dest: './dist/wp-content/themes/vernadskiy'
+        dest: './dist/wp-content/themes/vernadsky'
     },
     styles: { 
         main: './src/assets/styles/main.scss',
         src: './src/assets/styles/**/*.scss',
-        dest: './dist/wp-content/themes/vernadskiy/assets/styles'
+        dest: './dist/wp-content/themes/vernadsky/assets/styles'
     },
     // scripts: {
     //     src: './src/assets/scripts/index-app.js',
     //     watch: './src/assets/scripts/**/*.js',
-    //     dest: './dist/wp-content/themes/vernadskiy/assets/scripts/'
+    //     dest: './dist/wp-content/themes/vernadsky/assets/scripts/'
     // },
     fonts: {
         src: './src/assets/fonts/**/*',
-        dest: './dist/wp-content/themes/vernadskiy/assets/fonts'
+        dest: './dist/wp-content/themes/vernadsky/assets/fonts'
     },
     images: {
         src: './src/assets/images/**/*',
-        dest: './dist/wp-content/themes/vernadskiy/assets/images'
+        dest: './dist/wp-content/themes/vernadsky/assets/images'
     },
     svgSprite: {
         src: './src/assets/svg-sprite/*.svg',
@@ -57,7 +57,7 @@ const paths = {
     },
     gulpModules: {
         src: './src/assets/scripts/modules/*.js',
-        dest: './dist/wp-content/themes/vernadskiy/assets/scripts/'
+        dest: './dist/wp-content/themes/vernadsky/assets/scripts/'
     },
     libs: {
         src: './src/assets/scripts/libs/libs.js',
@@ -66,11 +66,11 @@ const paths = {
     },
     static: {
         src: './src/static/**/*.*',
-        dest: './dist/wp-content/themes/vernadskiy/static/'
+        dest: './dist/wp-content/themes/vernadsky/static/'
     },
   	video: {
         src: './src/assets/video/**/*.*',
-        dest: './dist/wp-content/themes/vernadskiy/assets/video/'
+        dest: './dist/wp-content/themes/vernadsky/assets/video/'
     },
 };
 
@@ -95,7 +95,7 @@ function server() {
     browserSync.init({
 				//server: paths.root,
 				notify: false,
-				proxy: "vernadskiy",
+				proxy: "vernadsky",
     });
     browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }
@@ -246,15 +246,15 @@ const pathsProd = {
 		dest: './prod'
 	},
 	style: {
-		src: './dist/wp-content/themes/vernadskiy/assets/styles/*.css',
+		src: './dist/wp-content/themes/vernadsky/assets/styles/*.css',
 		dest: './prod/assets/styles',
 	},
 	js: {
-		src: './dist/wp-content/themes/vernadskiy/assets/scripts/*.js',
+		src: './dist/wp-content/themes/vernadsky/assets/scripts/*.js',
 		dest: './prod/assets/scripts',
 	},
 	fonts: {
-		src: './dist/wp-content/themes/vernadskiy/assets/fonts/**/*',
+		src: './dist/wp-content/themes/vernadsky/assets/fonts/**/*',
 		dest: './prod/assets/fonts'
 	},
 	static: {
@@ -262,7 +262,7 @@ const pathsProd = {
 		dest: './prod/static/'
 	},
 	images: {
-		src: './dist/wp-content/themes/vernadskiy/assets/images/**/*',
+		src: './dist/wp-content/themes/vernadsky/assets/images/**/*',
 		dest: './prod/assets/images'
 	},
 };

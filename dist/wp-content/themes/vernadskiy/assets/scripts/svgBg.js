@@ -163,7 +163,6 @@ window.addEventListener('resize', debounce(ressize, 100));
 
 function ressize() {
     const width = window.innerWidth;
-    console.log(width);
     if(width > 1023){
         svg(offset['desctop'].big,offset['desctop'].small );
     } else if(width > 767){

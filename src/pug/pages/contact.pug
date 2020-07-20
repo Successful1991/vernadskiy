@@ -4,12 +4,12 @@ block meta
     title= 'Home'
     meta(name='description', content='')
 block head
-    link(rel='stylesheet', href="/wp-content/themes/vernadskiy/assets/styles/main.min.css")
+    link(rel='stylesheet', href="/wp-content/themes/vernadsky/assets/styles/main.min.css")
 block scripts
-    script(src='/wp-content/themes/vernadskiy/assets/scripts/libs.js')
-    script(src='/wp-content/themes/vernadskiy/assets/scripts/index.js')
-    script(src='/wp-content/themes/vernadskiy/assets/scripts/scroll.js')
-    script(src='/wp-content/themes/vernadskiy/assets/scripts/svgBg.js')
+    script(src='/wp-content/themes/vernadsky/assets/scripts/libs.js')
+    script(src='/wp-content/themes/vernadsky/assets/scripts/index.js')
+    script(src='/wp-content/themes/vernadsky/assets/scripts/scroll.js')
+    script(src='/wp-content/themes/vernadsky/assets/scripts/svgBg.js')
 
 block content
     section.main
@@ -21,7 +21,7 @@ block content
             .contacts__bg-v32.wb-all__bg
                 include ../includes/V32.svg
             .contacts__bg-image.wb-all__bg
-                img(src='/wp-content/themes/vernadskiy/assets/images/contact/bg.jpg')
+                img(src='/wp-content/themes/vernadsky/assets/images/contact/bg.jpg')
             .contacts__content
                 .contacts__data
                     .contacts__title Зв’яжіться з нами:
@@ -41,20 +41,34 @@ block content
                 .contacts__maps
                     .contacts__title Ми на мапі:
                     .contacts__maps-image
-                        img(src='/wp-content/themes/vernadskiy/assets/images/contact/maps.jpg')
+                        img(src='/wp-content/themes/vernadsky/assets/images/contact/maps.jpg')
                     .contacts__maps-link.link Відкрити </br>у навігаторі
                 .contacts__forms
+                    .form__loader
+                        .lds-spinner
+                            div
+                            div
+                            div
+                            div
+                            div
+                            div
+                            div
+                            div
+                            div
+                            div
+                            div
+                            div
                     .contacts__title Напишіть нам
                     form(name='message' class='contacts__form')
                         legend.contacts__form-legend Наші менеджери зв’яжуться з вами у найкоротший час
                         label.contacts__form-label.contacts__form-label-name
-                            input(type='text' name='name' placeholder='ваше ім’я' required).contacts__form-input.js-contacts__form-input
+                            input(type='text' name='name' placeholder='ваше ім’я' required data-errormessage='имя не введено').js__form__input.contacts__form-input.js-contacts__form-input
                             span.form__info
                         label.contacts__form-label.contacts__form-label-tel
-                            input(type='tell' name='phone' placeholder='Телефон' required).contacts__form-input.js-contacts__form-input
+                            input(type='tel' name='phone' id='form-tel' placeholder='Телефон' required data-errormessage='телефон не введён').js__form__input.contacts__form-input.js-contacts__form-input
                             span.form__info
                         label.contacts__form-label.contacts__form-label-message
-                            input(type='text' name='message' placeholder='повідомлення').contacts__form-input.js-contacts__form-input
+                            input(type='text' name='message' placeholder='повідомлення' required ).js__form__input.contacts__form-input.js-contacts__form-input
                             span.form__info
                         button(type='submit' value='Надіслати').js-form__submit.contacts__form-submit Надіслати
 

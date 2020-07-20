@@ -1,0 +1,321 @@
+
+<!--mixin testCard(link, src, title, descr)-->
+<!--	a(href=link).card-item-->
+<!--		img.card-item__img(src=src alt='foto-1')-->
+<!--		h2.card-item__title=title-->
+<!--		p.card-item__descr=descr--><!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="notranslate" name="google">
+    <title>Home</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/wp-content/themes/vernadsky/assets/styles/main.min.css">
+  </head>
+  <body>
+    <div class="preloader js-preloader">
+
+</div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="position:absolute">
+	
+		<symbol id="icon-Webcam" viewBox="0 0 18 19">
+			<path d="M2.93 14.983c-.733.829-1.12 1.786-1.12 2.793v.844c0 .21.17.38.38.38h13.015c.21 0 .38-.17.38-.38v-.844c0-1.006-.387-1.964-1.12-2.792a8.584 8.584 0 0 0 2.838-6.38C17.303 3.86 13.443 0 8.698 0 3.954 0 .094 3.86.094 8.604a8.584 8.584 0 0 0 2.837 6.38zm11.895 2.793v.464H2.57v-.463c0-.825.328-1.617.947-2.309a8.56 8.56 0 0 0 5.181 1.74 8.559 8.559 0 0 0 5.18-1.739c.62.692.947 1.483.947 2.307zM8.698.76c4.326 0 7.845 3.519 7.845 7.844 0 4.326-3.52 7.844-7.845 7.844-4.325 0-7.844-3.518-7.844-7.844C.854 4.28 4.373.76 8.698.76z" fill="#7A7979"></path><path d="M8.698 13.076a4.477 4.477 0 0 0 4.472-4.472 4.477 4.477 0 0 0-4.472-4.471 4.477 4.477 0 0 0-4.471 4.471 4.477 4.477 0 0 0 4.471 4.472zm0-8.183a3.716 3.716 0 0 1 3.712 3.711 3.715 3.715 0 0 1-3.712 3.712 3.716 3.716 0 0 1-3.711-3.712 3.716 3.716 0 0 1 3.711-3.711z" fill="#7A7979"></path><path d="M8.386 10.583a2.004 2.004 0 0 0 .628-3.956 2.004 2.004 0 0 0-.628 3.956zm.512-3.205c.517.08.95.511 1.029 1.028a1.243 1.243 0 1 1-1.029-1.028z" fill="#7A7979"></path>
+		</symbol>
+	
+		<symbol id="icon-fb" viewBox="0 0 10 16">
+			<path d="M8.699 1.003L6.779 1C4.625 1 3.232 2.352 3.232 4.445v1.589h-1.93A.294.294 0 0 0 1 6.32V8.62c0 .158.135.286.302.286H3.23v5.807c0 .158.135.286.302.286H6.05a.294.294 0 0 0 .302-.286V8.907h2.255a.294.294 0 0 0 .302-.286L8.91 6.32a.278.278 0 0 0-.088-.202.31.31 0 0 0-.214-.084H6.352V4.687c0-.647.163-.975 1.054-.975h1.292A.294.294 0 0 0 9 3.425V1.288a.294.294 0 0 0-.301-.285z" stroke="#7A7979"></path>
+		</symbol>
+	
+		<symbol id="icon-fishka" viewBox="0 0 29 26">
+			<path d="M20.305 10.4c.495.495.762 1.18.762 1.866 0 .686-.267 1.371-.762 1.867a2.654 2.654 0 0 1-1.867.762 2.654 2.654 0 0 1-1.866-.762 2.588 2.588 0 0 1-.762-1.867v-.076h1.142v.076c0 .838.686 1.486 1.486 1.486.8 0 1.486-.686 1.486-1.486 0-.8-.686-1.486-1.486-1.486-.266 0-.533.077-.762.19l-.724-.609 1.867-2.324h-3.047V6.895h5.447l-2.286 2.819c.534.076.99.342 1.372.685zM28.19 14.819h-6.095l2.629-3.086c.457-.533.952-1.028 1.371-1.6.229-.304.42-.685.343-1.066-.076-.343-.305-.534-.495-.686a1.482 1.482 0 0 0-.876-.267c-.877 0-1.6.724-1.6 1.6h-1.334c0-.762.305-1.524.838-2.057.572-.533 1.296-.838 2.058-.838.571 0 1.18.19 1.638.495.533.381.914.915 1.028 1.486a2.365 2.365 0 0 1-.267 1.676c-.304.572-.761 1.029-1.18 1.524l-1.372 1.6h3.314v1.219zM4.762 0L15.2 20.8l-2.4 4.762L0 0h4.762zM23.048 3.276L21.143.038h3.771l-1.866 3.238z" fill="#323131"></path>
+		</symbol>
+	
+		<symbol id="icon-instagram" viewBox="0 0 12 12">
+			<path d="M8.688 0H3.311A3.315 3.315 0 0 0 0 3.312v5.376A3.315 3.315 0 0 0 3.312 12h5.376A3.315 3.315 0 0 0 12 8.688V3.312A3.315 3.315 0 0 0 8.688 0zm2.247 8.688a2.25 2.25 0 0 1-2.247 2.247H3.311a2.25 2.25 0 0 1-2.246-2.247V3.312a2.25 2.25 0 0 1 2.247-2.247h5.376a2.25 2.25 0 0 1 2.247 2.247v5.376z" fill="#7A7979"></path><path d="M6 2.908A3.096 3.096 0 0 0 2.908 6 3.095 3.095 0 0 0 6 9.092 3.095 3.095 0 0 0 9.092 6 3.096 3.096 0 0 0 6 2.908zm0 5.12A2.03 2.03 0 0 1 3.973 6 2.03 2.03 0 0 1 6 3.973 2.03 2.03 0 0 1 8.028 6 2.03 2.03 0 0 1 6 8.027zM9.222 2.005a.784.784 0 0 0-.781.781.787.787 0 0 0 .78.78.788.788 0 0 0 .553-.228.784.784 0 0 0-.552-1.333z" fill="#7A7979"></path>
+		</symbol>
+	
+		<symbol id="icon-key" viewBox="0 0 18 20">
+			<path d="M18 5.975a5.202 5.202 0 0 1-1.533 3.704 5.193 5.193 0 0 1-3.697 1.53 5.254 5.254 0 0 1-2.42-.59L8.4 12.57l1.472 1.472c.126.126.306.41.103.902-.249.6-1.154 1.525-1.848 1.525a.672.672 0 0 1-.486-.193L6.168 14.8l-.598.597 1.473 1.473c.126.126.306.41.102.902-.25.6-1.154 1.524-1.849 1.524a.672.672 0 0 1-.486-.194L3.33 17.624l-.911.87a.666.666 0 0 1-.48.187c-.694 0-1.6-.925-1.848-1.525-.204-.492-.023-.776.102-.901l7.922-7.869a5.234 5.234 0 0 1 4.646-7.65c1.401 0 2.717.545 3.705 1.534A5.202 5.202 0 0 1 18 5.975zM5.297 18.525h-.002l.002.386v-.386zm11.93-12.55a4.433 4.433 0 0 0-1.307-3.158 4.433 4.433 0 0 0-3.158-1.307 4.462 4.462 0 0 0-3.834 6.747.386.386 0 0 1-.06.472L.776 16.767c.016.091.12.322.395.614.302.323.613.504.746.525l1.154-1.102a.386.386 0 0 1 .54.007l1.71 1.711c.134-.022.444-.203.746-.525.274-.293.378-.523.394-.614l-1.71-1.712a.387.387 0 0 1 0-.546l1.144-1.144a.386.386 0 0 1 .546 0l1.71 1.71c.135-.022.444-.203.745-.524.274-.292.379-.523.395-.614l-1.711-1.71a.387.387 0 0 1 0-.548l2.428-2.429a.387.387 0 0 1 .471-.059c.69.411 1.482.628 2.29.628 1.192 0 2.311-.462 3.151-1.303a4.431 4.431 0 0 0 1.307-3.157zm-2.516-1.95a2.763 2.763 0 0 1 0 3.9c-.52.52-1.212.806-1.949.806a2.738 2.738 0 0 1-1.949-.806 2.761 2.761 0 0 1 0-3.9 2.74 2.74 0 0 1 1.95-.806 2.74 2.74 0 0 1 1.948.805zm-.546.546a1.971 1.971 0 0 0-1.402-.58c-.531 0-1.03.207-1.404.58a1.987 1.987 0 0 0 .001 2.807c.374.374.872.58 1.402.58.53 0 1.029-.206 1.403-.58a1.989 1.989 0 0 0 0-2.807z" fill="#7A7979"></path>
+		</symbol>
+	
+		<symbol id="icon-mouse" viewBox="0 0 15 24">
+			<path d="M7.5 23.485c-.438 0-1.04-.054-1.642-.11C2.518 23.02 0 20.284 0 16.917V6.57C0 3.203 2.49.465 5.858.11 6.46.055 7.062 0 7.5 0c.438 0 1.04.055 1.642.11C12.51.464 15 3.202 15 6.57v10.319c0 3.367-2.49 6.104-5.858 6.46-.574.082-1.177.136-1.642.136zm0-22.472c-.438 0-.958.055-1.56.11-2.847.3-4.955 2.654-4.955 5.446v10.32c0 2.846 2.108 5.2 4.955 5.447.602.055 1.15.11 1.56.11.41 0 .958-.056 1.56-.11 2.792-.301 4.955-2.655 4.955-5.447V6.569c0-2.846-2.108-5.2-4.955-5.447a11.235 11.235 0 0 0-1.56-.11z" fill="#F3EDEC"></path><path d="M7.5 19.982a1.506 1.506 0 1 0 0-3.011 1.506 1.506 0 0 0 0 3.01z" fill="#F3EDEC"></path>
+		</symbol>
+	
+		<symbol id="icon-phone" viewBox="0 0 21 26">
+			<path clip-rule="evenodd" d="M6.591 8.238c2.971-.89 3.342-1.262 2.006-4.233C7.483 1.257 6.74.217 4.289 1.628c-9.655 5.72 4.085 27.703 13.74 21.91 2.377-1.485 1.708-2.674-.297-4.902-2.08-2.525-2.525-2.302-4.68-.074-3.119 2.674-10.248-8.69-6.46-10.324z"></path>
+		</symbol>
+	
+		<symbol id="icon-point" viewBox="0 0 13 16">
+			<path d="M6.287 16.001a.356.356 0 0 0 .302-.168c.64-1.027 1.524-2.104 2.379-3.145a52.672 52.672 0 0 0 1.668-2.103c.88-1.192 1.89-2.761 1.89-4.324A6.268 6.268 0 0 0 6.263 0 6.27 6.27 0 0 0 0 6.261c0 1.675 1.072 3.341 2.682 5.328.283.35.578.704.863 1.047.875 1.052 1.78 2.14 2.44 3.198.065.104.179.167.302.167zM6.264.711c3.06 0 5.55 2.49 5.55 5.55 0 1.058-.54 2.26-1.75 3.902a51.961 51.961 0 0 1-1.646 2.073c-.744.906-1.51 1.839-2.131 2.757-.642-.945-1.43-1.892-2.195-2.812-.284-.341-.578-.694-.857-1.04C1.72 9.272.71 7.727.71 6.262c0-3.06 2.491-5.55 5.553-5.55z" fill="#5B5A5A"></path><path d="M6.262 9.664c1.823 0 3.307-1.521 3.307-3.391 0-1.869-1.484-3.389-3.307-3.389s-3.305 1.52-3.305 3.389c0 1.87 1.482 3.391 3.305 3.391zm0-6.069c1.43 0 2.595 1.202 2.595 2.678 0 1.478-1.164 2.68-2.595 2.68-1.43 0-2.594-1.202-2.594-2.68 0-1.476 1.164-2.678 2.594-2.678z" fill="#5B5A5A"></path>
+		</symbol>
+	
+		<symbol id="icon-smarto" viewBox="0 0 70 28">
+			<path d="M27.593 12.96h.279c.03.605.288 1.104.783 1.486.495.382 1.113.584 1.855.584.722 0 1.32-.191 1.784-.574.464-.382.69-.87.69-1.464 0-.467-.154-.839-.474-1.125-.32-.287-.835-.52-1.556-.701l-.938-.244c-.763-.191-1.32-.457-1.67-.775-.35-.318-.526-.743-.526-1.252 0-.627.258-1.157.763-1.582.505-.424 1.123-.637 1.835-.637.752 0 1.38.202 1.896.605.516.404.784.902.804 1.497h-.278c-.031-.52-.268-.955-.732-1.306-.453-.35-1.02-.52-1.69-.52-.65 0-1.196.18-1.64.552-.453.372-.67.828-.67 1.39 0 .446.155.797.475 1.073.32.276.824.498 1.525.679l.928.233c.773.202 1.35.468 1.7.796.362.33.537.765.537 1.295a2.08 2.08 0 0 1-.773 1.667c-.516.435-1.175.647-2 .647s-1.505-.223-2.051-.658c-.536-.424-.835-.987-.856-1.666zM42.035 6.804v8.374h-.279V7.472h-.02l-3.288 7.706h-.3L34.86 7.472h-.02v7.706h-.279V6.804h.3l3.432 8.013h.02l3.412-8.013h.31zM49.384 15.178l-1.062-2.908H44.54l-1.082 2.908h-.31l3.134-8.374h.289l3.134 8.374h-.32zm-2.969-7.982l-1.773 4.798h3.577l-1.773-4.798h-.03zM51.085 11.516v3.662h-.288V6.804h2.525c.814 0 1.453.212 1.917.626.464.425.701.998.701 1.73 0 .616-.175 1.125-.515 1.528-.34.404-.825.67-1.433.775l2.144 3.715h-.32l-2.123-3.672c-.134.01-.258.01-.371.01h-2.237zm0-4.447v4.182h2.237c.721 0 1.299-.191 1.711-.563.412-.371.618-.88.618-1.528 0-.658-.206-1.168-.618-1.539-.412-.372-.99-.552-1.721-.552h-2.227zM59.898 15.178h-.278V7.08h-2.938v-.276h6.144v.276h-2.938l.01 8.098zM31.243 16.027c1.092 0 1.968.393 2.607 1.168.65.774.97 1.825.97 3.141 0 1.317-.32 2.367-.97 3.142-.649.775-1.515 1.168-2.618 1.168s-1.968-.393-2.618-1.168c-.65-.775-.969-1.825-.969-3.142 0-1.316.32-2.356.97-3.141.649-.786 1.514-1.168 2.628-1.168zm0 .265c-1.01 0-1.815.361-2.412 1.094-.598.722-.897 1.709-.897 2.94 0 1.231.299 2.207.896 2.94.598.732 1.402 1.093 2.413 1.093 1 0 1.804-.36 2.401-1.093.598-.732.897-1.709.897-2.94 0-1.231-.299-2.208-.897-2.94-.597-.722-1.402-1.093-2.401-1.093zM36.448 20.857v3.662h-.288v-8.375h2.525c.814 0 1.453.212 1.917.626.464.425.701.998.701 1.73 0 .616-.175 1.125-.515 1.529-.35.403-.825.669-1.433.775l2.144 3.715h-.32l-2.123-3.673c-.134.01-.258.01-.37.01h-2.238zm0-4.448v4.182h2.237c.722 0 1.299-.19 1.711-.562.413-.372.619-.881.619-1.529 0-.658-.206-1.167-.619-1.539-.412-.371-.99-.552-1.721-.552h-2.227zM48.426 24.519l-1.062-2.909h-3.782L42.51 24.52h-.31l3.134-8.375h.288l3.134 8.375h-.33zm-2.958-7.982l-1.783 4.797h3.576l-1.773-4.797h-.02zM50.127 24.519h-.289v-8.375h.31l5.4 7.823h.021v-7.823h.279v8.375h-.258l-5.443-7.887h-.02v7.887zM63.939 21.239c0 1.05-.289 1.878-.866 2.483-.577.605-1.37.903-2.37.903-.681 0-1.29-.18-1.825-.552-.536-.361-.949-.881-1.237-1.54-.3-.657-.443-1.422-.443-2.27 0-1.275.32-2.304.969-3.079.639-.775 1.494-1.167 2.546-1.167.804 0 1.494.233 2.082.69.587.456.948 1.05 1.103 1.793h-.279a2.741 2.741 0 0 0-1.03-1.602c-.526-.404-1.155-.605-1.876-.605-.97 0-1.753.36-2.34 1.093-.588.732-.876 1.688-.876 2.887 0 1.21.298 2.197.896 2.95.598.754 1.371 1.136 2.33 1.136.917 0 1.639-.276 2.165-.828.525-.552.793-1.316.793-2.271v-.584h-2.989v-.265h3.268v.828h-.021zM70 24.243v.276h-4.659v-8.375h4.66v.276h-4.37v3.672h4.174v.266H65.63v3.895H70v-.01z" fill="#7A7979"></path><path d="M23.8 18.065l-.103-.594 1.227-2.303-1.186-1.953.464-1.2-1.134-.902-.154-2.441-2.227-1.03-.412-.987-.66-.223-.979-1.603-2.072.096-1.752-1.603-1.598.563-.515-.287-1.268.637-2.443-.541-.98 1.061-.67-.095-.958 1.517-2.721.881-.577 2.516-.485.371-.03.563-.248.244.02.34L.69 12.949l.722 1.964-.598 1.146.629 1.146-.423 1.922 1.65 1.73.185 1.518 1.062.54.742 2.325 2.505.446.845 1.125 1.206-.042 1.474 1.114 1.907-.743 2.133.86.918-.807.824.17 1.35-1.55 2.413-.297.629-1.624.453-.201.413-1.37 2.175-1.496-.269-2.494.165-.266z" fill="#727376"></path><path d="M21.244 20.358l-.536 1.104 1.072-2.42-.536 1.316z" fill="#898A8D"></path><path d="M17.45 25.134l-.752.308 2.144-1.613-1.392 1.305z" fill="#A0A1A3"></path><path d="M23.202 13.894l-.907-2.93.825 1.55.082 1.38z" fill="#8D8E91"></path><path d="M7.514 25.209l-.794-.457 2.628.966-1.834-.51z" fill="#6C6E70"></path><path d="M23.8 18.065l-.783 1.178.557-2.632.227 1.454z" fill="#F2F2F2"></path><path d="M2.34 11.952l-.021-1.2 1.309-1.316-1.289 2.516z" fill="#E5E5E5"></path><path d="M18.482 24.943l1.711-.976 1.124-.276-2.835 1.252z" fill="#A0A0A0"></path><path d="M21.316 23.69l-1.123.277 1.69-2.155-.567 1.879z" fill="#CCC"></path><path d="M18.894 6.305l1.381.35.66 1.582-2.041-1.932z" fill="#D8D8D8"></path><path d="M17.368 5.668l2.907.987-1.381-.35-1.526-.637z" fill="#F2F2F2"></path><path d="M2.772 20.475l1.63 2.674-1.547-.774-.083-1.9z" fill="#999"></path><path d="M2.772 20.475l.082 1.9-.433-3.397.35 1.497z" fill="#A5A5A5"></path><path d="M16.472 27.363l-2.886-.615 1.855.084 1.03.531z" fill="#BFBFBF"></path><path d="M16.472 27.363l-1.03-.53 2.525-1.179-1.495 1.71z" fill="#D8D8D8"></path><path d="M1.794 17.418l.629 1.56-1.608-2.919.979 1.359z" fill="#BFBFBF"></path><path d="M1.567 14.584l.227 2.834-.98-1.359.753-1.475z" fill="#D8D8D8"></path><path d="M13.585 26.748l-2.896 1.135 1.958-.87.938-.265z" fill="#CCC"></path><path d="M14.812 3.322l2.556 2.346-1.01-.732-1.546-1.614zM24.924 15.168l-1.36-1.497-.433-1.444 1.793 2.94z" fill="#E5E5E5"></path><path d="M23.564 13.671l-.866-2.866.433 1.422.433 1.444z" fill="#808183"></path><path d="M23.13 12.228l-.432-1.423.216-2.133.217 3.556z" fill="#D8D8D8"></path><path d="M10.689 27.883l-1.082-1.39 3.04.52-1.958.87zM10.688 27.883l-2.7-2.048 1.618.658 1.082 1.39z" fill="#999"></path><path d="M8.493 5.031l-1.639.998 2.134-2.335-.495 1.337z" fill="#F2F2F2"></path><path d="M8.988 3.694l2.907.647-.918.106-1.99-.753z" fill="#F2F2F2"></path><path d="M8.494 5.031l.494-1.337 1.99.753-2.484.584z" fill="#E5E5E5"></path><path d="M13.637 4.33l1.175-1.008 1.546 1.614-2.721-.605z" fill="#F2F2F2"></path><path d="M11.895 4.341l1.742-.01-2.66.116.918-.106z" fill="#9C9EA0"></path><path d="M11.895 4.341l2.917-1.019-1.175 1.009-1.742.01z" fill="#E5E5E5"></path><path d="M6.081 6.634l.773-.605 1.64-.998L6.08 6.634z" fill="#B9B9BA"></path><path d="M6.08 6.634l-2.422.424 3.196-1.03-.773.606z" fill="#E5E5E5"></path><path d="M24.924 15.168l-1.402 1.05.041-2.547 1.361 1.497z" fill="#F2F2F2"></path><path d="M23.563 17.747l-.04-1.529 1.401-1.05-1.36 2.579z" fill="#E5E5E5"></path><path d="M15.441 26.832l1.66-.934.866-.244-2.526 1.178z" fill="#BFBFBF"></path><path d="M1.742 15.857l.051 1.56-.227-2.833.176 1.273z" fill="#A5A5A5"></path><path d="M7.988 25.835l-1.164-.637 2.783 1.295-1.619-.658z" fill="#6E6F72"></path><path d="M7.988 25.835l-3.33-.595 2.165-.042 1.165.637z" fill="#999"></path><path d="M3.865 9.107l-.207-2.049 2.423-.424-2.216 2.473z" fill="#F2F2F2"></path><path d="M3.865 9.107l-1.01 1.39.804-3.439.206 2.049zM20.234 7.44l2.68 1.232-1.69.265-.99-1.497z" fill="#E5E5E5"></path><path d="M21.223 8.937l1.69-.265-.216 2.133-1.474-1.868z" fill="#F2F2F2"></path><path d="M9.607 26.493l1.824.191 1.216.329-3.04-.52z" fill="#CCC"></path><path d="M23.904 20.825l-.98-2.41.64-.668.34 3.078z" fill="#D8D8D8"></path><path d="M22.925 18.415l.597-2.197.042 1.529-.64.668z" fill="#CCC"></path><path d="M2.515 11.74l.34-1.243 1.01-1.39-1.35 2.632z" fill="#B9BABA"></path><path d="M2.515 11.74L.69 12.95l2.165-2.453-.34 1.242z" fill="#F2F2F2"></path><path d="M13.637 4.33l2.721.606-.917.148-1.804-.753z" fill="#CCC"></path><path d="M15.441 5.084l.918-.148 2.278-.106-3.196.254z" fill="#F2F2F2"></path><path d="M8.494 5.031l2.484-.584-.753.605-1.731-.021z" fill="#CCC"></path><path d="M3.865 9.107L6.08 6.634l-.722 1.178-1.494 1.295z" fill="#E5E5E5"></path><path d="M4.844 22.895l1.98 2.303-2.166.042.186-2.345z" fill="#A5A5A5"></path><path d="M4.844 22.895l-.186 2.346-1.082-3.418 1.268 1.072z" fill="#B2B2B2"></path><path d="M23.904 20.825l-2.062-.18 1.083-2.23.979 2.41z" fill="#E5E5E5"></path><path d="M21.368 22.576l.474-1.931 2.062.18-2.536 1.751z" fill="#F2F2F2"></path><path d="M23.563 13.67l-.566.479 1.206-2.134-.64 1.656z" fill="#CCC"></path><path d="M23.522 16.218l-.525-2.07.566-.477-.04 2.547z" fill="#D8D8D8"></path><path d="M22.09 11.166l.607-.36 1.505 1.21-2.113-.85z" fill="#E5E5E5"></path><path d="M22.09 11.166l2.112.85-1.206 2.133-.907-2.983z" fill="#F2F2F2"></path><path d="M21.223 8.937l1.474 1.868-.608.361-.866-2.229z" fill="#CCC"></path><path d="M2.515 11.74l-.227 2.547L.69 12.949l1.825-1.21z" fill="#D8D8D8"></path><path d="M2.288 14.287l-.546 1.57L.69 12.95l1.598 1.338z" fill="#B2B2B2"></path><path d="M20.234 7.44l.99 1.497-1.732-1.284.742-.213z" fill="#CCC"></path><path d="M18.636 4.83l1.598 2.61-.742.213-.856-2.823z" fill="#E5E5E5"></path><path d="M10.225 5.052l.752-.605 1.722-.849-2.474 1.454zM20.234 25.516l.082-2.93 1.052-.01-1.134 2.94z" fill="#D8D8D8"></path><path d="M20.316 22.587l1.526-1.942-.475 1.931-1.051.01z" fill="#E5E5E5"></path><path d="M14.73 28l-3.3-1.316 2.021-.446L14.73 28z" fill="#A5A5A5"></path><path d="M14.73 28l-1.28-1.762 2.702-.754L14.729 28z" fill="#CCC"></path><path d="M14.73 28l1.422-2.516.948.414L14.73 28z" fill="#E5E5E5"></path><path d="M17.1 25.898l1.227-1.655 1.907 1.273-3.134.383z" fill="#CCC"></path><path d="M20.234 25.516l-1.907-1.273 1.99-1.656-.083 2.93z" fill="#E5E5E5"></path><path d="M16.152 25.485l2.175-1.242-1.227 1.655-.948-.413z" fill="#D8D8D8"></path><path d="M3.39 19.986l.186 1.837-2.556-2.696 2.37.86z" fill="#B2B2B2"></path><path d="M4.844 22.895l-1.268-1.072-.185-1.837 1.453 2.909zM2.546 17.014l.845 2.972-2.371-.86 1.526-2.112z" fill="#999"></path><path d="M2.546 17.014l-.804-1.156.546-1.571.258 2.727z" fill="#D8D8D8"></path><path d="M2.546 17.014L1.02 19.127l.722-3.27.804 1.157zM17.255 6.634l1.381-1.804.856 2.823-2.237-1.019z" fill="#F2F2F2"></path><path d="M15.441 5.084l3.196-.254-1.382 1.804-1.814-1.55z" fill="#E5E5E5"></path><path d="M7.41 7.037l-2.05.775L7.339 4.66l.072 2.377z" fill="#D8D8D8"></path><path d="M11.431 26.684l-3.422.127 2.495-1.072.927.945z" fill="#A5A5A5"></path><path d="M11.431 26.684l-.928-.945 2.948.5-2.02.445zM6.648 23.68l.175 1.518-1.98-2.303 1.805.785z" fill="#999"></path><path d="M6.648 23.68l1.36 3.131-1.185-1.613-.175-1.518z" fill="#BFBFBF"></path><path d="M7.411 7.037L7.339 4.66l2.597 1.443-2.525.934z" fill="#E5E5E5"></path><path d="M7.339 4.66l2.886.392-.289 1.051L7.34 4.66zM2.598 9.946l.752 2.887-.835-1.094.083-1.793z" fill="#D8D8D8"></path><path d="M3.35 12.832l-1.062 1.455.226-2.548.835 1.093z" fill="#BFBFBF"></path><path d="M15.441 5.084l1.815 1.55-2.423-.499.608-1.05z" fill="#CCC"></path><path d="M12.698 3.598l2.742 1.486-.608 1.05-2.134-2.536z" fill="#D8D8D8"></path><path d="M5.298 9.425l.062-1.613 2.051-.775-2.113 2.388z" fill="#F2F2F2"></path><path d="M5.298 9.425l-2.7.52L5.36 7.812l-.062 1.613z" fill="#D8D8D8"></path><path d="M10.225 5.052l2.474-1.454-.413 2.388-2.061-.934z" fill="#F2F2F2"></path><path d="M12.286 5.986l.413-2.388 2.133 2.537-2.546-.149z" fill="#E5E5E5"></path><path d="M10.226 5.052l2.061.934-2.35.117.289-1.05zM22.09 11.166l.907 2.983-1.474-1.157.567-1.826z" fill="#E5E5E5"></path><path d="M21.523 12.992l1.474 1.157.65 2.144-2.124-3.301z" fill="#CCC"></path><path d="M21.842 20.645l-.186-2.41 1.268.18-1.082 2.23z" fill="#D8D8D8"></path><path d="M22.924 18.416l-1.268-.18 1.99-1.943-.722 2.123z" fill="#F2F2F2"></path><path d="M19.492 7.653l1.731 1.284.227.223-1.958-1.507z" fill="#E5E5E5"></path><path d="M21.45 9.16l.64 2.006-.568 1.826-.072-3.832z" fill="#D8D8D8"></path><path d="M8.73 24.02L8.01 26.81l-1.361-3.13 2.082.339z" fill="#A5A5A5"></path><path d="M8.73 24.02l1.774 1.72-2.495 1.071.722-2.791z" fill="#BFBFBF"></path><path d="M17.255 6.634l2.237 1.019-.804 1.082-1.433-2.101z" fill="#E5E5E5"></path><path d="M18.687 8.735l.804-1.082L21.45 9.16l-2.763-.425z" fill="#F2F2F2"></path><path d="M13.45 26.238l1.063-1.539 1.639.785-2.701.754z" fill="#D8D8D8"></path><path d="M13.451 26.238l-1.01.35 2.072-1.889-1.062 1.539z" fill="#E5E5E5"></path><path d="M4.112 18.203l-.721 1.783-.845-2.972 1.566 1.19z" fill="#BFBFBF"></path><path d="M4.865 11.835l-1.515.998-.752-2.887 2.267 1.889z" fill="#CCC"></path><path d="M5.298 9.425l-.433 2.41-2.267-1.89 2.7-.52z" fill="#E5E5E5"></path><path d="M18.327 24.243l.31-2.219 1.68.563-1.99 1.656z" fill="#D8D8D8"></path><path d="M21.522 12.992l2.123 3.3-2.917-1.262.794-2.038z" fill="#F2F2F2"></path><path d="M20.728 15.03l2.917 1.263-1.989 1.942-.928-3.205zM7.411 7.037l2.526-.934-.67 1.879-1.856-.945z" fill="#D8D8D8"></path><path d="M21.522 12.992l-.793 2.038-1.031-3.407 1.824 1.369z" fill="#CCC"></path><path d="M21.45 9.16l.072 3.832-1.824-1.37L21.45 9.16z" fill="#F2F2F2"></path><path d="M18.687 8.735l2.763.425-1.752 2.462-1.01-2.887z" fill="#D8D8D8"></path><path d="M4.216 21.759l2.432 1.921-1.804-.785-.628-1.136zM4.112 18.203l.103 3.556-.824-1.773.721-1.783z" fill="#A5A5A5"></path><path d="M11.462 24.169l.98 2.42-1.939-.85.959-1.57z" fill="#B2B2B2"></path><path d="M11.462 24.168l-.959 1.571-1.773-1.72 2.732.15z" fill="#999"></path><path d="M11.462 24.169l3.051.53-2.072 1.89-.979-2.42z" fill="#D8D8D8"></path><path d="M2.463 15.22l1.65 2.983-1.567-1.188-.083-1.794z" fill="#B2B2B2"></path><path d="M3.35 12.832l-.887 2.389-.175-.934 1.061-1.455z" fill="#F2F2F2"></path><path d="M2.463 15.22l.082 1.794-.257-2.727.175.934z" fill="#A5A5A5"></path><path d="M6.411 7.653l1-.616 1.856.945-2.856-.33z" fill="#E5E5E5"></path><path d="M20.316 22.587l-1.68-.563 2.557-1.274-.877 1.837z" fill="#CCC"></path><path d="M21.842 20.645l-.65.106.465-2.516.185 2.41z" fill="#CCC"></path><path d="M20.316 22.587l.876-1.836.65-.107-1.526 1.943zM12.286 5.986l2.546.149-.793 1.486-1.753-1.635z" fill="#D8D8D8"></path><path d="M7.545 21.886l-.897 1.794-2.432-1.921 3.33.127z" fill="#BFBFBF"></path><path d="M8.73 24.02l-2.082-.34.897-1.793L8.73 24.02z" fill="#999"></path><path d="M7.08 10.455l-2.216 1.38.433-2.41 1.784 1.03zM6.411 7.653l2.856.329-2.186 2.473-.67-2.802z" fill="#D8D8D8"></path><path d="M6.411 7.653l.67 2.802-1.783-1.03 1.113-1.772z" fill="#E5E5E5"></path><path d="M16.152 25.485l-1.639-.786 2.65-.255-1.011 1.04zM18.327 24.243l-1.165.201 1.474-2.42-.31 2.219z" fill="#BFBFBF"></path><path d="M16.152 25.485l1.01-1.04 1.165-.202-2.175 1.242z" fill="#E5E5E5"></path><path d="M5.225 14.074L3.35 12.832l1.516-.997.36 2.24z" fill="#BFBFBF"></path><path d="M5.226 14.074l-2.763 1.147.887-2.389 1.876 1.242z" fill="#E5E5E5"></path><path d="M14.039 7.621l.793-1.486 2.124 1.061-2.917.425z" fill="#F2F2F2"></path><path d="M14.833 6.135l2.423.499-.3.562-2.123-1.061z" fill="#D8D8D8"></path><path d="M16.956 7.196l.299-.562 1.432 2.101-1.731-1.539z" fill="#CCC"></path><path d="M20.729 15.03l.928 3.205-2.248-1.072 1.32-2.133z" fill="#E5E5E5"></path><path d="M19.41 17.163l2.247 1.072-.464 2.516-1.784-3.588z" fill="#F2F2F2"></path><path d="M6.432 19.36l-2.216 2.4-.103-3.557 2.319 1.157z" fill="#BFBFBF"></path><path d="M6.432 19.36l1.113 2.526-3.33-.127 2.217-2.399z" fill="#A5A5A5"></path><path d="M18.688 8.735l1.01 2.887-2.34-.976 1.33-1.91z" fill="#E5E5E5"></path><path d="M16.956 7.196l1.731 1.54-1.33 1.91-.401-3.45z" fill="#F2F2F2"></path><path d="M13.637 22.682l3.525 1.762-2.649.255-.876-2.017z" fill="#A5A5A5"></path><path d="M13.637 22.682l.876 2.017-3.051-.53 2.175-1.487z" fill="#BFBFBF"></path><path d="M6.432 19.36l-2.32-1.157 1.598-1.486.722 2.643z" fill="#999"></path><path d="M5.226 14.074l.484 2.643-3.247-1.496 2.763-1.147z" fill="#B2B2B2"></path><path d="M5.71 16.717l-1.597 1.486-1.65-2.982 3.247 1.496z" fill="#A5A5A5"></path><path d="M11.565 6.644l.722-.658 1.752 1.635-2.474-.977z" fill="#CCC"></path><path d="M9.937 6.103l2.35-.117-.722.658-1.628-.54z" fill="#D8D8D8"></path><path d="M9.267 7.982l.67-1.879 1.629.542-2.3 1.337z" fill="#F2F2F2"></path><path d="M19.41 17.163l1.782 3.588-3.432-1.55 1.65-2.038z" fill="#E5E5E5"></path><path d="M17.76 19.2l3.432 1.55-2.556 1.274-.876-2.823z" fill="#CCC"></path><path d="M15.76 21.143l2.877.881-1.474 2.42-1.402-3.3z" fill="#CCC"></path><path d="M15.76 21.143l1.402 3.301-3.525-1.762 2.123-1.539z" fill="#B2B2B2"></path><path d="M17.76 19.2l.877 2.824-2.876-.88 2-1.943z" fill="#BFBFBF"></path><path d="M9.267 7.982l2.299-1.337-1.907 3.513-.392-2.176z" fill="#E5E5E5"></path><path d="M9.267 7.982l.392 2.176-2.577.297 2.185-2.473z" fill="#CCC"></path><path d="M14.039 7.62l2.917-.424-2.134 2.802-.783-2.377z" fill="#D8D8D8"></path><path d="M16.956 7.196l.402 3.45-2.536-.648 2.134-2.802z" fill="#E5E5E5"></path><path d="M11.565 6.645l.587 3.12-2.494.393 1.907-3.513z" fill="#BFBFBF"></path><path d="M11.565 6.645l2.474.976-1.886 2.144-.588-3.12z" fill="#E5E5E5"></path><path d="M14.039 7.621L14.822 10l-2.67-.234 1.887-2.144z" fill="#CCC"></path><path d="M9.163 20.093l-1.618 1.793-1.113-2.526 2.731.733z" fill="#999"></path><path d="M15.76 21.143l-2.123 1.54-1.278-2.176 3.401.636z" fill="#A5A5A5"></path><path d="M7.617 15.072l-1.906 1.645-.485-2.643 2.391.998z" fill="#999"></path><path d="M9.947 23.064l1.515 1.104-2.732-.148 1.217-.956zM9.164 20.093l3.195.413-2.412 2.558-.783-2.971z" fill="#BFBFBF"></path><path d="M12.358 20.507l1.278 2.175-3.69.383 2.412-2.558z" fill="#999"></path><path d="M9.946 23.064l3.69-.382-2.175 1.486-1.515-1.104z" fill="#B2B2B2"></path><path d="M9.163 20.093l.784 2.971-2.402-1.178 1.618-1.793z" fill="#A5A5A5"></path><path d="M9.947 23.065l-1.217.955-1.185-2.133 2.402 1.178z" fill="#B2B2B2"></path><path d="M19.41 17.163l-1.65 2.038-1.237-3.227 2.887 1.19z" fill="#CCC"></path><path d="M12.152 9.765L9.74 12.546l-.082-2.388 2.494-.393z" fill="#B2B2B2"></path><path d="M17.358 10.646l-1.897 2.176-.639-2.823 2.536.647z" fill="#D8D8D8"></path><path d="M19.698 11.623l1.03 3.407-1.7-1.582.67-1.825zM17.358 10.646l1.67 2.802-3.567-.626 1.897-2.176z" fill="#E5E5E5"></path><path d="M17.358 10.646l2.34.976-.67 1.826-1.67-2.802z" fill="#D8D8D8"></path><path d="M19.028 13.448l.382 3.715-2.887-1.189 2.505-2.526z" fill="#F2F2F2"></path><path d="M19.028 13.448l1.7 1.582-1.319 2.133-.381-3.715zM15.461 12.822l3.567.626-2.505 2.526-1.062-3.152z" fill="#D8D8D8"></path><path d="M6.535 12.387l3.205.159-2.123 2.526-1.082-2.685z" fill="#BFBFBF"></path><path d="M9.658 10.158l.082 2.388-3.205-.16 3.123-2.228z" fill="#D8D8D8"></path><path d="M6.535 12.387l1.082 2.685-2.39-.998 1.308-1.687z" fill="#A5A5A5"></path><path d="M6.534 12.387l-1.309 1.687-.36-2.24 1.67.553z" fill="#B2B2B2"></path><path d="M7.08 10.455l-.546 1.932-1.67-.552 2.217-1.38z" fill="#F2F2F2"></path><path d="M7.08 10.455l2.578-.297-3.123 2.229.546-1.932z" fill="#E5E5E5"></path><path d="M11.308 17.874l1.051 2.633-3.195-.414 2.144-2.219z" fill="#A5A5A5"></path><path d="M9.74 12.546l.64 2.664-2.763-.138 2.123-2.526zM13.42 15.274l-2.113 2.6-.927-2.664 3.04.064z" fill="#999"></path><path d="M15.461 12.822l1.062 3.152-3.103-.7 2.041-2.452z" fill="#CCC"></path><path d="M7.802 17.96l3.505-.086-2.144 2.219-1.36-2.134z" fill="#BFBFBF"></path><path d="M7.802 17.96l1.361 2.133-2.731-.733 1.37-1.4zM7.617 15.072l.186 2.887-2.093-1.242 1.907-1.645z" fill="#A5A5A5"></path><path d="M7.803 17.96l-1.371 1.4-.722-2.643 2.093 1.242z" fill="#BFBFBF"></path><path d="M10.38 15.21l.927 2.664-3.505.085 2.577-2.749z" fill="#A5A5A5"></path><path d="M7.617 15.072l2.762.138-2.577 2.75-.185-2.888z" fill="#B2B2B2"></path><path d="M12.42 11.877l3.041.945-2.04 2.452-1-3.397z" fill="#D8D8D8"></path><path d="M14.822 9.999l.64 2.823-3.041-.945L14.822 10z" fill="#F2F2F2"></path><path d="M12.153 9.765l2.67.234-2.402 1.878-.268-2.112z" fill="#BFBFBF"></path><path d="M12.42 11.877l1 3.397-3.04-.064 2.04-3.333z" fill="#A5A5A5"></path><path d="M12.152 9.765l.268 2.112-2.68.669 2.412-2.78z" fill="#F2F2F2"></path><path d="M9.74 12.546l2.68-.669-2.04 3.333-.64-2.664z" fill="#B2B2B2"></path><path d="M16.523 15.974l1.237 3.227-3.03-.541 1.793-2.686z" fill="#F2F2F2"></path><path d="M14.73 18.66l3.03.541-2 1.942-1.03-2.483z" fill="#D8D8D8"></path><path d="M13.42 15.274l1.31 3.386-3.422-.786 2.113-2.6z" fill="#B2B2B2"></path><path d="M13.42 15.274l3.103.7-1.793 2.686-1.31-3.386z" fill="#D8D8D8"></path><path d="M14.73 18.66l1.03 2.483-3.401-.637 2.37-1.846z" fill="#BFBFBF"></path><path d="M11.308 17.874l3.422.786-2.371 1.847-1.051-2.633z" fill="#999"></path><path d="M2.598 3.11l2.391 1.05.886 2.208L2.598 3.11z" fill="#727272"></path><path d="M5.36 3.237l.515 3.132-.886-2.208-.825-1.868 1.196.944z" fill="#A5A5A5"></path><path d="M.845 2.293l1.752.817L4.99 4.16l-.825-1.867H.845z" fill="#8C8C8C"></path><path d="M2.731.955l1.433 1.338H.845L2.731.955z" fill="#B2B2B2"></path><path d="M0 .955h2.732L.845 2.293 0 .955z" fill="#BFBFBF"></path><path d="M2.732.955l1.845.138L2.907 0 0 .955h2.732z" fill="#8C8C8C"></path><path d="M5.453 1.093h-.876L2.907 0l2.546 1.093z" fill="#A5A5A5"></path><path d="M5.36 3.237l-.783-2.144L2.732.955l1.432 1.338 1.196.944zM6.38 6.21L5.36 3.236l.516 3.131.505-.159z" fill="#727272"></path><path d="M5.453 1.093l.928 5.116-1.02-2.972-.784-2.144h.876z" fill="#8C8C8C"></path>
+		</symbol>
+	
+</svg>
+
+    <header class="header">
+      <div class="lang">
+        <div class="lang-list"><a class="lang-list__item" href="#">RU</a><a class="lang-list__item lang-active" href="#">UA</a><a class="lang-list__item" href="#">EN</a></div>
+      </div><a class="logo" href="/"><img src="/wp-content/themes/vernadsky/assets/images/icon/Logo.svg"></a>
+      <div class="tel"><a class="tel__link" href="0442202222">
+          <svg class="icon--phone tel__icon" role="presentation">
+            <use xlink:href="#icon-phone"></use>
+          </svg>(044)220-22-22</a></div>
+      <div class="burger js-burger"><span></span><span></span><span></span></div>
+    </header>
+    <section class="main">
+      <div class="construction">
+        <!-- breadcrumb start-->
+        <ul class="breadcrumb">
+          <li class="breadcrumb__el"><a href="/">Главная</a></li>
+          <li class="breadcrumb__el"><a href="/news.html">Новости</a></li>
+          <!-- repeat-->
+          <li class="breadcrumb__el"><span>Новость</span></li>
+        </ul>
+        <!-- breadcrumb end-->
+        <h1 class="title">Хід будівництва</h1>
+        <div class="construction__bg wb-all__bg"><svg viewBox="0 0 1361 700" class="js-svg-bg-animate" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line class="svg-short svg-left" x1="95.5" y1="1100" x2="95.5" y2="-400" />
+    <line class="svg-short svg-right" x1="1264.5" y1="-400" x2="1264.5" y2="1100" />
+    <line class="svg-long svg-top" x1="-400" y1="96.5" x2="1900" y2="96.5" />
+    <line class="svg-long svg-bottom" x1="100%" y1="603.5" x2="0" y2="603.5" />
+    <rect class="svg-min-line svg-min-line-1 svg-line-1" x="48" y="604" width="48" height="2"/>
+    <rect class="svg-min-line svg-min-line-2 svg-line-2" x="96" y="604" width="47" height="2"/>
+    <rect class="svg-min-line svg-min-line-1 svg-line-3" x="1216" y="96" width="48" height="2"/>
+    <rect class="svg-min-line svg-min-line-2 svg-line-4" x="1264" y="96" width="47" height="2"/>
+    <rect class="svg-min-line svg-min-line-1 svg-line-5" x="1265" y="603" width="2" height="49"/>
+    <rect class="svg-min-line svg-min-line-2 svg-line-6" x="1265" y="554" width="2" height="48"/>
+    <rect class="svg-min-line svg-min-line-1 svg-line-7" x="96" y="48" width="2" height="48" />
+    <rect class="svg-min-line svg-min-line-2 svg-line-8" x="96" y="96" width="2" height="47"/>
+</svg>
+        </div>
+        <div class="construction__content js-construction">
+          <div class="construction__element js-pagination__element" data-id="10">
+            <div class="construction__element-img"><img src="/wp-content/themes/vernadsky/assets/images/construction/1.jpg"></div>
+            <div class="construction__element-text">Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.</div>
+            <div class="construction__element-data">березня 2020</div>
+            <div class="construction__element-link link">Дивитися звіт</div>
+          </div>
+          <div class="construction__element js-pagination__element" data-id="10">
+            <div class="construction__element-img"><img src="/wp-content/themes/vernadsky/assets/images/construction/1.jpg"></div>
+            <div class="construction__element-text">Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.</div>
+            <div class="construction__element-data">березня 2020</div>
+            <div class="construction__element-link link">Дивитися звіт</div>
+          </div>
+          <div class="construction__element js-pagination__element" data-id="10">
+            <div class="construction__element-img"><img src="/wp-content/themes/vernadsky/assets/images/construction/1.jpg"></div>
+            <div class="construction__element-text">Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.</div>
+            <div class="construction__element-data">березня 2020</div>
+            <div class="construction__element-link link">Дивитися звіт</div>
+          </div>
+          <div class="construction__element js-pagination__element" data-id="10">
+            <div class="construction__element-img"><img src="/wp-content/themes/vernadsky/assets/images/construction/1.jpg"></div>
+            <div class="construction__element-text">Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.</div>
+            <div class="construction__element-data">березня 2020</div>
+            <div class="construction__element-link link">Дивитися звіт</div>
+          </div>
+          <div class="construction__element js-pagination__element" data-id="10">
+            <div class="construction__element-img"><img src="/wp-content/themes/vernadsky/assets/images/construction/1.jpg"></div>
+            <div class="construction__element-text">Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.</div>
+            <div class="construction__element-data">березня 2020</div>
+            <div class="construction__element-link link">Дивитися звіт</div>
+          </div>
+          <div class="construction__element js-pagination__element" data-id="10">
+            <div class="construction__element-img"><img src="/wp-content/themes/vernadsky/assets/images/construction/1.jpg"></div>
+            <div class="construction__element-text">Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.</div>
+            <div class="construction__element-data">березня 2020</div>
+            <div class="construction__element-link link">Дивитися звіт</div>
+          </div>
+          <div class="construction__element js-pagination__element" data-id="10">
+            <div class="construction__element-img"><img src="/wp-content/themes/vernadsky/assets/images/construction/1.jpg"></div>
+            <div class="construction__element-text">Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.</div>
+            <div class="construction__element-data">березня 2020</div>
+            <div class="construction__element-link link">Дивитися звіт</div>
+          </div>
+          <div class="construction__element js-pagination__element" data-id="10">
+            <div class="construction__element-img"><img src="/wp-content/themes/vernadsky/assets/images/construction/1.jpg"></div>
+            <div class="construction__element-text">Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.</div>
+            <div class="construction__element-data">березня 2020</div>
+            <div class="construction__element-link link">Дивитися звіт</div>
+          </div>
+          <div class="construction__element js-pagination__element" data-id="10">
+            <div class="construction__element-img"><img src="/wp-content/themes/vernadsky/assets/images/construction/1.jpg"></div>
+            <div class="construction__element-text">Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.</div>
+            <div class="construction__element-data">березня 2020</div>
+            <div class="construction__element-link link">Дивитися звіт</div>
+          </div>
+          <div class="construction__element js-pagination__element" data-id="10">
+            <div class="construction__element-img"><img src="/wp-content/themes/vernadsky/assets/images/construction/1.jpg"></div>
+            <div class="construction__element-text">Для бажаючих придбати квартиру в ЖК Vernadsky компанія «Інтергал-Буд» пропонує розстрочку без переплат.</div>
+            <div class="construction__element-data">березня 2020</div>
+            <div class="construction__element-link link">Дивитися звіт</div>
+          </div>
+        </div>
+        <div class="construction__popup"><a class="js-construction__popup" href="/wp-content/themes/vernadsky/assets/images/construction/2.jpg"></a></div>
+        <div class="pagination js-pagination"></div>
+      </div>
+    </section>
+    <div class="menu js-menu no-scroll">
+      <div class="menu__bg"></div>
+      <div class="menu__header">
+        <div class="lang">
+          <div class="lang-list"><a class="lang-list__item" href="#">RU</a><a class="lang-list__item lang-active" href="#">UA</a><a class="lang-list__item" href="#">EN</a></div>
+        </div><a class="menu__header-logo" href="#"><img src="/wp-content/themes/vernadsky/assets/images/icon/Logo.svg"></a>
+        <div class="menu__close js-close"></div>
+      </div>
+      <div class="menu__list">
+        <div class="menu__block">
+          <div class="menu__list-title">Комплекс</div>
+          <ul>
+            <li class="menu__elem"><a class="menu__link" href="about.html">Про комплекс</a></li>
+            <li class="menu__elem"><a class="menu__link" href="infrastructure.html">Инфраструктура</a></li>
+            <li class="menu__elem"><a class="menu__link" href="advantages.html">Преимущества</a></li>
+            <li class="menu__elem"><a class="menu__link" href="genplan.html">Ген. план</a></li>
+            <li class="menu__elem"><a class="menu__link" href="technical.html">Технические характеристики</a></li>
+            <li class="menu__elem"><a class="menu__link" href="documentation.html">Документация</a></li>
+            <li class="menu__elem"><a class="menu__link" href="advantage.html">Про застройщика</a></li>
+            <li class="menu__elem"><a class="menu__link" href="webcam.html">Веб камера</a></li>
+          </ul>
+        </div>
+        <div class="menu__block">
+          <div class="menu__list-title">Подбор квартир</div>
+          <ul>
+            <li class="menu__elem"><a class="menu__link" href="#.html">Обрати квартиру</a></li>
+            <li class="menu__elem"><a class="menu__link" href="#.html">Подбор по параметрам</a></li>
+            <li class="menu__elem"><a class="menu__link" href="#.html">1-комнатные</a></li>
+            <li class="menu__elem"><a class="menu__link" href="#.html">2-комнатные</a></li>
+            <li class="menu__elem"><a class="menu__link" href="#.html">3-комнатные</a></li>
+          </ul>
+        </div>
+        <div class="menu__block">
+          <div class="menu__list-title">Условия приобретения</div>
+          <ul>
+            <li class="menu__elem"><a class="menu__link" href="#.html">С ремонтом</a></li>
+            <li class="menu__elem"><a class="menu__link" href="payment.html">Полная оплата</a></li>
+            <li class="menu__elem"><a class="menu__link" href="rasrochka.html">Рассрочка</a></li>
+            <li class="menu__elem"><a class="menu__link" href="credit.html">Кредитование</a></li>
+          </ul>
+        </div>
+        <div class="menu__block menu__block-big">
+          <ul>
+            <li class="menu__elem"><a class="menu__link" href="news.html">Новости</a></li>
+            <li class="menu__elem"><a class="menu__link" href="sale.html">Акции</a></li>
+            <li class="menu__elem"><a class="menu__link" href="gallery.html">Галерея</a></li>
+            <li class="menu__elem"><a class="menu__link" href="construction.html">Ход строительства</a></li>
+            <li class="menu__elem"><a class="menu__link" href="nonResidential.html">Нежилые помещения</a></li>
+            <li class="menu__elem"><a class="menu__link" href="contact.html">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="menu__footer"><a class="menu__footer__block" href="0442222020">
+          <div class="menu__footer__icon">
+            <svg class="icon--phone menu__footer__icon-phone" role="presentation">
+              <use xlink:href="#icon-phone"></use>
+            </svg>
+          </div>
+          <div class="menu__footer__block-phone">(044) 222-20-20</div></a><a class="menu__footer__block" href="#">
+          <div class="menu__footer__icon">
+            <svg class="icon--instagram menu__footer__icon-instagram" role="presentation">
+              <use xlink:href="#icon-instagram"></use>
+            </svg>
+          </div>
+          <div class="menu__footer__social">Instagram</div></a><a class="menu__footer__block" href="#">
+          <div class="menu__footer__icon">
+            <svg class="icon--fb menu__footer__icon-fb" role="presentation">
+              <use xlink:href="#icon-fb"></use>
+            </svg>
+          </div>
+          <div class="menu__footer__social">Facebook</div></a>
+        <div class="menu__footer__block"><a class="js-call menu__footer__call" href="#">Зворотній дзвінок</a></div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer__top">
+        <div class="footer__menu__list">
+          <div class="footer__menu__list-title">Комплекс</div>
+          <ul class="footer__menu__group">
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="about">Про комплекс</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="infrastructure">Инфраструктура</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="advantages">Преимущества</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="genplan">Ген. план</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="technical">Технические характеристики</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="documentation">Документация</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="advantage">Про застройщика</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="webcam">Веб камера</a></li>
+          </ul>
+        </div>
+        <div class="footer__menu__list">
+          <div class="footer__menu__list-title">Подбор квартир</div>
+          <ul class="footer__menu__group">
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="#">Обрати квартиру</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="#">Подбор по параметрам</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="#">1-комнатные</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="#">2-комнатные</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="#">3-комнатные</a></li>
+          </ul>
+        </div>
+        <div class="footer__menu__list">
+          <div class="footer__menu__list-title">Условия приобретения</div>
+          <ul class="footer__menu__group">
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="#">С ремонтом</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="payment">Полная оплата</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="rasrochka">Рассрочка</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="credit">Кредитование</a></li>
+          </ul>
+        </div>
+        <div class="footer__menu__list footer__menu__list-big">
+          <ul class="footer__menu__group">
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="news">Новости</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="sale">Акции</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="gallery">Галерея</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="construction">Ход строительства</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="nonResidential">Нежилые помещения</a></li>
+            <li class="footer__menu__elem"><a class="footer__menu__link" href="contact">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__middle">
+        <div class="footer__elem">
+          <svg class="icon--point" role="presentation">
+            <use xlink:href="#icon-point"></use>
+          </svg><span class="footer__elem-point">вул. Вернадського, 32</span>
+        </div>
+        <div class="footer__elem">
+          <svg class="icon--phone footer__icon-phone" role="presentation">
+            <use xlink:href="#icon-phone"></use>
+          </svg><a class="footer__elem-phone" href="0442222020">(044) 222-20-20</a>
+        </div>
+        <div class="footer__elem"><a class="footer__social" href="#">Instagram</a><a class="footer__social" href="#">Facebook</a></div>
+        <div class="footer__elem"><a class="js-call footer__call">Зворотній дзвінок</a></div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__copy">© Усі права захищено Vernadsky</div>
+        <div class="footer__smarto"><span>Розробка сайту</span><a href="https://smarto.agency/">
+            <svg class="icon--smarto" role="presentation">
+              <use xlink:href="#icon-smarto"></use>
+            </svg></a></div>
+        <!--.footer-bottom__copy-->
+        <!--	p © 2008-2019 Все права защищены.-->
+        <!--.footer__link--wrap-->
+        <!--	span Розработка сайта-->
+        <!--	a(href='https://smarto.agency/' rel="nofollow" target="_blank").footer-bottom__link-->
+        <!--		+svg('smarto')//img(src='./assets/images/smarto.svg' alt="" title="")
+        -->
+      </div>
+    </footer>
+    <!-- include ../pages/includes/forms-->
+    <script src="/wp-content/themes/vernadsky/assets/scripts/libs.js"></script>
+    <script src="/wp-content/themes/vernadsky/assets/scripts/scroll.js"></script>
+    <script src="/wp-content/themes/vernadsky/assets/scripts/svgBg.js"></script>
+    <script src="/wp-content/themes/vernadsky/assets/scripts/pagination.js"></script>
+    <script src="/wp-content/themes/vernadsky/assets/scripts/index.js"></script>
+    <script>paginationInit({wrap: '.js-pagination',dots: true,dotsAmount: 3,dotsLast: true,arrow: true,extremeArrow: false, elementInPage: 8, el:'.js-pagination__element'});</script>
+  </body>
+</html>

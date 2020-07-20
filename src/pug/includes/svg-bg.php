@@ -14,7 +14,7 @@
 
     </defs>
     <image x="0" y="0" width="556" height="556" data-index="2"
-           xlink:href="/wp-content/themes/vernadskiy/assets/images/about/bg.jpg"
+           xlink:href="/wp-content/themes/vernadsky/assets/images/about/bg.jpg"
            mask="url(#thirty-two)">
     </image>
 

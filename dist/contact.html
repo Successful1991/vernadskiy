@@ -15,7 +15,7 @@
     <meta content="notranslate" name="google">
     <title>Home</title>
     <meta name="description" content="">
-    <link rel="stylesheet" href="/wp-content/themes/vernadskiy/assets/styles/main.min.css">
+    <link rel="stylesheet" href="/wp-content/themes/vernadsky/assets/styles/main.min.css">
   </head>
   <body>
     <div class="preloader js-preloader">
@@ -63,7 +63,7 @@
     <header class="header">
       <div class="lang">
         <div class="lang-list"><a class="lang-list__item" href="#">RU</a><a class="lang-list__item lang-active" href="#">UA</a><a class="lang-list__item" href="#">EN</a></div>
-      </div><a class="logo" href="/"><img src="/wp-content/themes/vernadskiy/assets/images/icon/Logo.svg"></a>
+      </div><a class="logo" href="/"><img src="/wp-content/themes/vernadsky/assets/images/icon/Logo.svg"></a>
       <div class="tel"><a class="tel__link" href="0442202222">
           <svg class="icon--phone tel__icon" role="presentation">
             <use xlink:href="#icon-phone"></use>
@@ -105,7 +105,7 @@
 </svg>
 
         </div>
-        <div class="contacts__bg-image wb-all__bg"><img src="/wp-content/themes/vernadskiy/assets/images/contact/bg.jpg"></div>
+        <div class="contacts__bg-image wb-all__bg"><img src="/wp-content/themes/vernadsky/assets/images/contact/bg.jpg"></div>
         <div class="contacts__content">
           <div class="contacts__data">
             <div class="contacts__title">Зв’яжіться з нами:</div>
@@ -130,21 +130,37 @@
           </div>
           <div class="contacts__maps">
             <div class="contacts__title">Ми на мапі:</div>
-            <div class="contacts__maps-image"><img src="/wp-content/themes/vernadskiy/assets/images/contact/maps.jpg"></div>
+            <div class="contacts__maps-image"><img src="/wp-content/themes/vernadsky/assets/images/contact/maps.jpg"></div>
             <div class="contacts__maps-link link">Відкрити </br>у навігаторі</div>
           </div>
           <div class="contacts__forms">
+            <div class="form__loader">
+              <div class="lds-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
             <div class="contacts__title">Напишіть нам</div>
             <form class="contacts__form" name="message">
               <legend class="contacts__form-legend">Наші менеджери зв’яжуться з вами у найкоротший час</legend>
               <label class="contacts__form-label contacts__form-label-name">
-                <input class="contacts__form-input js-contacts__form-input" type="text" name="name" placeholder="ваше ім’я" required><span class="form__info"></span>
+                <input class="js__form__input contacts__form-input js-contacts__form-input" type="text" name="name" placeholder="ваше ім’я" required data-errormessage="имя не введено"><span class="form__info"></span>
               </label>
               <label class="contacts__form-label contacts__form-label-tel">
-                <input class="contacts__form-input js-contacts__form-input" type="tell" name="phone" placeholder="Телефон" required><span class="form__info"></span>
+                <input class="js__form__input contacts__form-input js-contacts__form-input" type="tel" name="phone" id="form-tel" placeholder="Телефон" required data-errormessage="телефон не введён"><span class="form__info"></span>
               </label>
               <label class="contacts__form-label contacts__form-label-message">
-                <input class="contacts__form-input js-contacts__form-input" type="text" name="message" placeholder="повідомлення"><span class="form__info"></span>
+                <input class="js__form__input contacts__form-input js-contacts__form-input" type="text" name="message" placeholder="повідомлення" required><span class="form__info"></span>
               </label>
               <button class="js-form__submit contacts__form-submit" type="submit" value="Надіслати">Надіслати</button>
             </form>
@@ -157,7 +173,7 @@
       <div class="menu__header">
         <div class="lang">
           <div class="lang-list"><a class="lang-list__item" href="#">RU</a><a class="lang-list__item lang-active" href="#">UA</a><a class="lang-list__item" href="#">EN</a></div>
-        </div><a class="menu__header-logo" href="#"><img src="/wp-content/themes/vernadskiy/assets/images/icon/Logo.svg"></a>
+        </div><a class="menu__header-logo" href="#"><img src="/wp-content/themes/vernadsky/assets/images/icon/Logo.svg"></a>
         <div class="menu__close js-close"></div>
       </div>
       <div class="menu__list">
@@ -301,9 +317,9 @@
       </div>
     </footer>
     <!-- include ../pages/includes/forms-->
-    <script src="/wp-content/themes/vernadskiy/assets/scripts/libs.js"></script>
-    <script src="/wp-content/themes/vernadskiy/assets/scripts/index.js"></script>
-    <script src="/wp-content/themes/vernadskiy/assets/scripts/scroll.js"></script>
-    <script src="/wp-content/themes/vernadskiy/assets/scripts/svgBg.js"></script>
+    <script src="/wp-content/themes/vernadsky/assets/scripts/libs.js"></script>
+    <script src="/wp-content/themes/vernadsky/assets/scripts/index.js"></script>
+    <script src="/wp-content/themes/vernadsky/assets/scripts/scroll.js"></script>
+    <script src="/wp-content/themes/vernadsky/assets/scripts/svgBg.js"></script>
   </body>
 </html>

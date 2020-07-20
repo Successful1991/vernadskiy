@@ -69,16 +69,16 @@
       color: #728596;
     }
     &-addres:before{
-      background: url('/wp-content/themes/vernadskiy/assets/images/icon/point.svg') no-repeat center / contain;
+      background: url('/wp-content/themes/vernadsky/assets/images/icon/point.svg') no-repeat center / contain;
     }
     &-tel:before{
-      background: url('/wp-content/themes/vernadskiy/assets/images/icon/call.svg') no-repeat center / contain;
+      background: url('/wp-content/themes/vernadsky/assets/images/icon/call.svg') no-repeat center / contain;
     }
     &-mail:before{
-      background: url('/wp-content/themes/vernadskiy/assets/images/icon/mail.svg') no-repeat center / contain;
+      background: url('/wp-content/themes/vernadsky/assets/images/icon/mail.svg') no-repeat center / contain;
     }
     &-v32:before{
-      background: url('/wp-content/themes/vernadskiy/assets/images/icon/v32.svg') no-repeat center / contain;
+      background: url('/wp-content/themes/vernadsky/assets/images/icon/v32.svg') no-repeat center / contain;
     }
   }
   &__maps{
@@ -91,6 +91,9 @@
     }
     &-link{
       text-align: left;
+      a{
+        color: #C2A7A1;
+      }
     }
   }
   &__forms{
@@ -137,13 +140,13 @@
         width: 16px;
       }
       &-name:before{
-        background: url("/wp-content/themes/vernadskiy/assets/images/icon/user.svg") no-repeat center/ contain;
+        background: url("/wp-content/themes/vernadsky/assets/images/icon/user.svg") no-repeat center/ contain;
       }
       &-tel:before{
-        background: url("/wp-content/themes/vernadskiy/assets/images/icon/call.svg") no-repeat center/ contain;
+        background: url("/wp-content/themes/vernadsky/assets/images/icon/call.svg") no-repeat center/ contain;
       }
       &-message:before{
-        background: url("/wp-content/themes/vernadskiy/assets/images/icon/message.svg") no-repeat center/ contain;
+        background: url("/wp-content/themes/vernadsky/assets/images/icon/message.svg") no-repeat center/ contain;
       }
     }
     &-input{
@@ -162,7 +165,6 @@
       border: none;
     }
     .form__info{
-      display: none;
       position: absolute;
       top: 100%;
       left: 0;
@@ -229,5 +231,7 @@
       }
     }
   }
-
+  .js-no-valid{
+    border-color: red;
+  }
 }

@@ -12,11 +12,8 @@ class Smooth {
         this.scroll = this.scroll.bind(this);
 
         document.addEventListener('mousedown',function (e) {
-            console.log(e);
 
             function clickedOnScrollbar(mouseX) {
-                console.log('mouseX', mouseX);
-                console.log('document.documentElement.clientWidth', document.documentElement.clientWidth);
                 if(document.documentElement.clientWidth <= mouseX){return true}
                 return false;
             }
@@ -29,7 +26,6 @@ class Smooth {
     scrollHandler(e) {
         var scroll = true;
         if( this.ignore && $(e.path).closest(this.ignore).length !== 0 || window.isKeyDown()) {
-
             scroll = false;
         }
 
