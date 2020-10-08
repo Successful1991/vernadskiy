@@ -230,18 +230,18 @@
         <div class="wb-5__img"><img src="/wp-content/themes/vernadsky/assets/images/main/wb-5-1.jpg"></div>
         <div class="wb-5__forms">
           <div class="wb-5__forms-title">Напишіть нам</div>
-          <form class="wb-5__form">
+          <form class="wb-5__form" name="form">
             <legend class="wb-5__form-legend">Наші менеджери зв’яжуться з вами у найкоротший час</legend>
             <label class="wb-5__form-label wb-5__form-user">
-              <input type="text" placeholder="ваше ім’я" required><span class="form__info"></span>
+              <input class="js__form__input" type="text" name="name" placeholder="ваше ім’я" data-errormessage="имя не введено" required><span class="form__info"></span>
             </label>
-            <label class="wb-5__form-label wb-5__form-mail">
-              <input type="text" placeholder="example@email.com" required><span class="form__info"></span>
+            <label class="wb-5__form-label wb-5__form-phone">
+              <input class="js__form__input" type="tel" name="phone" placeholder="Телефон" data-errormessage="телефон не введён" required><span class="form__info"></span>
             </label>
             <label class="wb-5__form-label wb-5__form-message">
-              <input type="text" placeholder="повідомлення" required><span class="form__info"></span>
+              <input class="js__form__input" type="text" name="message" placeholder="повідомлення"><span class="form__info"></span>
             </label>
-            <button class="link wb-5__form-button" type="submit" value="Надіслати">Надіслати</button>
+            <button class="link wb-5__form-button js-form__submit" type="submit" value="Надіслати">Надіслати</button>
           </form>
         </div>
       </div>
@@ -396,9 +396,9 @@
     </footer>
     <!-- include ../pages/includes/forms-->
     <script src="/wp-content/themes/vernadsky/assets/scripts/libs.js"></script>
-    <script src="/wp-content/themes/vernadsky/assets/scripts/scroll-block.js"></script>
     <script src="/wp-content/themes/vernadsky/assets/scripts/index.js"></script>
-    <script src="/wp-content/themes/vernadsky/assets/scripts/home.js"></script>
     <script src="/wp-content/themes/vernadsky/assets/scripts/svgBg.js"></script>
+    <script src="/wp-content/themes/vernadsky/assets/scripts/home.js"></script>
+    <script src="/wp-content/themes/vernadsky/assets/scripts/scroll-block.js"></script>
   </body>
 </html>

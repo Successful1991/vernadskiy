@@ -59,25 +59,25 @@ block content
                             div
                             div
                     .contacts__title Напишіть нам
-                    form(name='message' class='contacts__form')
+                    form(name='forms' class='contacts__form')
                         legend.contacts__form-legend Наші менеджери зв’яжуться з вами у найкоротший час
                         label.contacts__form-label.contacts__form-label-name
-                            input(type='text' name='name' placeholder='ваше ім’я' required data-errormessage='имя не введено').js__form__input.contacts__form-input.js-contacts__form-input
+                            input(type='text' name='name' placeholder='ваше ім’я' required data-errormessage='имя не введено').js__form__input.contacts__form-input
                             span.form__info
                         label.contacts__form-label.contacts__form-label-tel
-                            input(type='tel' name='phone' id='form-tel' placeholder='Телефон' required data-errormessage='телефон не введён').js__form__input.contacts__form-input.js-contacts__form-input
+                            input(type='tel' name='phone' placeholder='Телефон' required data-errormessage='телефон не введён').js__form__input.contacts__form-input.js-form-tel
                             span.form__info
                         label.contacts__form-label.contacts__form-label-message
-                            input(type='text' name='message' placeholder='повідомлення' required ).js__form__input.contacts__form-input.js-contacts__form-input
+                            input(type='text' name='message' placeholder='повідомлення' required ).js__form__input.contacts__form-input
                             span.form__info
                         button(type='submit' value='Надіслати').js-form__submit.contacts__form-submit Надіслати
 
 
 block footer
     include ../includes/menu
+    include ../pages/includes/forms
     footer.footer
         include ../includes/footer
-    // include ../pages/includes/forms
 block header
     header.header
         include ../includes/header.pug

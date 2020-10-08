@@ -902,6 +902,7 @@
       opacity: 1;
       visibility: visible;
       height: inherit;
+      grid-row: auto;
     }
     &-1{
       opacity: 1;
@@ -1152,7 +1153,8 @@
 @media screen and (max-width: 767px){
   .wb{
     &-1{
-    height: calc(100vh - 70px);
+
+    height: calc(100vh - 40px);
     max-height: -webkit-fill-available;
     //height: 454px;
     &__bg-img{
@@ -1232,12 +1234,15 @@
         display: none;
       }
       &__img-1{
-        height: initial;
+        //height: initial;
         flex: 0 0 auto;
+        img{
+          height: initial;
+        }
       }
       &__content{
         &-wrap{
-          padding: 60px 40px 56px 64px;
+          padding: 30px 40px 26px 64px;
         }
       }
       &__title{
@@ -1255,7 +1260,7 @@
       }
     }
     &-4{
-      height: initial;
+      height: inherit;
       max-height: none;
       grid-template-rows: auto auto auto;
       grid-template-columns: 100%;
@@ -1274,6 +1279,11 @@
         &-2{
           grid-column: 1;
           grid-row: 1;
+          display: flex;
+          height: 100%;
+          img{
+            height: initial;
+          }
         }
         &-3{
           width: 40vw;
@@ -1307,7 +1317,9 @@
       }
     }
     &-5{
+      padding: 0 0 30px;
       flex-direction: column;
+      background: linear-gradient(180deg, #F3EDEC 0%, #616161 40.62%, #2B2B2B 100%);
       &__bg{
         circle{
           display: none;
@@ -1315,44 +1327,61 @@
       }
       &__fishka{
         width: 100%;
+        height: 35vh;
         padding: 63px 0 25px;
         svg{
-          height: initial;
+          height: 100%;
         }
       }
       &__forms{
         width: 100%;
-        padding: 0 63px 82px 89px;
+        padding: 0 63px 82px 63px;
         &-title{
           font-size: 24px;
           line-height: 33px;
-          margin-left: -20px;
+          margin-left: 0;
+          color: #F3EDEC;
         }
       }
       &__form{
-        padding-left: 10px;
+        padding-left: 0;
         &-legend{
           font-size: 14px;
           line-height: 22px;
+          color: #F3EDEC;
+          text-align: center;
           &:before{
+            display: none;
             width: 10px;
             left: -25px;
           }
         }
         &-label{
+          margin-left: 25px;
+          input{
+            color: #F3EDEC;
+            font-size: 12px;
+            &::placeholder{
+              color: #F3EDEC;
+            }
+          }
           &:before{
             left: -30px;
+            top: 10px;
           }
         }
+      }
+      &__img{
+        display: none;
       }
     }
   }
   .svg-line{
     &-1,&-2,&-3,&-4{
-      width: 15px;
+      width: 20px;
     }
     &-5,&-6,&-7,&-8{
-      height: 15px;
+      height: 20px;
     }
   }
    //.footer{

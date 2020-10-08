@@ -28,6 +28,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex: 0 0 auto;
     &-logo{
       flex: 1 1 200px;
       max-width: 200px;
@@ -232,6 +233,9 @@
       &-logo{
         flex-basis: 140px;
         max-width: 140px;
+        img{
+          height: 35px;
+        }
       }
     }
     &__footer{
@@ -277,10 +281,14 @@
       }
     }
     &__list{
+      //height: inherit;
       display: flex;
       flex-direction: column;
       align-content: center;
+      align-items: center;
       justify-content: flex-start;
+      flex-wrap: nowrap;
+      flex: 0 0 auto;
       padding: 10px;
       &-title{
         text-align: center;

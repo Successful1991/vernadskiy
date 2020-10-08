@@ -65,8 +65,6 @@ function init() {
         ]
     });
     $('.js-gallery__slider').on('init', function (event, slick, currentSlide, nextSlide) {
-        console.log('init');
-        console.log(slick);
         $('.js-gallery__amount-slide-all').html( slick.slideCount);
         $('.js-gallery__amount-slide-current').html(slick.currentSlide+1);
     });
@@ -98,22 +96,17 @@ function init() {
     });
 
 
-    // $('body').on('click','.js-call',function () {
-    //   $('.js-call__popup').css({'transform':'scale(1, 1)'});
-    // });
+    $('.js-call').on('click', e => {
+        e.preventDefault();
+        $('.js-popup__forms').addClass('active');
+        $('.js-popup__forms').find('.js-wb').addClass(['wb-show','wb-animate']);
+    });
+    $('.js-popup__forms-close').on('click', e => {
+        $('.js-popup__forms').removeClass('active');
+        $('.js-popup__forms').find('.js-wb').removeClass(['wb-show','wb-animate']);
+    });
 
 
-    // $('.js-form__close').on('click',function () {
-    //   $('.js-call__popup').css({'transform':'scale(0.5,0)'});
-    // });
-    //
-    // $('.js-video__popup-close').on('click',function () {
-    //     $('.js-video__popup').removeClass('active');
-    // });
-    // setTimeout(function () {
-    //     // $('.wb-1').addClass('active');
-    //     $('.preloader').css('display','none');
-    // },0);
     $('.js-burger').on('click', e => {
         $('.js-menu').addClass('menu-active');
     });
@@ -121,7 +114,7 @@ function init() {
         $('.js-menu').removeClass('menu-active');
     });
 
-     $("#form-tel").mask("(999)999-9999");
+     $(".js-form-tel").mask("(999)999-9999");
 
     $('.js-form__submit').on('click',function(e) {
         e.preventDefault();
@@ -146,7 +139,6 @@ function init() {
         })
     })
 }
-
 
 function ajax_form(e,methods,url) {
     event.preventDefault();
@@ -177,9 +169,10 @@ function ajax_form(e,methods,url) {
                 var data = JSON.parse(data);
                 // success();
                 successSendMesage();
-                if (data.result) {
+                if (data === 'done') {
                     //$(e).find('.result-text').removeClass('error');
-                    $(form)[0].reset();
+                    // $(form)[0].reset();
+                    window.location.href = '/message'
                 } else {
                     //$(e).find('.result-text').addClass('error');
                 }
@@ -187,7 +180,7 @@ function ajax_form(e,methods,url) {
                     $(form).find('.js-result-text').fadeIn();
                     $(form).find('.js-result-text').html(data.message);
                     setTimeout(function() {
-                        // $('.form__loader').removeClass('active');
+
                         $(e).find('.js-result-text').fadeOut();
                     },2000)
                 }
@@ -201,13 +194,12 @@ function validateForm(self) {
     let elem = $(self);
     var regular = new RegExp('^[a-zA-Zа-яА-Я\'][a-zA-Zа-яА-Я-\' ]+[a-zA-Zа-яА-Я\']?$');
     var regularTel = new RegExp(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})?([ .-]?)([0-9]{2})?([ .-]?)([0-9]{2})/);
-    console.log(elem.val());
-    console.log(regularTel.test(elem.val()));
+
     if ((elem.attr('type') === 'tel' && (elem.val().length < 6 || !regularTel.test(elem.val()) ) )  ||
         (elem.attr('type') !== 'tel' && $.trim(elem.val()).length < 2) ||
         (elem.attr('type') !== 'tel' && !regular.test(elem.val()))) {
         var errorMessage = $(self).data("errormessage"); // добавляем в input сообщение об ошибке из dataAttr и class
-        //console.log( errorMessage);
+
         elem.next().text(errorMessage);
         elem.addClass('js-no-valid');
         return true
@@ -289,7 +281,6 @@ function successSendMesage() {
 //     newLat = marker.getPosition().lat() + (0.00013 * Math.pow(2, (17 - map.getZoom())));
 //   });
 // }
-
 
 document.addEventListener('DOMContentLoaded',function () {
     init();

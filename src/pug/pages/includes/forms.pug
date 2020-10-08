@@ -1,26 +1,24 @@
-.call__forms-wrap.js-call__popup
-    .call__forms
-        .call__forms-title Виникли запитання?
-        .call__forms-desc Наші менеджери передзвонять Вам у найближчий час
-        span.call__close.js-form__close
-        form(name='call').call__form
-            //legend.form__title Расчитать свой проект
-                //+svg('close', 'form__close')
-            // обязательно
-            label.call__form-user
-                input(type='text' name='name' placeholder='Ім’я:*').call__form-input.js-form__input
-                span.form__info
-            // обязательно
-            label.call__form-phone
-                input(type='number' name='tel' placeholder='Телефон:*').call__form-input.js-form__input
-                span.form__info
-
-            // обязательно
-            //input(type='email' name='mail' placeholder='E-mail:*').form__input.js-form__input
-            //span.form__info
-
-            // обязательно
-            //input(type='text' name='region' placeholder='Регион строительства:*').form__input.js-form__input
-            //span.form__info
-
-            button(type='submit' value='Надіслати').js-form__submit.button Надіслати
+.popup__forms.js-popup__forms
+    .popup__forms-close.js-popup__forms-close
+    .wb-5.js-wb
+        .wb-5__bg
+            include ../../includes/svg-bg.html
+        .wb-5__fishka
+            .wb-2__fishka-event.js-wb__fishka-event(data-index=5)
+            include ../../includes/wb-5-fishka.html
+        .wb-5__img
+            img(src='/wp-content/themes/vernadsky/assets/images/main/wb-5-1.jpg')
+        .wb-5__forms
+            .wb-5__forms-title Напишіть нам
+            form(name='popup-form' class="wb-5__form")
+                legend.wb-5__form-legend Наші менеджери зв’яжуться з вами у найкоротший час
+                label.wb-5__form-label.wb-5__form-user
+                    input(type='text' placeholder='ваше ім’я' required).js__form__input.js-contacts__form-input
+                    span.form__info
+                label.wb-5__form-label.wb-5__form-mail
+                    input(type='text' placeholder='example@email.com' required).js__form__input.js-contacts__form-input.js-form-tel
+                    span.form__info
+                label.wb-5__form-label.wb-5__form-message
+                    input(type='text' name='message' placeholder='повідомлення').js__form__input.js-contacts__form-input
+                    span.form__info
+                button(type='submit' value='Надіслати').link.wb-5__form-button.js-form__submit Надіслати

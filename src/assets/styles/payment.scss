@@ -1,6 +1,9 @@
 .payment{
   //position: relative;
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
   width: 100%;
   min-height: 100vh;
   height: initial;

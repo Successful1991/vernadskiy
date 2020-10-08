@@ -55,8 +55,8 @@
 .main-home{
   display: grid;
   grid-template-columns: 100%;
-  grid-auto-rows: 100%;
-  height: 100%;
+  grid-auto-rows: auto;
+  height: inherit;
 }
 .wb{
   &-1{
@@ -641,10 +641,10 @@
           display: inline-block;
           height: 16px;
           width: 15px;
-          background: url('../images/icon/user.svg');
+          background: url('../images/icon/user.svg') no-repeat center /contain;
         }
       }
-      &-mail{
+      &-phone{
         &:before{
           content: '';
           position: absolute;
@@ -653,7 +653,7 @@
           display: inline-block;
           height: 11px;
           width: 15px;
-          background: url("../images/icon/mail.svg");
+          background: url("../images/icon/call.svg") no-repeat center /contain;
         }
       }
       &-message{
@@ -665,7 +665,7 @@
           display: inline-block;
           height: 13px;
           width: 15px;
-          background: url("../images/icon/message.svg");
+          background: url("../images/icon/message.svg") no-repeat center /contain;
         }
       }
       &-button{
@@ -745,7 +745,9 @@
   padding: 10px;
 }
 
-
-@media screen and (max-width: 1023px){
-
-}
+//
+//@media screen and (max-width: 1023px){
+//  .main-home{
+//    grid-auto-rows: auto;
+//  }
+//}

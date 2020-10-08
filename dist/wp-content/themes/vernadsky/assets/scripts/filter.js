@@ -5,7 +5,13 @@ let element = '';
 (function () {
     $('.js-select__items [name="year"][checked]').length ? year = $('.js-select__items [name="year"][checked]')[0].value : 'all';
     $('.js-select__items [name="month"][checked]').length ? month = $('.js-select__items [name="month"][checked]')[0].value : 'all';
-    $('.js-select__items ').on('change', 'input', updateSelect);
+    $('.js-select__items ').on('change', 'input',(e) => {
+
+        $(e.target).closest('label').children('input').prop('checked', false);
+        // $('#year').prop('checked', false);
+        // $('#year-bg').prop('checked', false);
+        updateSelect(e);
+    });
     element = $('.js-pagination__element');
     filter();
     paginationInit({wrap: '.js-pagination',dots: true,dotsAmount: 3,dotsLast: true,arrow: true,extremeArrow: false, elementInPage: 8, el:'.js-pagination__element'});
@@ -20,7 +26,7 @@ function updateSelect(e) {
     } else if(e.target.name === 'month') {
         month = e.target.value || 'all';
     }
-    filterElements = [];
+    paginationDefaults.filterElements = [];
     filter();
 }
 
@@ -28,7 +34,7 @@ function filter() {
     element.each(function (i,category) {
         $(category).show();
         if( (year === 'all' || category.dataset.year === year ) && (month === 'all' || category.dataset.month === month)) {
-            filterElements.push(category)
+            paginationDefaults.filterElements.push(category)
         } else {
             $(category).hide();
         }

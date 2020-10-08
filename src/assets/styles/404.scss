@@ -1,12 +1,14 @@
 .page404 {
+  display: inline-block;
   margin: 0 auto;
   &-wrap {
     position: relative;
+    width: 100%;
     height: calc(100vh - 240px);
     //background-color: lighten($mc, 5%);
     display: flex;
     justify-content: center;
-    padding-left: var(--padding-wrap);
+    padding: var(--padding-wrap) 0;
     align-items: center;
     color: #7E8888;
     .wb-all__fishka{
@@ -14,6 +16,10 @@
       @include to(1023px){
         display: none;
       }
+    }
+    @include to(1023px){
+      height: inherit;
+      padding: calc(var(--padding-wrap) + 30px) 0;
     }
   }
 
@@ -25,18 +31,26 @@
     text-align: center;
     animation: tada 3s infinite;
 
-    @include to(578px) {
+    @include to(1023px) {
       font-size: 70px;
       line-height: 1em;
       margin-bottom: 30px;
+    }
+    @include to(578px) {
+      font-size: 40px;
+      line-height: 1em;
+      margin-bottom: 20px;
     }
 
     &-small {
       display: block;
       font-size: 50px;
 
-      @include to(578px) {
+      @include to(1023px) {
         font-size: 30px;
+      }
+      @include to(578px) {
+        font-size: 22px;
       }
     }
   }
@@ -74,8 +88,13 @@
         z-index: 0;
       }
 
-      @include to(578px) {
+      @include to(1023px) {
         margin: 20px auto;
+        width: 70%;
+        min-width: 200px;
+      }
+      @include to(578px) {
+        margin: 7px auto;
         width: 70%;
         min-width: 200px;
       }

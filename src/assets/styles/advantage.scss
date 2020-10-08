@@ -116,7 +116,11 @@
     &-first{
       flex-direction: column;
     }
+    &__left{
+      flex: 0 0 auto;
+    }
     &__right{
+      flex: 0 0 auto;
       padding: 40px  var(--padding-wrap)  var(--padding-wrap)  var(--padding-wrap);
       width: 100%;
       justify-content: center;

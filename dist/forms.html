@@ -1,26 +1,59 @@
 
-<div class="call__forms-wrap js-call__popup">
-  <div class="call__forms">
-    <div class="call__forms-title">Виникли запитання?</div>
-    <div class="call__forms-desc">Наші менеджери передзвонять Вам у найближчий час</div><span class="call__close js-form__close"></span>
-    <form class="call__form" name="call">
-      <!--legend.form__title Расчитать свой проект//+svg('close', 'form__close')
-      -->
-      <!-- обязательно-->
-      <label class="call__form-user">
-        <input class="call__form-input js-form__input" type="text" name="name" placeholder="Ім’я:*"/><span class="form__info"></span>
-      </label>
-      <!-- обязательно-->
-      <label class="call__form-phone">
-        <input class="call__form-input js-form__input" type="number" name="tel" placeholder="Телефон:*"/><span class="form__info"></span>
-      </label>
-      <!-- обязательно-->
-      <!--input(type='email' name='mail' placeholder='E-mail:*').form__input.js-form__input-->
-      <!--span.form__info-->
-      <!-- обязательно-->
-      <!--input(type='text' name='region' placeholder='Регион строительства:*').form__input.js-form__input-->
-      <!--span.form__info-->
-      <button class="js-form__submit button" type="submit" value="Надіслати">Надіслати</button>
-    </form>
+<div class="popup__forms js-popup__forms">
+  <div class="popup__forms-close js-popup__forms-close"></div>
+  <div class="wb-5 js-wb">
+    <div class="wb-5__bg"><svg viewBox="0 0 1361 700" class="js-svg-bg-animate" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line class="svg-short svg-left" x1="95.5" y1="1100" x2="95.5" y2="-400" />
+    <line class="svg-short svg-right" x1="1264.5" y1="-400" x2="1264.5" y2="1100" />
+    <line class="svg-long svg-top" x1="-400" y1="96.5" x2="1900" y2="96.5" />
+    <line class="svg-long svg-bottom" x1="100%" y1="603.5" x2="0" y2="603.5" />
+    <circle r="350" cx="350" cy="350" class="svg-circle svg-circle1"></circle>
+    <circle r="350" cx="350" cy="350" class="svg-circle svg-circle2"></circle>
+    <rect class="svg-min-line svg-min-line-1 svg-line-1" x="48" y="604" width="48" height="2"/>
+    <rect class="svg-min-line svg-min-line-2 svg-line-2" x="96" y="604" width="47" height="2"/>
+    <rect class="svg-min-line svg-min-line-1 svg-line-3" x="1216" y="96" width="48" height="2"/>
+    <rect class="svg-min-line svg-min-line-2 svg-line-4" x="1264" y="96" width="47" height="2"/>
+    <rect class="svg-min-line svg-min-line-1 svg-line-5" x="1265" y="603" width="2" height="49"/>
+    <rect class="svg-min-line svg-min-line-2 svg-line-6" x="1265" y="554" width="2" height="48"/>
+    <rect class="svg-min-line svg-min-line-1 svg-line-7" x="96" y="48" width="2" height="48" />
+    <rect class="svg-min-line svg-min-line-2 svg-line-8" x="96" y="96" width="2" height="47"/>
+</svg>
+
+    </div>
+    <div class="wb-5__fishka">
+      <div class="wb-2__fishka-event js-wb__fishka-event" data-index="5"></div><svg width="388" height="352" viewBox="0 0 388 352" fill="none" xmlns="http://www.w3.org/2000/svg" baseProfile="full">
+    <defs>
+        <mask id="thirty-three">
+            <path class="fishka-1" d="M201.3,119.7h58.1l-36.1,44.4c0,0,5.2-6.9,15.4-6.9c11.4,0,22.9,8,26.2,19.8c3.3,11.8-0.5,23.8-9.4,30.2
+	c-8.9,6.4-14,6.3-19.7,6.3c-5.7,0-15.4-3.7-19.9-10.1c-4.5-6.4-6.6-12.9-6.6-19" fill="none" mask="#000000"/>
+            <path class="fishka-2" d="M297.7,150.3c0,0-1.2-17.7,16.2-27.1s31.6,0.5,35.1,4c3.5,3.5,16,17,0,35.9s-42.5,49.1-42.5,49.1h65.3" fill="none"/>
+            <path class="fishka-3" d="M47,31 L 48,31 L175.5 286.1 L175.22, 286.65 L47,31 48,31z" fill="none"/>
+            <path class="fishka-4" d="M 310.32 11 L 323.714 11 L 317.20 22.317 L 310.32 11 L 323.714 11Z" fill="none"/>
+        </mask>
+    </defs>
+    <polygon points="0,0 400,0 400,400 0,400" fill="#ffffff" mask="url(#thirty-three)"></polygon>
+    <image x="-185" y="-320" width="1937" height="1167" class="wb-5__fishka-img" data-index="5"
+           xlink:href="/wp-content/themes/vernadsky/assets/images/main/wb-5-2.jpg"
+           mask="url(#thirty-three)">
+    </image>
+</svg>
+    </div>
+    <div class="wb-5__img"><img src="/wp-content/themes/vernadsky/assets/images/main/wb-5-1.jpg"/></div>
+    <div class="wb-5__forms">
+      <div class="wb-5__forms-title">Напишіть нам</div>
+      <form class="wb-5__form" name="popup-form">
+        <legend class="wb-5__form-legend">Наші менеджери зв’яжуться з вами у найкоротший час</legend>
+        <label class="wb-5__form-label wb-5__form-user">
+          <input class="js__form__input js-contacts__form-input" type="text" placeholder="ваше ім’я" required="required"/><span class="form__info"></span>
+        </label>
+        <label class="wb-5__form-label wb-5__form-mail">
+          <input class="js__form__input js-contacts__form-input js-form-tel" type="text" placeholder="example@email.com" required="required"/><span class="form__info"></span>
+        </label>
+        <label class="wb-5__form-label wb-5__form-message">
+          <input class="js__form__input js-contacts__form-input" type="text" name="message" placeholder="повідомлення"/><span class="form__info"></span>
+        </label>
+        <button class="link wb-5__form-button js-form__submit" type="submit" value="Надіслати">Надіслати</button>
+      </form>
+    </div>
   </div>
 </div>

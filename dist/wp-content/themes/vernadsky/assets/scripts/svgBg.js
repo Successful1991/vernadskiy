@@ -7,6 +7,7 @@ function svg(big, small) {
     let list = $('.js-svg-bg-animate');
     list.each(function (i,el) {
         let svg = $(this);
+        svg.addClass('wb-animate-bg-'+i);
         let height = svg.parent().height();
         let width = svg.parent().width();
         svg.attr("viewBox", `0 0 ${width} ${height}`);
@@ -25,7 +26,6 @@ function svg(big, small) {
             bottom[0].y2.baseVal.value = height - big;
             bottom[0].x2.baseVal.value = 0;
         }
-
 
         let right = svg.find('.svg-right');
         if(right.length){
@@ -106,12 +106,21 @@ function svg(big, small) {
             line8[0].x.baseVal.value = big + 1;
             line8[0].y.baseVal.value = small + small;
         }
+        classes += `
+        .wb-animate-bg-${i} .wb-animate-end .svg-long{stroke-dashoffset: ${ width }!important;}
+        .wb-animate-bg-${i} .svg-long{stroke-dasharray: ${ width };}
+        // .wb-animate-bg-${i} .svg-long{stroke-dasharray: ${ width };stroke-dashoffset: ${ width };}
+        .wb-animate-bg-${i} .wb-animate-end .svg-short{stroke-dashoffset: ${ height }!important;}
+        .wb-animate-bg-${i} .svg-short{stroke-dasharray: ${ height };}`;
+        // classes += `
+        // .wb-animate-bg-${i} .wb-animate-end .svg-long{stroke-dashoffset: ${ height }!important;}
+        // .wb-animate-bg-${i} .svg-long{stroke-dasharray: ${ height };}
+        // // .wb-animate-bg-${i} .svg-long{stroke-dasharray: ${ height };stroke-dashoffset: ${ height };}
+        // .wb-animate-bg-${i} .wb-animate-end .svg-short{stroke-dashoffset: ${ width }!important;}
+        // .wb-animate-bg-${i} .svg-short{stroke-dasharray: ${ width };}`;
 
-        classes = `
-        .wb-animate-end .svg-long{stroke-dashoffset: ${ width }!important;}
-        .svg-long{stroke-dasharray: ${ width };stroke-dashoffset: ${ width };}
-        .wb-animate-end .svg-short{stroke-dashoffset: ${ height }!important;}
-        .svg-short{stroke-dasharray: ${ height };stroke-dashoffset: ${ height };}`;
+
+        // .wb-animate-bg-${i} .svg-short{stroke-dasharray: ${ width };stroke-dashoffset: ${ width };}`;
     });
     styles.innerHTML = classes;
 }
@@ -123,11 +132,11 @@ const offset = {
     },
     tablet: {
         big: 64,
-        small: 34
+        small: 30
     },
     mobile: {
         big: 40,
-        small: 25
+        small: 20
     }
 };
 document.addEventListener('DOMContentLoaded',function (e) {
@@ -162,15 +171,15 @@ let logger = (args) => console.log(`My args are ${args}`);
 window.addEventListener('resize', debounce(ressize, 100));
 
 function ressize() {
-    const width = window.innerWidth;
-    if(width > 1023){
+    if(window.innerWidth > 1023){
         svg(offset['desctop'].big,offset['desctop'].small );
-    } else if(width > 767){
+    } else if(window.innerWidth > 767){
         svg(offset['tablet'].big,offset['tablet'].small );
     } else {
         svg(offset['mobile'].big,offset['mobile'].small );
     }
 }
+
 // window.addEventListener('resize', function (e) {
 //     console.log(e.type);
 //     const width = window.innerWidth;

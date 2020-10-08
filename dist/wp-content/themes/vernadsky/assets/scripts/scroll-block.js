@@ -100,9 +100,8 @@ const isDevice = (type = 'mobile' )=> {
 };
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 document.addEventListener('DOMContentLoaded', function () {
-  if(window.innerWidth > 1023){
+  if(window.innerWidth > 1024){
   // if(!isDevice('mobile')){
-    console.log(window.innerWidth);
     var body = new Smooth({ignore:'.menu'});
     body.key();
   }
@@ -148,7 +147,7 @@ function enableScroll() {
 
 
 window.addEventListener('resize', function () {
-  if(window.innerWidth < 1024){
+  if(window.innerWidth <= 1024){
     enableScroll();
   }
 });

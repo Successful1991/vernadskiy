@@ -87,20 +87,27 @@
 @media screen and (max-width: 768px){
   .webcam{
     &__slider{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       padding-top: 20px;
+      flex: 0 0 auto;
+      height: initial;
       &-el{
+        height: inherit;
         iframe{
           height: calc((100vw - var(--padding-wrap) )* 0.6);
         }
       }
     }
     &__arrow{
+      position: static;
+      order: 2;
       height: 40px;
       width: 40px;
-      top: auto;
-      bottom: -15px;
-      transform: translateY(50%);
+      margin: 0 10px;
       padding: 10px;
+      transform: translateY(0);
       &-left{
         right: calc(50% + 10px);
       }

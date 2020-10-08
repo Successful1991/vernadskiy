@@ -74,7 +74,7 @@ class Smooth {
 const keys = {37: 1, 38: 1, 39: 1, 40: 1};
 let body;
 // document.addEventListener('DOMContentLoaded',function () {
-    body = new Smooth({ignore:'.map4'});
+    body = new Smooth({ignore:'#map'});
     body.key();
 // });
 
